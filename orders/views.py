@@ -53,8 +53,8 @@ def create_order(request):
                         messages.success(request, 'Order placed successfully!')
                         return redirect('user:profile')
             except ValidationError as e:
-                messages.success(request, str(e))
-                return redirect('cart:order')
+                messages.error(request, str(e))
+                return redirect('orders:create_order')
     else:
         initial = {
             'first_name': request.user.first_name,

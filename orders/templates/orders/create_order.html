@@ -7,6 +7,19 @@
 {% endblock meta %}
 
 {% block content %}
+{% if messages %}
+    <div class="position-fixed top-0 start-50 translate-middle-x mt-3"
+         style="z-index: 1100; width: 90%; max-width: 500px;">
+        {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show shadow"
+                 role="alert">
+                {{ message }}
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
 <div class="bg-white">
 	<div class="container bg-white" id="cart-items-container">
 		{% user_carts request as carts %}
