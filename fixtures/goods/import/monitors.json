@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 111,
+        "fields": {
+            "name": "Acer Nitro XV272U KF Gaming Monitor",
+            "slug": "acer-nitro-xv272u-kf",
+            "manufacturer": "Acer",
+            "description": "A 27-inch gaming monitor featuring a 1920x1080 resolution, 144 Hz refresh rate, 4 ms response time, 16:9 aspect ratio, 350 cd/m² brightness, 1000:1 contrast ratio, 99% sRGB color gamut, HDMI 2.0 and DisplayPort 1.4 inputs, and dimensions of 610 x 360 x 80 mm.",
+            "image": "categories/monitors/acer-nitro-xv272u-kf.jpg",
+            "price": 200.00,
+            "discount": 10,
+            "quantity": 10,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 111,
+            "panel_type": "IPS",
+            "resolution": "1920x1080",
+            "refresh_rate": 144,
+            "response_time": 4.00,
+            "aspect_ratio": "16:9",
+            "brightness": 350,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "99% sRGB",
+            "inputs": "HDMI 2.0, DisplayPort 1.4",
+            "dimensions": "610 x 360 x 80 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 112,
+        "fields": {
+            "name": "ASUS ROG Swift PG32UQXE Gaming Monitor",
+            "slug": "asus-rog-swift-pg32uqxe",
+            "manufacturer": "ASUS",
+            "description": "A 32-inch gaming monitor featuring a 3840x2160 resolution, 165 Hz refresh rate, 4 ms response time, 16:9 aspect ratio, 550 cd/m² brightness, 1000:1 contrast ratio, 98% DCI-P3 color gamut, HDMI 2.1 and DisplayPort 1.4 inputs, and dimensions of 715 x 508 x 90 mm.",
+            "image": "categories/monitors/asus-rog-swift-pg32uqxe.jpg",
+            "price": 557.00,
+            "discount": 5,
+            "quantity": 5,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 112,
+            "panel_type": "IPS",
+            "resolution": "3840x2160",
+            "refresh_rate": 165,
+            "response_time": 4.00,
+            "aspect_ratio": "16:9",
+            "brightness": 550,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "98% DCI-P3",
+            "inputs": "HDMI 2.1, DisplayPort 1.4",
+            "dimensions": "715 x 508 x 90 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 113,
+        "fields": {
+            "name": "Samsung Odyssey G9 Gaming Monitor",
+            "slug": "samsung-odyssey-g9",
+            "manufacturer": "Samsung",
+            "description": "A 49-inch gaming monitor featuring a 5120x1440 resolution, 240 Hz refresh rate, 1 ms response time, 32:9 aspect ratio, 400 cd/m² brightness, 1000:1 contrast ratio, 95% DCI-P3 color gamut, HDMI 2.1 and DisplayPort 1.4 inputs, and dimensions of 1240 x 490 x 240 mm.",
+            "image": "categories/monitors/samsung-odyssey-g9.jpg",
+            "price": 1225.00,
+            "discount": 0,
+            "quantity": 2,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 113,
+            "panel_type": "VA",
+            "resolution": "5120x1440",
+            "refresh_rate": 240,
+            "response_time": 1.00,
+            "aspect_ratio": "32:9",
+            "brightness": 400,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "95% DCI-P3",
+            "inputs": "HDMI 2.1, DisplayPort 1.4",
+            "dimensions": "1240 x 490 x 240 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 114,
+        "fields": {
+            "name": "LG UltraGear 27GN950-B Gaming Monitor",
+            "slug": "lg-ultragear-27gn950-b",
+            "manufacturer": "LG",
+            "description": "A 27-inch gaming monitor featuring a 2560x1440 resolution, 144 Hz refresh rate, 1 ms response time, 16:9 aspect ratio, 400 cd/m² brightness, 1000:1 contrast ratio, 98% DCI-P3 color gamut, HDMI 2.0 and DisplayPort 1.4 inputs, and dimensions of 613 x 363 x 80 mm.",
+            "image": "categories/monitors/lg-ultragear-27gn950-b.jpg",
+            "price": 334.00,
+            "discount": 15,
+            "quantity": 7,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 114,
+            "panel_type": "Nano IPS",
+            "resolution": "2560x1440",
+            "refresh_rate": 144,
+            "response_time": 1.00,
+            "aspect_ratio": "16:9",
+            "brightness": 400,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "98% DCI-P3",
+            "inputs": "HDMI 2.0, DisplayPort 1.4",
+            "dimensions": "613 x 363 x 80 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 115,
+        "fields": {
+            "name": "Gigabyte M34WQ Gaming Monitor",
+            "slug": "gigabyte-m34wq",
+            "manufacturer": "Gigabyte",
+            "description": "A 34-inch gaming monitor featuring a 3440x1440 resolution, 144 Hz refresh rate, 4 ms response time, 21:9 aspect ratio, 300 cd/m² brightness, 3000:1 contrast ratio, 90% DCI-P3 color gamut, HDMI 2.0 and DisplayPort 1.4 inputs, and dimensions of 815 x 463 x 93 mm.",
+            "image": "categories/monitors/gigabyte-m34wq.jpg",
+            "price": 423.00,
+            "discount": 10,
+            "quantity": 4,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 115,
+            "panel_type": "VA",
+            "resolution": "3440x1440",
+            "refresh_rate": 144,
+            "response_time": 4.00,
+            "aspect_ratio": "21:9",
+            "brightness": 300,
+            "contrast_ratio": "3000:1",
+            "color_gamut": "90% DCI-P3",
+            "inputs": "HDMI 2.0, DisplayPort 1.4",
+            "dimensions": "815 x 463 x 93 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 116,
+        "fields": {
+            "name": "AOC AGON AG352QCX Gaming Monitor",
+            "slug": "aoc-agon-ag352qcx",
+            "manufacturer": "AOC",
+            "description": "A 35-inch gaming monitor listed with a 3440x1440 resolution, 175 Hz refresh rate, 1 ms response time, 21:9 aspect ratio, 400 cd/m² brightness, 2000:1 contrast ratio, 95% DCI-P3 color gamut, HDMI 2.0 and DisplayPort 1.4 inputs, and dimensions of 815 x 463 x 93 mm.",
+            "image": "categories/monitors/aoc-agon-ag352qcx.jpg",
+            "price": 490.00,
+            "discount": 7,
+            "quantity": 3,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 116,
+            "panel_type": "VA",
+            "resolution": "3440x1440",
+            "refresh_rate": 175,
+            "response_time": 1.00,
+            "aspect_ratio": "21:9",
+            "brightness": 400,
+            "contrast_ratio": "2000:1",
+            "color_gamut": "95% DCI-P3",
+            "inputs": "HDMI 2.0, DisplayPort 1.4",
+            "dimensions": "815 x 463 x 93 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 117,
+        "fields": {
+            "name": "iiyama GB3488WQSU-B1 Gaming Monitor",
+            "slug": "iiyama-gb3488wqsu-b1",
+            "manufacturer": "iiyama",
+            "description": "A 34-inch gaming monitor featuring a 3440x1440 resolution, 144 Hz refresh rate, 5 ms response time, 21:9 aspect ratio, 300 cd/m² brightness, 3000:1 contrast ratio, 90% DCI-P3 color gamut, HDMI 2.0 and DisplayPort 1.4 inputs, and dimensions of 817 x 465 x 90 mm.",
+            "image": "categories/monitors/iiyama-gb3488wqsu-b1.jpg",
+            "price": 356.00,
+            "discount": 12,
+            "quantity": 6,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 117,
+            "panel_type": "VA",
+            "resolution": "3440x1440",
+            "refresh_rate": 144,
+            "response_time": 5.00,
+            "aspect_ratio": "21:9",
+            "brightness": 300,
+            "contrast_ratio": "3000:1",
+            "color_gamut": "90% DCI-P3",
+            "inputs": "HDMI 2.0, DisplayPort 1.4",
+            "dimensions": "817 x 465 x 90 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 118,
+        "fields": {
+            "name": "Philips Momentum 32GQ2880NW Gaming Monitor",
+            "slug": "philips-momentum-32gq2880nw",
+            "manufacturer": "Philips",
+            "description": "A 32-inch gaming monitor listed with a 3840x2160 resolution, 165 Hz refresh rate, 1 ms response time, 16:9 aspect ratio, 450 cd/m² brightness, 1000:1 contrast ratio, 98% DCI-P3 color gamut, HDMI 2.1 and DisplayPort 1.4 inputs, and dimensions of 715 x 508 x 90 mm.",
+            "image": "categories/monitors/philips-momentum-32gq2880nw.jpg",
+            "price": 501.00,
+            "discount": 8,
+            "quantity": 5,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 118,
+            "panel_type": "Nano IPS",
+            "resolution": "3840x2160",
+            "refresh_rate": 165,
+            "response_time": 1.00,
+            "aspect_ratio": "16:9",
+            "brightness": 450,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "98% DCI-P3",
+            "inputs": "HDMI 2.1, DisplayPort 1.4",
+            "dimensions": "715 x 508 x 90 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 119,
+        "fields": {
+            "name": "MSI Optix MAG321QR-K Gaming Monitor",
+            "slug": "msi-optix-mag321qr-k",
+            "manufacturer": "MSI",
+            "description": "A 32-inch gaming monitor listed with a 3840x2160 resolution, 165 Hz refresh rate, 1 ms response time, 16:9 aspect ratio, 400 cd/m² brightness, 1000:1 contrast ratio, 95% DCI-P3 color gamut, HDMI 2.1 and DisplayPort 1.4 inputs, and dimensions of 715 x 508 x 90 mm.",
+            "image": "categories/monitors/msi-optix-mag321qr-k.jpg",
+            "price": 445.00,
+            "discount": 15,
+            "quantity": 8,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 119,
+            "panel_type": "VA",
+            "resolution": "3840x2160",
+            "refresh_rate": 165,
+            "response_time": 1.00,
+            "aspect_ratio": "16:9",
+            "brightness": 400,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "95% DCI-P3",
+            "inputs": "HDMI 2.1, DisplayPort 1.4",
+            "dimensions": "715 x 508 x 90 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 120,
+        "fields": {
+            "name": "ASUS TUF Gaming VG32UQ Gaming Monitor",
+            "slug": "asus-tuf-gaming-vg32uq",
+            "manufacturer": "ASUS",
+            "description": "A 32-inch gaming monitor listed with a 3840x2160 resolution, 165 Hz refresh rate, 1 ms response time, 16:9 aspect ratio, 400 cd/m² brightness, 1000:1 contrast ratio, 98% DCI-P3 color gamut, HDMI 2.1 and DisplayPort 1.4 inputs, and dimensions of 715 x 508 x 90 mm.",
+            "image": "categories/monitors/asus-tuf-gaming-vg32uq.jpg",
+            "price": 423.00,
+            "discount": 20,
+            "quantity": 10,
+            "category": 12
+        }
+    },
+    {
+        "model": "goods.monitor",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 120,
+            "panel_type": "VA",
+            "resolution": "3840x2160",
+            "refresh_rate": 165,
+            "response_time": 1.00,
+            "aspect_ratio": "16:9",
+            "brightness": 400,
+            "contrast_ratio": "1000:1",
+            "color_gamut": "98% DCI-P3",
+            "inputs": "HDMI 2.1, DisplayPort 1.4",
+            "dimensions": "715 x 508 x 90 mm"
+        }
+    }
+]

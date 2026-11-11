@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 21,
+        "fields": {
+            "name": "Chieftec NitroX8 850W Gold Power Supply",
+            "slug": "blok-zhivlennya-chieftec-nitrox8-850w-gold",
+            "manufacturer": "Chieftec",
+            "description": "The Chieftec NitroX8 850W Gold is a powerful and reliable power supply, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/chieftec_nitrox8_850w_gold.jpg",
+            "price": "80.00",
+            "discount": 10,
+            "quantity": 12,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 21,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "120 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "160 x 150 x 50 mm",
+            "weight": 2.20,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 22,
+        "fields": {
+            "name": "Corsair RMx (2021) 850W Gold Power Supply",
+            "slug": "blok-zhivlennya-corsair-rmx-2021-850w-gold",
+            "manufacturer": "Corsair",
+            "description": "The Corsair RMx (2021) 850W Gold is a quiet and efficient power supply, well suited for gaming and high-performance systems.",
+            "image": "categories/power-supplies/corsair_rmx_2021_850w_gold.jpg",
+            "price": "96.00",
+            "discount": 5,
+            "quantity": 15,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 22,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "165 x 150 x 55 mm",
+            "weight": 2.30,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 23,
+        "fields": {
+            "name": "Cooler Master V850 Gold V2 Power Supply",
+            "slug": "blok-zhivlennya-cooler-master-v850-gold-v2",
+            "manufacturer": "Cooler Master",
+            "description": "The Cooler Master V850 Gold V2 is a reliable and quiet power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/cooler_master_v850_gold_v2.jpg",
+            "price": "89.00",
+            "discount": 0,
+            "quantity": 8,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 23,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "160 x 150 x 56 mm",
+            "weight": 2.40,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 24,
+        "fields": {
+            "name": "be quiet! Pure Power 11 FM 850W Power Supply",
+            "slug": "blok-zhivlennya-be-quiet-pure-power-11-fm-850w",
+            "manufacturer": "be quiet!",
+            "description": "The be quiet! Pure Power 11 FM 850W is a quiet and efficient power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/be_quiet_pure_power_11_fm_850w.jpg",
+            "price": "100.00",
+            "discount": 7,
+            "quantity": 10,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 24,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "120 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "155 x 150 x 55 mm",
+            "weight": 2.10,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 25,
+        "fields": {
+            "name": "Seasonic PRIME Gold 850W Power Supply",
+            "slug": "blok-zhivlennya-seasonic-prime-gold-850w",
+            "manufacturer": "Seasonic",
+            "description": "The Seasonic PRIME Gold 850W is a powerful and reliable power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/seasonic_prime_gold_850w.jpg",
+            "price": "111.00",
+            "discount": 2,
+            "quantity": 5,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 25,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "160 x 150 x 58 mm",
+            "weight": 2.50,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 26,
+        "fields": {
+            "name": "Fractal Design Ion+ 850W Gold Power Supply",
+            "slug": "blok-zhivlennya-fractal-design-ion-850w-gold",
+            "manufacturer": "Fractal Design",
+            "description": "The Fractal Design Ion+ 850W Gold is a quiet and efficient power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/fractal_design_ion_850w_gold.jpg",
+            "price": "105.00",
+            "discount": 4,
+            "quantity": 7,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 26,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "120 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "150 x 150 x 58 mm",
+            "weight": 2.20,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 27,
+        "fields": {
+            "name": "ASUS ROG Strix 850G Gold Power Supply",
+            "slug": "blok-zhivlennya-asus-rog-strix-850g-gold",
+            "manufacturer": "ASUS",
+            "description": "The ASUS ROG Strix 850G Gold is a powerful and reliable power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/asus_rog_strix_850g_gold.jpg",
+            "price": "122.00",
+            "discount": 3,
+            "quantity": 3,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 27,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "170 x 150 x 60 mm",
+            "weight": 2.60,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 28,
+        "fields": {
+            "name": "NZXT C850 Gold Power Supply",
+            "slug": "blok-zhivlennya-nzxt-c850-gold",
+            "manufacturer": "NZXT",
+            "description": "The NZXT C850 Gold is a quiet and efficient power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/nzxt_c850_gold.jpg",
+            "price": "109.00",
+            "discount": 2,
+            "quantity": 6,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 28,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "120 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "160 x 150 x 55 mm",
+            "weight": 2.30,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 29,
+        "fields": {
+            "name": "Thermaltake Toughpower GF1 850W Gold Power Supply",
+            "slug": "blok-zhivlennya-thermaltake-toughpower-gf1-850w-gold",
+            "manufacturer": "Thermaltake",
+            "description": "The Thermaltake Toughpower GF1 850W Gold is a powerful and reliable power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/thermaltake_toughpower_gf1_850w_gold.jpg",
+            "price": "102.00",
+            "discount": 6,
+            "quantity": 4,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 29,
+            "power": 850,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "165 x 150 x 62 mm",
+            "weight": 2.50,
+            "certification": "80 Plus Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 30,
+        "fields": {
+            "name": "Corsair RMx (2021) 750W Gold Power Supply",
+            "slug": "blok-zhivlennya-corsair-rmx-2021-750w-gold",
+            "manufacturer": "Corsair",
+            "description": "The Corsair RMx (2021) 750W Gold is a quiet and efficient power supply with 80 Plus Gold certification, ideal for gaming and high-performance systems.",
+            "image": "categories/power-supplies/corsair_rmx_2021_750w_gold.jpg",
+            "price": "89.00",
+            "discount": 4,
+            "quantity": 10,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.powersupply",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 30,
+            "power": 750,
+            "efficiency": 90.00,
+            "modular_cables": true,
+            "form_factor": "ATX",
+            "fan_size": "140 mm",
+            "connectors": "+24-pin, +4/8-pin CPU, 2 x +6/8-pin PCI-E, 6 x SATA, 4 x Molex, 1 x Floppy",
+            "protections": "OPP, OVP, UVP, SCP, OTP",
+            "dimensions": "165 x 150 x 55 mm",
+            "weight": 2.30,
+            "certification": "80 Plus Gold"
+        }
+    }
+]

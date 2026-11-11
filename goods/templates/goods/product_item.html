@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="item d-flex flex-column p-0">
+	<div class="p-1 d-flex flex-column justify-content-between flex-grow-1 text-black">
+		<div class="card flex-grow-1 position-relative">
+			{% if product.quantity == 0 %}<div class="overlay"></div>{% endif %}
+			{% if product.discount %}<span class="discount-label bg-warning text-black">-{{ product.discount }}%</span>{% endif %}
+			<div class="card-img-top align-content-center flex-grow-1">
+				{% comment %} !<img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}" 
+				class="card-image" alt="{{ product }}"> {% endcomment %}
+				<a href="{% url 'catalog:product' product.category.slug product.slug %}" class="text-black text-decoration-none">
+					<img src="{% if product.image.url %}{{ product.image.url }}{% else %}{{ product.category.image.url }}{% endif %}" class="card-image" alt="{{ product }}">
+				</a>
+			</div>
+			<div class="card-body pt-0 px-2 pb-2 px-md-3 pb-md-3 flex-grow-0" style="pointer-events: auto;">
+				<a href="{% url 'catalog:product' product.category.slug product.slug %}" class="text-black text-decoration-none">
+					<p class="card-title product-text"><strong>{{ product }} <br><br> </strong></p>
+					<p class="card-text product-text">{{ product.description }}</p>
+				</a>
+				<div class="d-flex justify-content-between my-1 my-md-2" style="height: 50px;">
+					<div class="d-flex flex-column price">
+					{% if product.discount %}
+						<p class="text-decoration-line-through m-0">${{ product.price }}</p>
+						<h5><strong class="d-price">${{ product.sell_price }}</strong></h5>
+					{% else %}
+						<h5><strong>${{ product.price }}</strong></h5>
+					{% endif %}
+					</div>
+					{% if product.quantity != 0 %}
+					<div class="d-flex">
+						<a href="{% url 'carts:cart_add' %}" class="add-to-cart" data-product-id="{{ product.id }}">
+						{% csrf_token %}
+						<object class="h-100" type="image/svg+xml" data="{% static 'icons/cart_add.svg' %}"></object>
+						</a>
+						{% comment %} <a href="{% url 'carts:cart_add' %}" class="add-to-cart" data-product-id="{{ product.id }}">
+						{% csrf_token %}
+						<object class="toggle-icon h-100" type="image/svg+xml" data="{% static 'icons/cart_add.svg' %}"></object>
+						<img src="{% static 'icons/cart_add.svg' %}" style="height: 50px;" alt="Додати до кошика">
+						</a>
+						{% endcomment %}
+					</div>
+					{% endif %}
+				</div>
+				{% if product.quantity == 0 %}
+				<p class="text-danger fw-semibold position-relative z-3 m-0"><small>Out of stock</small></p>
+				{% else %}
+				<p class="text-success fw-semibold m-0"><small>In stock</small></p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

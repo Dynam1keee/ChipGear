@@ -1,0 +1,107 @@
+{% load static %}
+
+<div class="card p-3 bg-white">
+	<h3 class="text-center my-3">Cart</h3>
+	<hr>
+	<div id="cart-items-container">
+	{% if carts %}
+		<div class="table-responsive my-3">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col" class="border-0 bg-light"></th>
+						<th scope="col" class="border-0 bg-light">
+							<div class="p-2 ps-3 text-uppercase">Name</div>
+						</th>
+						<th scope="col" class="border-0 bg-light">
+							<div class="py-2 text-uppercase">Quantity</div>
+						</th>
+						<th scope="col" class="border-0 bg-light">
+							<div class="py-2 text-uppercase">Price</div>
+						</th>
+						<th scope="col" class="border-0 bg-light"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for cart in carts %}
+					<tr height="100">
+						<th scope="row" class="border-0 p-0 align-middle" width="100">
+							<img src="{% if cart.product.image.url %}{{ cart.product.category.image.url }}{% else %}{{ cart.product.image.url }}{% endif %}" 
+							alt="{{ product }}" class="img-fluid" width="100" style="min-width: 100px;">
+							{% comment %} ! <img src="{% if cart.product.image %}{{ cart.product.category.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}" 
+							alt="{{ product }}" class="img-fluid" width="100" style="min-width: 100px;"> {% endcomment %}
+						</th>
+						<td class="border-0 align-middle">
+							<h6 class="ms-3 mb-0">
+								<a href="{% url 'catalog:product' cart.product.category.slug cart.product.slug %}" class="text-dark text-decoration-none d-inline-block align-middle">{{ cart.product.name }}</a>
+							</h6>
+						</td>
+						<td class="border-0 align-middle">
+							<div class="col p-0">
+								<div class="input-group q-change" style="max-width: 100px;">
+									<button type="button" class="btn btn-dark btn-sm input-group-btn decrement{% if cart.quantity == 1 %} disabled{% endif %}" 
+									data-cart-id="{{ cart.id }}" data-cart-change-url="{% url "cart:cart_change" %}">
+									{% csrf_token %}-
+									</button>
+									<input type="text" class="form-control quantity" value="{{ cart.quantity }}" readonly/>
+									<button type="button" class="btn btn-dark btn-sm input-group-btn increment" 
+									data-cart-id="{{ cart.id }}" data-cart-change-url="{% url "cart:cart_change" %}">
+									{% csrf_token %}+
+									</button>
+								</div>
+							</div>
+						</td>
+						<td class="border-0 align-middle" style="min-width: 100px;"><strong class="cart-price">${{ cart.products_price }}</strong></td>
+						<td class="border-0 align-middle">
+							<a href="{% url 'cart:cart_remove' %}" class="remove-from-cart"
+								data-cart-id="{{ cart.id }}">
+								{% csrf_token %}
+								<object width="16" height="16" type="image/svg+xml" data="{% static 'icons/delete_icon.svg' %}"></object>
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="row m-0">
+			<div class="col-md-6 p-0 pe-md-2">
+				<div class="bg-light px-4 py-3 text-uppercase fw-bold">Discount promo code</div>
+				<div class="p-4">
+					<p class="fst-italic mb-4">If you have a discount promo code, please enter it in the field below</p>
+					<div class="input-group mb-4 border">
+						<input type="text" placeholder="Your promo code" aria-label="Your promo code" aria-describedby="coupon-button" class="form-control border-0">
+						<button id="coupon-button" type="button" class="btn px-lg-4 rounded-0" style="background-color: orange;">
+							<div class="d-flex align-items-center">
+								<object width="16" height="16" type="image/svg+xml" data="{% static 'icons/gift_icon.svg' %}"></object>
+								<span class="text-white ps-1">Apply</span>
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 p-0 ps-md-2">
+				<div class="bg-light px-4 py-3 text-uppercase fw-bold">Order summary</div>
+				<div class="p-4">
+					<ul class="list-unstyled">
+						<li class="d-flex justify-content-between pb-3 border-bottom"><strong class="text-muted">Items total</strong><strong class='total-price'>${{ carts.total_price }}</strong></li>
+						<li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping</strong><strong>free</strong></li>
+						<li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+							<h5 class="fw-bold m-0 total-price">${{ carts.total_price }}</h5>
+						</li>
+					</ul>
+					{% if carts and not order %}
+					<div class="mb-4 text-center">
+						<a class="btn btn-success fw-bolder py-2" href="{% url "orders:create_order" %}">Checkout</a>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% else %}
+		<div class="d-flex align-items-center justify-content-center vh-100">
+			<h1 class="mb-0 fw-bold">Nothing here yet :(</h1>
+		</div>
+		{% endif %}
+	</div>
+</div>

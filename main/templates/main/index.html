@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+<meta name="robots" content="index, follow">
+<meta name="description" content="ChipGear computer components online store offers a wide selection of processors, graphics cards, motherboards, and other equipment at the best prices.">
+{% endblock meta %}
+
+{% block content %}
+
+<h3 class="text-center pb-3 m-0"><strong>Component categories</strong></h3>
+
+<div class="bg-transparent p-0 row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 m-0">
+	{% for category in categories %}
+	<div class="item d-flex flex-column p-0">
+		<div class="p-1 d-flex flex-column justify-content-between flex-grow-1 text-black">
+			<div class="card flex-grow-1">
+				<a href="{% url 'catalog:goods_list' category.slug %}" 
+				class="p-3 d-flex flex-column flex-grow-1 text-black text-decoration-none">
+					<div class="card-img-top pb-2 align-content-center flex-grow-1">
+						<img src="{% if category.image %}{{ category.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}"
+						class="card-image" alt="{{ category }}">
+					</div>
+					<div class="card-body p-0 align-content-end">
+						<h5 class="text-center">{{ category }}</h5>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+<div class="text-center">
+	<h3 class="my-4">Top sales</h3>
+</div>
+
+<div class="bg-transparent p-0 row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 w-100 m-0 position-relative">
+	{% comment %} Add progress bar {% endcomment %}
+	<div class="overlay d-none pe-auto" style="margin-top: 1px;"></div>
+	{% comment %} Товари {% endcomment %}
+	{% for product in top_goods %}
+		{% include "goods/product_item.html" %}
+	{% endfor %}
+</div>
+
+{% endblock content %}

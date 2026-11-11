@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 11,
+        "fields": {
+            "name": "Fractal Design Define 7 White",
+            "slug": "fractal-design-define-7-white",
+            "manufacturer": "Fractal Design",
+            "description": "The Fractal Design Define 7 White is a spacious, quiet ATX mid-tower case designed for excellent noise reduction, flexible component layouts, and efficient cooling. Its clean design makes it suitable for both professional workstations and high-performance desktop PCs.",
+            "image": "categories/pc-cases/fractal_define_7_white.jpg",
+            "price": 58.00,
+            "discount": 10,
+            "quantity": 15,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 11,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, plastic",
+            "front_panel_ports": "2x USB 3.0, 1x USB Type-C, HD audio",
+            "expansion_slots": 8,
+            "drive_bays": 5,
+            "cooling_system": "2x 140 mm fans included; supports additional 120 mm and 140 mm fans",
+            "side_panel_window": true,
+            "rgb_lighting": false,
+            "dimensions": "494 x 230 x 507 mm",
+            "weight": 10.5
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 12,
+        "fields": {
+            "name": "NZXT H510i Black",
+            "slug": "nzxt-h510i-black",
+            "manufacturer": "NZXT",
+            "description": "The NZXT H510i Black is a compact mid-tower case with a minimalist design, tempered glass side panel, and integrated smart features. It is designed for clean-looking gaming builds and straightforward cable management.",
+            "image": "categories/pc-cases/nzxt_h510i_black.jpg",
+            "price": 42.00,
+            "discount": 0,
+            "quantity": 8,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 12,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, tempered glass",
+            "front_panel_ports": "1x USB 3.1 Gen 2 Type-C, 1x USB 3.0, HD audio",
+            "expansion_slots": 7,
+            "drive_bays": 4,
+            "cooling_system": "1x 120 mm fan included; supports additional 120 mm and 140 mm fans",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "460 x 214 x 453 mm",
+            "weight": 7.2
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 13,
+        "fields": {
+            "name": "be quiet! Dark Base 900 White",
+            "slug": "be-quiet-dark-base-900-white",
+            "manufacturer": "be quiet!",
+            "description": "The be quiet! Dark Base 900 White is a spacious full-tower case designed for quiet operation and highly configurable system builds. Its modular interior provides flexibility for powerful gaming PCs, workstations, and custom cooling configurations.",
+            "image": "categories/pc-cases/be_quiet_dark_base_900_white.jpg",
+            "price": 111.00,
+            "discount": 5,
+            "quantity": 10,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 13,
+            "form_factor": "ATX full-tower",
+            "material": "Steel, plastic, aluminum",
+            "front_panel_ports": "2x USB Type-C, 2x USB 3.0, HD audio",
+            "expansion_slots": 10,
+            "drive_bays": 8,
+            "cooling_system": "3x 140 mm fans included; supports additional 120 mm, 140 mm, and 200 mm fans",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "577 x 230 x 582 mm",
+            "weight": 15.7
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 14,
+        "fields": {
+            "name": "Lian Li O11 Dynamic Mini White",
+            "slug": "lian-li-o11-dynamic-mini-white",
+            "manufacturer": "Lian Li",
+            "description": "The Lian Li O11 Dynamic Mini White is a compact dual-chamber case with a distinctive glass-panel design and flexible hardware compatibility. It is ideal for showcase builds where component visibility and organized cable management are priorities.",
+            "image": "categories/pc-cases/lian_li_o11_dynamic_mini_white.jpg",
+            "price": 73.00,
+            "discount": 0,
+            "quantity": 7,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 14,
+            "form_factor": "Compact tower",
+            "material": "Aluminum, tempered glass",
+            "front_panel_ports": "2x USB Type-C, 2x USB 3.0, HD audio",
+            "expansion_slots": 8,
+            "drive_bays": 6,
+            "cooling_system": "2x 120 mm fans included; supports additional fans and radiators depending on configuration",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "508 x 226 x 405 mm",
+            "weight": 9.8
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 15,
+        "fields": {
+            "name": "Corsair iCUE 4000X RGB White",
+            "slug": "corsair-icue-4000x-rgb-white",
+            "manufacturer": "Corsair",
+            "description": "The Corsair iCUE 4000X RGB White is a stylish mid-tower case featuring a tempered glass side panel and a front panel designed to showcase its RGB lighting. It combines an attractive appearance with flexible cooling options for gaming systems.",
+            "image": "categories/pc-cases/corsair_icue_4000x_rgb_white.jpg",
+            "price": 78.00,
+            "discount": 12,
+            "quantity": 12,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 15,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, tempered glass, aluminum",
+            "front_panel_ports": "1x USB 3.1 Gen 2 Type-C, 1x USB 3.0, HD audio",
+            "expansion_slots": 7,
+            "drive_bays": 4,
+            "cooling_system": "3x 120 mm SP RGB ELITE fans included; supports additional fans and radiators",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "453 x 230 x 466 mm",
+            "weight": 7.8
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 16,
+        "fields": {
+            "name": "Fractal Design Meshify C Black",
+            "slug": "fractal-design-meshify-c-black",
+            "manufacturer": "Fractal Design",
+            "description": "The Fractal Design Meshify C Black is a compact mid-tower case featuring a distinctive mesh front panel for efficient airflow. Its space-efficient interior supports a wide range of gaming components while maintaining a clean, understated appearance.",
+            "image": "categories/pc-cases/fractal_design_meshify_c_black.jpg",
+            "price": 51.00,
+            "discount": 0,
+            "quantity": 9,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 16,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, plastic",
+            "front_panel_ports": "2x USB 3.0 Type-A, HD audio",
+            "expansion_slots": 7,
+            "drive_bays": 4,
+            "cooling_system": "2x 120 mm fans included; supports additional 120 mm and 140 mm fans",
+            "side_panel_window": true,
+            "rgb_lighting": false,
+            "dimensions": "413 x 217 x 453 mm",
+            "weight": 6.5
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 17,
+        "fields": {
+            "name": "Cooler Master MasterBox MB530P RGB White",
+            "slug": "cooler-master-masterbox-mb530p-rgb-white",
+            "manufacturer": "Cooler Master",
+            "description": "The Cooler Master MasterBox MB530P RGB White is a mid-tower case with a striking white finish, tempered glass panels, and RGB lighting. Its cooling-focused design offers a practical foundation for an attractive gaming PC.",
+            "image": "categories/pc-cases/cooler_master_masterbox_mb530p_rgb_white.jpg",
+            "price": 42.00,
+            "discount": 8,
+            "quantity": 14,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 17,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, plastic, tempered glass",
+            "front_panel_ports": "2x USB 3.0 Type-A, HD audio",
+            "expansion_slots": 7,
+            "drive_bays": 4,
+            "cooling_system": "3x RGB fans included; supports additional fans and radiators",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "489 x 214 x 469 mm",
+            "weight": 7.5
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 18,
+        "fields": {
+            "name": "ASUS ROG Strix Helios White",
+            "slug": "asus-rog-strix-helios-white",
+            "manufacturer": "ASUS",
+            "description": "The ASUS ROG Strix Helios White is a premium full-tower gaming case with a bold design, tempered glass panels, and extensive cooling support. Its spacious interior is designed for high-performance hardware and elaborate custom builds.",
+            "image": "categories/pc-cases/asus_rog_strix_helios_white.jpg",
+            "price": 167.00,
+            "discount": 0,
+            "quantity": 5,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 18,
+            "form_factor": "ATX full-tower",
+            "material": "Aluminum, tempered glass, plastic",
+            "front_panel_ports": "1x USB 3.1 Gen 2 Type-C, 4x USB 3.1 Gen 1 Type-A, HD audio",
+            "expansion_slots": 8,
+            "drive_bays": 8,
+            "cooling_system": "3x 140 mm fans included; supports additional fans and radiators",
+            "side_panel_window": true,
+            "rgb_lighting": true,
+            "dimensions": "591 x 250 x 565 mm",
+            "weight": 18.9
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 19,
+        "fields": {
+            "name": "NZXT H1 Mini White",
+            "slug": "nzxt-h1-mini-white",
+            "manufacturer": "NZXT",
+            "description": "The NZXT H1 Mini White is a compact Mini-ITX case with a vertical layout designed to save desk space. Its integrated cooling and power-supply configuration makes it a convenient foundation for a compact gaming PC.",
+            "image": "categories/pc-cases/nzxt_h1_mini_white.jpg",
+            "price": 89.00,
+            "discount": 15,
+            "quantity": 4,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 19,
+            "form_factor": "Mini-ITX",
+            "material": "Steel, plastic, tempered glass",
+            "front_panel_ports": "1x USB 3.1 Gen 2 Type-C, 1x USB 3.0, HD audio",
+            "expansion_slots": 2,
+            "drive_bays": 2,
+            "cooling_system": "Integrated liquid cooling system; cooling configuration depends on the H1 revision",
+            "side_panel_window": true,
+            "rgb_lighting": false,
+            "dimensions": "405 x 196 x 196 mm",
+            "weight": 6.5
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 20,
+        "fields": {
+            "name": "Fractal Design Define 7 Compact White",
+            "slug": "fractal-design-define-7-compact-white",
+            "manufacturer": "Fractal Design",
+            "description": "The Fractal Design Define 7 Compact White is a compact case designed for quiet operation and a clean, minimalist appearance. Its adaptable interior and sound-dampening design make it suitable for both workstations and everyday desktop systems.",
+            "image": "categories/pc-cases/fractal_design_define_7_compact_white.jpg",
+            "price": 62.00,
+            "discount": 7,
+            "quantity": 11,
+            "category": 2
+        }
+    },
+    {
+        "model": "goods.case",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 20,
+            "form_factor": "ATX mid-tower",
+            "material": "Steel, plastic",
+            "front_panel_ports": "2x USB 3.0 Type-A, 1x USB Type-C, HD audio",
+            "expansion_slots": 7,
+            "drive_bays": 4,
+            "cooling_system": "2x 120 mm fans included; supports additional 120 mm and 140 mm fans",
+            "side_panel_window": true,
+            "rgb_lighting": false,
+            "dimensions": "427 x 210 x 474 mm",
+            "weight": 8.2
+        }
+    }
+]

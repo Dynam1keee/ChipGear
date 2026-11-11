@@ -1,0 +1,122 @@
+[
+    {
+        "model": "goods.category",
+        "pk": 1,
+        "fields": {
+            "name": "Processors",
+            "slug": "processors",
+            "image": "categories/processors/_category_image.jpg",
+            "model_name": "processor"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 2,
+        "fields": {
+            "name": "Cases",
+            "slug": "pc-cases",
+            "image": "categories/pc-cases/_category_image.jpg",
+            "model_name": "case"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 3,
+        "fields": {
+            "name": "Power supplies",
+            "slug": "power-supplies",
+            "image": "categories/power-supplies/_category_image.jpg",
+            "model_name": "powersupply"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 4,
+        "fields": {
+            "name": "Motherboards",
+            "slug": "motherboards",
+            "image": "categories/motherboards/_category_image.jpg",
+            "model_name": "motherboard"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 5,
+        "fields": {
+            "name": "Graphics cards",
+            "slug": "graphics-cards",
+            "image": "categories/graphics-cards/_category_image.jpg",
+            "model_name": "graphicscard"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 6,
+        "fields": {
+            "name": "RAM",
+            "slug": "ram",
+            "image": "categories/ram/_category_image.jpg",
+            "model_name": "ram"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 7,
+        "fields": {
+            "name": "Sound cards",
+            "slug": "sound-cards",
+            "image": "categories/sound-cards/_category_image.jpg",
+            "model_name": "soundcard"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 8,
+        "fields": {
+            "name": "Hard drives",
+            "slug": "hard-drives",
+            "image": "categories/hard-drives/_category_image.jpg",
+            "model_name": "harddrive"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 9,
+        "fields": {
+            "name": "Keyboards",
+            "slug": "keyboards",
+            "image": "categories/keyboards/_category_image.jpg",
+            "model_name": "keyboard"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 10,
+        "fields": {
+            "name": "Mice",
+            "slug": "mice",
+            "image": "categories/mice/_category_image.jpg",
+            "model_name": "mouse"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 11,
+        "fields": {
+            "name": "Cooling systems",
+            "slug": "cooling-systems",
+            "image": "categories/cooling-systems/_category_image.jpg",
+            "model_name": "coolingsystem"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 12,
+        "fields": {
+            "name": "Monitors",
+            "slug": "monitors",
+            "image": "categories/monitors/_category_image.jpg",
+            "model_name": "monitor"
+        }
+    }
+]

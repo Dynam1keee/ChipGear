@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 61,
+        "fields": {
+            "name": "Creative Sound Blaster Z",
+            "slug": "creative-sound-blaster-z",
+            "manufacturer": "Creative",
+            "description": "An ideal sound card for gamers and audiophiles, delivering high-quality audio.",
+            "image": "categories/sound-cards/creative_sound_blaster_z.jpg",
+            "price": "67.00",
+            "discount": 10,
+            "quantity": 50,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 61,
+            "interface": "PCIe",
+            "channels": 5,
+            "sample_rate": 192000,
+            "signal_to_noise_ratio": 116,
+            "audio_formats": "Dolby Digital, DTS",
+            "features": "SBX Pro Studio, CrystalVoice",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out",
+            "dimensions": "145 x 20 x 128 mm",
+            "weight": 0.42
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 62,
+        "fields": {
+            "name": "ASUS Xonar AE",
+            "slug": "asus-xonar-ae",
+            "manufacturer": "ASUS",
+            "description": "A sound card with 7.1-channel audio support for demanding users.",
+            "image": "categories/sound-cards/asus_xonar_ae.jpg",
+            "price": "45.00",
+            "discount": 5,
+            "quantity": 30,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 62,
+            "interface": "PCIe",
+            "channels": 7,
+            "sample_rate": 192000,
+            "signal_to_noise_ratio": 110,
+            "audio_formats": "Dolby Digital, DTS, PCM",
+            "features": "Hyper Grounding, 192kHz/24-bit",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "190 x 22 x 125 mm",
+            "weight": 0.30
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 63,
+        "fields": {
+            "name": "Creative Sound Blaster Audigy FX",
+            "slug": "creative-sound-blaster-audigy-fx",
+            "manufacturer": "Creative",
+            "description": "An affordable sound card delivering high-quality audio for everyday use.",
+            "image": "categories/sound-cards/creative_sound_blaster_audigy_fx.jpg",
+            "price": "22.00",
+            "discount": 0,
+            "quantity": 75,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 63,
+            "interface": "PCIe",
+            "channels": 5,
+            "sample_rate": 96000,
+            "signal_to_noise_ratio": 106,
+            "audio_formats": "EAX, Dolby Digital Live",
+            "features": "SBX Pro Studio, CrystalVoice",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out",
+            "dimensions": "130 x 20 x 125 mm",
+            "weight": 0.25
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 64,
+        "fields": {
+            "name": "ASUS Strix Soar",
+            "slug": "asus-strix-soar",
+            "manufacturer": "ASUS",
+            "description": "A high-quality gaming sound card with 7.1-channel audio support.",
+            "image": "categories/sound-cards/asus_strix_soar.jpg",
+            "price": "56.00",
+            "discount": 5,
+            "quantity": 40,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 64,
+            "interface": "PCIe",
+            "channels": 7,
+            "sample_rate": 192000,
+            "signal_to_noise_ratio": 116,
+            "audio_formats": "Dolby Digital, DTS",
+            "features": "Sonic Studio, Perfect Voice",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "190 x 20 x 130 mm",
+            "weight": 0.35
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 65,
+        "fields": {
+            "name": "Creative Sound BlasterX AE-5",
+            "slug": "creative-sound-blasterx-ae-5",
+            "manufacturer": "Creative",
+            "description": "A powerful sound card with RGB lighting designed for gamers.",
+            "image": "categories/sound-cards/creative_sound_blasterx_ae_5.jpg",
+            "price": "78.00",
+            "discount": 15,
+            "quantity": 25,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 65,
+            "interface": "PCIe",
+            "channels": 5,
+            "sample_rate": 384000,
+            "signal_to_noise_ratio": 122,
+            "audio_formats": "Dolby Digital, DTS, PCM",
+            "features": "RGB Aurora, Scout Mode",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out",
+            "dimensions": "145 x 20 x 130 mm",
+            "weight": 0.40
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 66,
+        "fields": {
+            "name": "ASUS Xonar U7 MKII",
+            "slug": "asus-xonar-u7-mkii",
+            "manufacturer": "ASUS",
+            "description": "A compact USB sound card that delivers high-quality audio.",
+            "image": "categories/sound-cards/asus_xonar_u7_mkii.jpg",
+            "price": "49.00",
+            "discount": 10,
+            "quantity": 60,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 66,
+            "interface": "USB",
+            "channels": 7,
+            "sample_rate": 192000,
+            "signal_to_noise_ratio": 114,
+            "audio_formats": "Dolby Home Theater, DTS",
+            "features": "Hyper Grounding, Sonic Studio",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "130 x 25 x 100 mm",
+            "weight": 0.29
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 67,
+        "fields": {
+            "name": "Creative Sound BlasterX G6",
+            "slug": "creative-sound-blasterx-g6",
+            "manufacturer": "Creative",
+            "description": "A portable sound card with a headphone amplifier, Dolby Digital support, and 7.1-channel audio.",
+            "image": "categories/sound-cards/creative_sound_blasterx_g6.jpg",
+            "price": "89.00",
+            "discount": 20,
+            "quantity": 20,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 67,
+            "interface": "USB",
+            "channels": 7,
+            "sample_rate": 384000,
+            "signal_to_noise_ratio": 130,
+            "audio_formats": "Dolby Digital, DTS, PCM",
+            "features": "Scout Mode, SB-Axx1",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "111 x 24 x 70 mm",
+            "weight": 0.144
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 68,
+        "fields": {
+            "name": "ASUS Essence STX II",
+            "slug": "asus-essence-stx-ii",
+            "manufacturer": "ASUS",
+            "description": "A professional sound card designed for high-quality audio and 7.1-channel sound.",
+            "image": "categories/sound-cards/asus_essence_stx_ii.jpg",
+            "price": "111.00",
+            "discount": 10,
+            "quantity": 15,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 68,
+            "interface": "PCIe",
+            "channels": 7,
+            "sample_rate": 192000,
+            "signal_to_noise_ratio": 124,
+            "audio_formats": "Dolby Home Theater, DTS",
+            "features": "Hyper Grounding, MUSES Op-Amps",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "170 x 20 x 130 mm",
+            "weight": 0.33
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 69,
+        "fields": {
+            "name": "Creative Sound Blaster Omni Surround 5.1",
+            "slug": "creative-sound-blaster-omni-surround-5-1",
+            "manufacturer": "Creative",
+            "description": "A USB sound card with 5.1-channel audio support and a built-in microphone.",
+            "image": "categories/sound-cards/creative_sound_blaster_omni_surround_5_1.jpg",
+            "price": "33.00",
+            "discount": 5,
+            "quantity": 35,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 69,
+            "interface": "USB",
+            "channels": 5,
+            "sample_rate": 96000,
+            "signal_to_noise_ratio": 100,
+            "audio_formats": "Dolby Digital, DTS",
+            "features": "CrystalVoice, Scout Mode",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "130 x 35 x 100 mm",
+            "weight": 0.27
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 70,
+        "fields": {
+            "name": "ASUS Xonar DGX",
+            "slug": "asus-xonar-dgx",
+            "manufacturer": "ASUS",
+            "description": "An affordable PCIe sound card with 5.1-channel audio support for gamers.",
+            "image": "categories/sound-cards/asus_xonar_dgx.jpg",
+            "price": "18.00",
+            "discount": 0,
+            "quantity": 50,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.soundcard",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 70,
+            "interface": "PCIe",
+            "channels": 5,
+            "sample_rate": 96000,
+            "signal_to_noise_ratio": 105,
+            "audio_formats": "Dolby Headphone, DTS",
+            "features": "GX 2.5, Smart Volume Normalizer",
+            "inputs": "Mic In, Line In",
+            "outputs": "Line Out, Optical Out, Headphone Jack",
+            "dimensions": "145 x 20 x 125 mm",
+            "weight": 0.20
+        }
+    }
+]

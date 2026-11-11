@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 81,
+        "fields": {
+            "name": "Razer BlackWidow V3 Pro Gaming Keyboard",
+            "slug": "razer-blackwidow-v3-pro-gaming-keyboard",
+            "manufacturer": "Razer",
+            "description": "The Razer BlackWidow V3 Pro is a wireless mechanical gaming keyboard featuring Razer Green switches, Razer Chroma RGB lighting, and an ergonomic design.",
+            "image": "categories/keyboards/keyboard-razer-blackwidow-v3-pro.jpg",
+            "price": 89.00,
+            "discount": 10,
+            "quantity": 20,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 81,
+            "layout": "US",
+            "key_switches": "Razer Green",
+            "backlighting": true,
+            "connectivity": "Wireless",
+            "interface": "USB",
+            "multimedia_keys": true,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "456 x 159 x 40 mm",
+            "weight": 1.32
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 82,
+        "fields": {
+            "name": "Logitech G915 TKL LIGHTSPEED Wireless Gaming Keyboard",
+            "slug": "logitech-g915-tkl-lightspeed-wireless-gaming-keyboard",
+            "manufacturer": "Logitech",
+            "description": "The Logitech G915 TKL is a compact wireless gaming keyboard featuring low-profile mechanical switches, LIGHTSYNC RGB lighting, and LIGHTSPEED wireless connectivity.",
+            "image": "categories/keyboards/keyboard-logitech-g915-tkb-lightspeed.jpg",
+            "price": 100.00,
+            "discount": 5,
+            "quantity": 15,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 82,
+            "layout": "US",
+            "key_switches": "Logitech GL Clicky",
+            "backlighting": true,
+            "connectivity": "Wireless",
+            "interface": "LIGHTSPEED",
+            "multimedia_keys": true,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "368 x 150 x 22 mm",
+            "weight": 0.81
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 83,
+        "fields": {
+            "name": "HyperX Alloy Origins Core Tenkeyless Gaming Keyboard",
+            "slug": "hyperx-alloy-origins-core-tenkeyless-gaming-keyboard",
+            "manufacturer": "HyperX",
+            "description": "The HyperX Alloy Origins Core is a tenkeyless mechanical gaming keyboard featuring HyperX Red linear switches, RGB backlighting, a compact design, and a detachable USB Type-C cable.",
+            "image": "categories/keyboards/keyboard-hyperx-alloy-origins-core-tenkeyless.jpg",
+            "price": 56.00,
+            "discount": 0,
+            "quantity": 30,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 83,
+            "layout": "US",
+            "key_switches": "HyperX Linear Red",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB Type-C",
+            "multimedia_keys": false,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "360 x 132.5 x 34.5 mm",
+            "weight": 0.9
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 84,
+        "fields": {
+            "name": "SteelSeries Apex Pro TKL Gaming Keyboard",
+            "slug": "steelseries-apex-pro-tkl-gaming-keyboard",
+            "manufacturer": "SteelSeries",
+            "description": "The SteelSeries Apex Pro TKL is a compact gaming keyboard featuring adjustable OmniPoint switches, per-key RGB illumination, and an OLED smart display.",
+            "image": "categories/keyboards/keyboard-steelseries-apex-pro-tkb.jpg",
+            "price": 134.00,
+            "discount": 15,
+            "quantity": 12,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 84,
+            "layout": "US",
+            "key_switches": "OmniPoint 2.0",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB",
+            "multimedia_keys": true,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "356 x 139 x 40 mm",
+            "weight": 0.85
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 85,
+        "fields": {
+            "name": "Ducky One 2 Mini White RGB Mechanical Keyboard",
+            "slug": "ducky-one-2-mini-white-rgb-mechanical-keyboard",
+            "manufacturer": "Ducky",
+            "description": "The Ducky One 2 Mini White RGB is a compact mechanical keyboard featuring Cherry MX Red switches, RGB backlighting, and a detachable USB Type-C cable.",
+            "image": "categories/keyboards/keyboard-ducky-one-2-mini-white-rgb.jpg",
+            "price": 73.00,
+            "discount": 12,
+            "quantity": 18,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 85,
+            "layout": "US",
+            "key_switches": "Cherry MX Red",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB Type-C",
+            "multimedia_keys": false,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "306 x 108 x 40 mm",
+            "weight": 0.59
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 86,
+        "fields": {
+            "name": "Corsair K65 RGB MINI Gaming Keyboard",
+            "slug": "corsair-k65-rgb-mini-gaming-keyboard",
+            "manufacturer": "Corsair",
+            "description": "The Corsair K65 RGB MINI is a compact 60% mechanical gaming keyboard featuring per-key RGB backlighting, programmable keys, and a detachable USB Type-C cable.",
+            "image": "categories/keyboards/keyboard-corsair-k65-rgb-mini.jpg",
+            "price": 89.00,
+            "discount": 7,
+            "quantity": 25,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 86,
+            "layout": "US",
+            "key_switches": "Corsair OPX Optical",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB Type-C",
+            "multimedia_keys": false,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "294 x 105 x 44 mm",
+            "weight": 0.58
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 87,
+        "fields": {
+            "name": "ASUS ROG Strix Flare II Gaming Keyboard",
+            "slug": "asus-rog-strix-flare-ii-gaming-keyboard",
+            "manufacturer": "ASUS",
+            "description": "The ASUS ROG Strix Flare II is a mechanical gaming keyboard featuring RGB backlighting, programmable controls, and a detachable USB cable. Switch type and layout may vary by model variant.",
+            "image": "categories/keyboards/keyboard-asus-rog-strix-flare-mini.jpg",
+            "price": 78.00,
+            "discount": 10,
+            "quantity": 22,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 87,
+            "layout": "US",
+            "key_switches": "Cherry MX Speed Silver",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB",
+            "multimedia_keys": true,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "454 x 155 x 31 mm",
+            "weight": 1.1
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 88,
+        "fields": {
+            "name": "Cooler Master MasterKeys MK720 Low-Profile Mechanical Keyboard",
+            "slug": "cooler-master-masterkeys-mk720-low-profile-mechanical-keyboard",
+            "manufacturer": "Cooler Master",
+            "description": "A low-profile mechanical keyboard designed for comfortable everyday typing and gaming. The listed model and switch specifications should be verified against the exact product variant.",
+            "image": "categories/keyboards/keyboard-cooler-master-masterkeys-mk720-low-profile-mechanical-keyboard.jpg",
+            "price": 67.00,
+            "discount": 0,
+            "quantity": 35,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 88,
+            "layout": "US",
+            "key_switches": "Cherry MX Low Profile Red",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB Type-C",
+            "multimedia_keys": true,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "306 x 95 x 23 mm",
+            "weight": 0.65
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 89,
+        "fields": {
+            "name": "Logitech G Pro X Mechanical Gaming Keyboard",
+            "slug": "logitech-g-pro-x-mechanical-gaming-keyboard",
+            "manufacturer": "Logitech",
+            "description": "The Logitech G Pro X is a compact mechanical gaming keyboard designed for competitive play. It features customizable key switches on compatible variants, RGB backlighting, and a detachable cable.",
+            "image": "categories/keyboards/keyboard-logitech-g-pro-x.jpg",
+            "price": 82.00,
+            "discount": 8,
+            "quantity": 17,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 89,
+            "layout": "US",
+            "key_switches": "Logitech GX Blue Clicky",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB",
+            "multimedia_keys": false,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "361 x 153 x 34 mm",
+            "weight": 0.98
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 90,
+        "fields": {
+            "name": "Razer Huntsman Mini Gaming Keyboard",
+            "slug": "razer-huntsman-mini-gaming-keyboard",
+            "manufacturer": "Razer",
+            "description": "The Razer Huntsman Mini is a compact 60% gaming keyboard featuring Razer optical switches, Chroma RGB backlighting, and a detachable USB Type-C cable.",
+            "image": "categories/keyboards/keyboard-razer-huntsman-mini.jpg",
+            "price": 89.00,
+            "discount": 15,
+            "quantity": 14,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.keyboard",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 90,
+            "layout": "US",
+            "key_switches": "Razer Optical Switch",
+            "backlighting": true,
+            "connectivity": "Wired",
+            "interface": "USB Type-C",
+            "multimedia_keys": false,
+            "programmable_keys": true,
+            "wrist_rest": false,
+            "dimensions": "293 x 103 x 36.8 mm",
+            "weight": 0.50
+        }
+    }
+]

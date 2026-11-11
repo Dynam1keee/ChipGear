@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block content %}
+
+<div class="row">
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-5 p-2">
+				<div class="bg-white p-3">
+					<h3 class="text-center mb-4">User profile</h3>
+					<form action="{% url "user:profile" %}" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-md-12 mb-3 text-center">
+								{% if user.image %}
+									<img src="{{ user.image.url }}"
+									alt="User avatar" class="img-fluid" id="user-avatar"
+									style="max-width: 150px;">
+								{% else %}
+									<img src="{% static "images/noavatar.jpg" %}"
+									alt="User avatar" class="img-fluid" id="user-avatar"
+									style="max-width: 150px;">
+									<p id="no-avatar-label">No avatar :(</p>
+								{% endif %}
+								<input type="file" class="form-control mt-3" id="id_image"
+									name="image" accept="image/*">
+								{% if form.image.errors %}
+								<div class="alert alert-danger alert-dismissible fade show">{{ form.image.errors }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-12 mb-3">
+								<label for="id_first_name" class="form-label">First name*</label>
+								<input type="text" class="form-control" id="id_first_name"
+									name="first_name" placeholder="Enter your first name" 
+									value="{{ form.first_name.value }}" required>
+									{% if form.first_name.errors %}
+									<div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>
+									{% endif %}
+							</div>
+							<div class="col-md-12 mb-3">
+								<label for="id_last_name" class="form-label">Last name*</label>
+								<input type="text" class="form-control" id="id_last_name"
+									name="last_name" placeholder="Enter your last name" 
+									value="{{ form.last_name.value }}" required>
+									{% if form.last_name.errors %}
+									<div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>
+									{% endif %}
+							</div>
+							<div class="col-md-12 mb-3">
+								<label for="id_username" class="form-label">Username*</label>
+								<input type="text" class="form-control" id="id_username"
+									name="username" placeholder="Enter your username" 
+									value="{{ form.username.value }}" required>
+									{% if form.username.errors %}
+									<div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+									{% endif %}
+							</div>
+							<div class="col-md-12 mb-3">
+								<label for="id_email" class="form-label">Email*</label>
+								<input type="email" class="form-control" id="id_email"
+									name="email" placeholder="Enter your email *youremail@example.com" 
+									value="{{ form.email.value }}" required>
+									{% if form.email.errors %}
+									<div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+									{% endif %}
+							</div>
+						</div>
+						<button type="submit" class="btn btn-dark">Save</button>
+					</form>
+				</div>
+			</div>
+			{% user_carts request as carts %}
+			<div class="col-md-7 p-2">
+				<div class=" bg-white">
+					{% include "carts/cart.html" %}
+					{% comment %} {% include "carts/included_cart.html" %} {% endcomment %}
+				</div>
+			</div>
+			<div class="col-md-12 p-2">
+				<div class=" bg-white p-3">
+					<h3 class="text-center mb-4">My orders</h3>
+					<div class="container">
+						{% if orders %}
+						<div class="accordion" id="accordionExample">
+							{% for order in orders %}
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading{{ order.id }}">
+									<button class="accordion-button {% if order != orders.0 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ order.id }}" aria-expanded="false" aria-controls="collapse{{ order.id }}">
+											Order # {{ order.id }} - {{ order.created_timestamp }} | Status:<strong class="mx-2">{{order.status}}</strong>
+									</button>
+								</h2>
+								<div id="collapse{{ order.id }}" class="accordion-collapse collapse {% if order == orders.0 %}show{% endif %}" aria-labelledby="heading{{ order.id }}" data-bs-parent="#accordionExample">
+									<div class="accordion-body overflow-x-auto">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Quantity</th>
+													<th>Price</th>
+													<th>Total price</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for item in order.orderitem_set.all %}
+												<tr>
+													<td><a class="text-black" href="{% url 'goods:product' item.product.category.slug item.product.slug %}">{{ item.product.name }}</a></td>
+													<td>{{ item.quantity }}</td>
+													<td>${{ item.price }}</td>
+													<td>${{ item.products_price }}</td>
+												</tr>
+												{% endfor %}
+												<tr>
+													<td><strong>Total</strong></td>
+													<td></td>
+													<td></td>
+													<td><strong>
+														{% load get_sum %}
+														${% accumulate_price order.orderitem_set.all %}
+													</strong></td>											
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						{% else %}
+						<p class="text-center">You haven't placed any orders yet</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'scripts/update_pfp.js' %}" type="text/javascript"></script>
+{% endblock scripts %}

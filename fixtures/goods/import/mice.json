@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 91,
+        "fields": {
+            "name": "Razer DeathAdder V2 Pro Gaming Mouse",
+            "slug": "razer-deathadderv2-pro",
+            "manufacturer": "Razer",
+            "description": "A lightweight, ergonomic gaming mouse featuring the Razer 5G optical sensor with up to 20,000 DPI, 8 programmable buttons, a 1000 Hz polling rate, Razer HyperSpeed wireless connectivity, RGB lighting, and up to 70 hours of battery life.",
+            "image": "categories/mice/razer-deathadder-v2-pro.jpg",
+            "price": 89.00,
+            "discount": 10,
+            "quantity": 15,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 91,
+            "sensor_type": "Optical",
+            "dpi": 20000,
+            "programmable_buttons": 8,
+            "polling_rate": 1000,
+            "connection_type": "Wireless",
+            "grip_style": "Palm grip",
+            "weight": 88.00,
+            "cable_length": 0.00,
+            "dimensions": "127 x 61.7 x 42.7 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 92,
+        "fields": {
+            "name": "Logitech G502 HERO Gaming Mouse",
+            "slug": "logitech-g502-hero",
+            "manufacturer": "Logitech",
+            "description": "A wired gaming mouse featuring the HERO 25K optical sensor with up to 25,600 DPI, 11 programmable buttons, a 1000 Hz polling rate, RGB lighting, and an adjustable weight system.",
+            "image": "categories/mice/logitech-g502-hero.jpg",
+            "price": 62.00,
+            "discount": 0,
+            "quantity": 20,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 92,
+            "sensor_type": "Optical",
+            "dpi": 25600,
+            "programmable_buttons": 11,
+            "polling_rate": 1000,
+            "connection_type": "Wired",
+            "grip_style": "Palm grip",
+            "weight": 121.00,
+            "cable_length": 2.10,
+            "dimensions": "132 x 75 x 40 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 93,
+        "fields": {
+            "name": "Zowie FK2-B Divina Gaming Mouse",
+            "slug": "zowie-fk2-b-divina-s",
+            "manufacturer": "Zowie",
+            "description": "A lightweight, symmetrical gaming mouse featuring the PixArt 3360 optical sensor with up to 3,200 DPI, a 1000 Hz polling rate, a wired connection, a glossy finish, and PTFE mouse feet.",
+            "image": "categories/mice/zowie-fk2-b-divina-s.jpg",
+            "price": 56.00,
+            "discount": 0,
+            "quantity": 12,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 93,
+            "sensor_type": "Optical",
+            "dpi": 3200,
+            "programmable_buttons": 5,
+            "polling_rate": 1000,
+            "connection_type": "Wired",
+            "grip_style": "Fingertip grip",
+            "weight": 80.00,
+            "cable_length": 2.00,
+            "dimensions": "124 x 64 x 36 mm",
+            "rgb_lighting": false
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 94,
+        "fields": {
+            "name": "SteelSeries Rival 5 Gaming Mouse",
+            "slug": "steelseries-rival-5",
+            "manufacturer": "SteelSeries",
+            "description": "An ergonomic wired gaming mouse featuring the TrueMove Air optical sensor with up to 18,000 CPI, 9 programmable buttons, a 1000 Hz polling rate, and customizable RGB lighting.",
+            "image": "categories/mice/steelseries-rival-5.jpg",
+            "price": 82.00,
+            "discount": 5,
+            "quantity": 8,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 94,
+            "sensor_type": "Optical",
+            "dpi": 18000,
+            "programmable_buttons": 9,
+            "polling_rate": 1000,
+            "connection_type": "Wired",
+            "grip_style": "Palm grip",
+            "weight": 85.00,
+            "cable_length": 1.80,
+            "dimensions": "128.8 x 63.3 x 28.2 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 95,
+        "fields": {
+            "name": "HyperX Pulsefire Haste Wireless Gaming Mouse",
+            "slug": "hyperx-pulsefire-haste",
+            "manufacturer": "HyperX",
+            "description": "A lightweight, symmetrical wireless gaming mouse featuring a PixArt PAW3335 optical sensor with up to 16,000 DPI, 6 programmable buttons, a 1000 Hz polling rate, 2.4 GHz wireless connectivity, PTFE mouse feet, and up to 100 hours of battery life.",
+            "image": "categories/mice/hyperx-pulsefire-haste.jpg",
+            "price": 51.00,
+            "discount": 0,
+            "quantity": 10,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 95,
+            "sensor_type": "Optical",
+            "dpi": 16000,
+            "programmable_buttons": 6,
+            "polling_rate": 1000,
+            "connection_type": "Wireless",
+            "grip_style": "Fingertip grip",
+            "weight": 61.00,
+            "cable_length": 0.00,
+            "dimensions": "124.3 x 66.8 x 38.2 mm",
+            "rgb_lighting": false
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 96,
+        "fields": {
+            "name": "Corsair M65 RGB Elite Gaming Mouse",
+            "slug": "corsair-m65-rgb-elite",
+            "manufacturer": "Corsair",
+            "description": "An ergonomic wired gaming mouse featuring the PixArt PMW3391 optical sensor with up to 18,000 DPI, 8 programmable buttons, a 1000 Hz polling rate, customizable RGB lighting, and an adjustable weight system.",
+            "image": "categories/mice/corsair-m65-rgb-elite.jpg",
+            "price": 67.00,
+            "discount": 7,
+            "quantity": 14,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 96,
+            "sensor_type": "Optical",
+            "dpi": 18000,
+            "programmable_buttons": 8,
+            "polling_rate": 1000,
+            "connection_type": "Wired",
+            "grip_style": "Palm grip",
+            "weight": 97.00,
+            "cable_length": 1.80,
+            "dimensions": "116.5 x 76.6 x 39.2 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 97,
+        "fields": {
+            "name": "ROCCAT Kone AIMO Remastered Gaming Mouse",
+            "slug": "roccat-kone-aimo-remastered",
+            "manufacturer": "ROCCAT",
+            "description": "An ergonomic wired gaming mouse featuring the Owl-Eye optical sensor with up to 16,000 DPI, 12 programmable buttons, a 1000 Hz polling rate, and customizable RGB lighting.",
+            "image": "categories/mice/roccat-kone-aimo-remastered.jpg",
+            "price": 60.00,
+            "discount": 0,
+            "quantity": 18,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 97,
+            "sensor_type": "Optical",
+            "dpi": 16000,
+            "programmable_buttons": 12,
+            "polling_rate": 1000,
+            "connection_type": "Wired",
+            "grip_style": "Palm grip",
+            "weight": 130.00,
+            "cable_length": 1.80,
+            "dimensions": "125 x 85 x 40 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 98,
+        "fields": {
+            "name": "Logitech G Pro Wireless Gaming Mouse",
+            "slug": "logitech-g-pro-wireless",
+            "manufacturer": "Logitech",
+            "description": "A lightweight, symmetrical wireless gaming mouse featuring the HERO 25K optical sensor with up to 25,600 DPI, LIGHTSPEED wireless technology, customizable RGB lighting, and up to 60 hours of battery life with lighting disabled.",
+            "image": "categories/mice/logitech-g-pro-wireless.jpg",
+            "price": 100.00,
+            "discount": 12,
+            "quantity": 7,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 98,
+            "sensor_type": "Optical",
+            "dpi": 25600,
+            "programmable_buttons": 8,
+            "polling_rate": 1000,
+            "connection_type": "Wireless",
+            "grip_style": "Fingertip grip",
+            "weight": 80.00,
+            "cable_length": 0.00,
+            "dimensions": "125 x 63.5 x 40 mm",
+            "rgb_lighting": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 99,
+        "fields": {
+            "name": "Razer Viper Mini Signature Edition Gaming Mouse",
+            "slug": "razer-viper-mini-signature-edition",
+            "manufacturer": "Razer",
+            "description": "An ultra-lightweight, symmetrical wireless gaming mouse featuring the Focus Pro 30K optical sensor with up to 30,000 DPI, 6 programmable buttons, Razer HyperSpeed wireless connectivity, and up to 60 hours of battery life. Compatible with high-polling-rate wireless technology when paired with supported hardware.",
+            "image": "categories/mice/razer-viper-mini-signature-edition.jpg",
+            "price": 73.00,
+            "discount": 8,
+            "quantity": 5,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 99,
+            "sensor_type": "Optical",
+            "dpi": 30000,
+            "programmable_buttons": 6,
+            "polling_rate": 4000,
+            "connection_type": "Wireless",
+            "grip_style": "Fingertip grip",
+            "weight": 49.00,
+            "cable_length": 0.00,
+            "dimensions": "119.5 x 62.5 x 38.1 mm",
+            "rgb_lighting": false
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 100,
+        "fields": {
+            "name": "SteelSeries Aerox 3 Wireless Gaming Mouse",
+            "slug": "steelseries-aerox-3-wireless",
+            "manufacturer": "SteelSeries",
+            "description": "An ultra-lightweight wireless gaming mouse featuring the TrueMove Air optical sensor with up to 18,000 CPI, 6 programmable buttons, a 1000 Hz polling rate, 2.4 GHz wireless connectivity, customizable RGB lighting, and up to 80 hours of battery life.",
+            "image": "categories/mice/steelseries-aerox-3-wireless.jpg",
+            "price": 67.00,
+            "discount": 15,
+            "quantity": 9,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.mouse",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 100,
+            "sensor_type": "Optical",
+            "dpi": 18000,
+            "programmable_buttons": 6,
+            "polling_rate": 1000,
+            "connection_type": "Wireless",
+            "grip_style": "Fingertip grip",
+            "weight": 66.00,
+            "cable_length": 0.00,
+            "dimensions": "120.6 x 67 x 38 mm",
+            "rgb_lighting": true
+        }
+    }
+]

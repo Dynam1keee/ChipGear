@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 101,
+        "fields": {
+            "name": "Noctua NH-D15S chromax.black",
+            "slug": "noctua-nh-d15s-chromax-black",
+            "manufacturer": "Noctua",
+            "description": "The Noctua NH-D15S chromax.black is a premium dual-tower CPU air cooler featuring a quiet NF-A15 PWM chromax.black fan. Its asymmetrical design improves compatibility with PCIe slots while delivering excellent cooling performance for high-performance processors.",
+            "image": "categories/cooling-systems/noctua-nh-d15s-chromax-black.jpg",
+            "price": 89.00,
+            "discount": 10,
+            "quantity": 10,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 101,
+            "type": "Air",
+            "fan_size": 140,
+            "bearing_type": "SSO2",
+            "airflow": 82.5,
+            "noise_level": 24.6,
+            "speed_control": true,
+            "rgb_lighting": false,
+            "dimensions": "160 x 150 x 135 mm",
+            "weight": 1150,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155; AMD AM4, AM5"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 102,
+        "fields": {
+            "name": "be quiet! Dark Rock Pro 4",
+            "slug": "be-quiet-dark-rock-pro-4",
+            "manufacturer": "be quiet!",
+            "description": "The be quiet! Dark Rock Pro 4 is a high-performance dual-tower CPU air cooler designed for demanding processors. Its two quiet fans and optimized heatsink provide strong cooling performance while keeping noise levels low.",
+            "image": "categories/cooling-systems/be-quiet-dark-rock-4-pro.jpg",
+            "price": 100.00,
+            "discount": 5,
+            "quantity": 5,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 102,
+            "type": "Air",
+            "fan_size": 120,
+            "bearing_type": "Rifle Bearing",
+            "airflow": 80.0,
+            "noise_level": 24.3,
+            "speed_control": true,
+            "rgb_lighting": false,
+            "dimensions": "162.8 x 136 x 145.7 mm",
+            "weight": 1130,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155, 2066; AMD AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 103,
+        "fields": {
+            "name": "Scythe Mugen 5 Rev. B",
+            "slug": "scythe-mugen-5-rev-b",
+            "manufacturer": "Scythe",
+            "description": "The Scythe Mugen 5 Rev. B is a compact tower CPU air cooler featuring a quiet 120 mm PWM fan. Its offset heatsink design provides good memory clearance, making it a practical choice for quiet desktop and gaming builds.",
+            "image": "categories/cooling-systems/scythe-mugen-5-rev-b.jpg",
+            "price": 45.00,
+            "discount": 0,
+            "quantity": 15,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 103,
+            "type": "Air",
+            "fan_size": 120,
+            "bearing_type": "Sealed Sleeve",
+            "airflow": 65.0,
+            "noise_level": 24.9,
+            "speed_control": true,
+            "rgb_lighting": false,
+            "dimensions": "154.5 x 130 x 110 mm",
+            "weight": 890,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155, 2066; AMD AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 104,
+        "fields": {
+            "name": "DeepCool GAMMAXX 400 V2",
+            "slug": "deepcool-gammaxx-400-v2",
+            "manufacturer": "DeepCool",
+            "description": "The DeepCool GAMMAXX 400 V2 is an affordable tower CPU air cooler with four direct-contact heat pipes and a 120 mm PWM fan. It offers practical cooling performance for everyday desktop systems and budget gaming PCs.",
+            "image": "categories/cooling-systems/deepcool-gammaxx-400-v2.jpg",
+            "price": 29.00,
+            "discount": 0,
+            "quantity": 20,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 104,
+            "type": "Air",
+            "fan_size": 120,
+            "bearing_type": "Hydro Bearing",
+            "airflow": 64.5,
+            "noise_level": 27.8,
+            "speed_control": true,
+            "rgb_lighting": false,
+            "dimensions": "129 x 77 x 155 mm",
+            "weight": 606,
+            "compatibility": "Intel LGA 1851, 1700, 1200, 1150, 1151, 1155; AMD AM5, AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 105,
+        "fields": {
+            "name": "NZXT Kraken X53 RGB",
+            "slug": "nzxt-kraken-x53-rgb",
+            "manufacturer": "NZXT",
+            "description": "The NZXT Kraken X53 RGB is a 240 mm all-in-one liquid CPU cooler with customizable RGB lighting and a distinctive pump design. Its two 120 mm fans and efficient radiator provide cooling for gaming and performance-oriented desktop systems.",
+            "image": "categories/cooling-systems/nzxt-kraken-x53-rgb.jpg",
+            "price": 167.00,
+            "discount": 15,
+            "quantity": 8,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 105,
+            "type": "Liquid",
+            "fan_size": 120,
+            "bearing_type": "Asetek Gen 7 pump",
+            "airflow": 73.1,
+            "noise_level": 36.0,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "275 x 123 x 30 mm",
+            "weight": 1300,
+            "compatibility": "Intel LGA 1200, 1150, 1151, 1155, 1156; AMD AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 106,
+        "fields": {
+            "name": "Corsair iCUE H150i RGB PRO XT",
+            "slug": "corsair-icue-h150i-rgb-pro-xt",
+            "manufacturer": "Corsair",
+            "description": "The Corsair iCUE H150i RGB PRO XT is a 360 mm all-in-one liquid CPU cooler designed for high-performance systems. Its three 120 mm PWM fans, customizable RGB lighting, and software-based control help balance cooling performance and noise.",
+            "image": "categories/cooling-systems/corsair-hydro-h150i-rgb-pro-xt.jpg",
+            "price": 200.00,
+            "discount": 10,
+            "quantity": 5,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 106,
+            "type": "Liquid",
+            "fan_size": 120,
+            "bearing_type": "Centrifugal pump",
+            "airflow": 75.0,
+            "noise_level": 36.0,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "397 x 120 x 27 mm",
+            "weight": 1560,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155, 2066; AMD AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 107,
+        "fields": {
+            "name": "ARCTIC Liquid Freezer II 240 RGB",
+            "slug": "arctic-liquid-freezer-ii-240-rgb",
+            "manufacturer": "ARCTIC",
+            "description": "The ARCTIC Liquid Freezer II 240 RGB is a 240 mm all-in-one liquid CPU cooler featuring two 120 mm RGB fans and an integrated VRM fan. Its thick radiator and efficient pump design provide strong cooling performance for demanding desktop systems.",
+            "image": "categories/cooling-systems/arctic-liquid-freezer-ii-240-rgb.jpg",
+            "price": 156.00,
+            "discount": 7,
+            "quantity": 12,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 107,
+            "type": "Liquid",
+            "fan_size": 120,
+            "bearing_type": "Fluid Dynamic Bearing",
+            "airflow": 48.8,
+            "noise_level": 24.0,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "277 x 120 x 38 mm",
+            "weight": 1191,
+            "compatibility": "Intel LGA 1851, 1700, 1200, 1150, 1151, 1155, 2066; AMD AM5, AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 108,
+        "fields": {
+            "name": "EKWB EK-CoolStream SE 360 D-RGB",
+            "slug": "ekwb-ek-coolstream-se-360-d-rgb",
+            "manufacturer": "EKWB",
+            "description": "The EKWB EK-CoolStream SE 360 D-RGB is a slim 360 mm radiator designed for custom liquid-cooling loops. Its D-RGB lighting support and compact radiator profile make it suitable for high-performance PC builds with compatible water-cooling components.",
+            "image": "categories/cooling-systems/ekwb-ek-coolstream-se360-d-rgb.jpg",
+            "price": 278.00,
+            "discount": 5,
+            "quantity": 3,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 108,
+            "type": "Liquid",
+            "fan_size": 120,
+            "bearing_type": "Not applicable — radiator only",
+            "airflow": 75.0,
+            "noise_level": 32.0,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "400 x 130 x 28 mm",
+            "weight": 900,
+            "compatibility": "Custom liquid-cooling loops with compatible fittings and 120 mm fans"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 109,
+        "fields": {
+            "name": "be quiet! Silent Loop 2 280mm",
+            "slug": "be-quiet-silent-loop-2-280mm",
+            "manufacturer": "be quiet!",
+            "description": "The be quiet! Silent Loop 2 280mm is a high-performance all-in-one liquid CPU cooler designed for quiet operation. It features two 140 mm Silent Wings 3 PWM fans, an adjustable pump, and subtle ARGB lighting.",
+            "image": "categories/cooling-systems/be-quiet-silent-loop-ii-280mm.jpg",
+            "price": 223.00,
+            "discount": 12,
+            "quantity": 6,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 109,
+            "type": "Liquid",
+            "fan_size": 140,
+            "bearing_type": "Fluid Dynamic Bearing",
+            "airflow": 90.0,
+            "noise_level": 32.6,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "314 x 140 x 52 mm",
+            "weight": 1180,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155, 2066; AMD AM5, AM4"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 110,
+        "fields": {
+            "name": "Alphacool Eisbaer Aurora 360",
+            "slug": "alphacool-eisbaer-aurora-360",
+            "manufacturer": "Alphacool",
+            "description": "The Alphacool Eisbaer Aurora 360 is a 360 mm all-in-one liquid CPU cooler with addressable RGB lighting. Its expandable design and refillable cooling loop distinguish it from many conventional sealed AIO coolers.",
+            "image": "categories/cooling-systems/alphacool-eisbaer-aurora-360.jpg",
+            "price": 334.00,
+            "discount": 10,
+            "quantity": 2,
+            "category": 11
+        }
+    },
+    {
+        "model": "goods.coolingsystem",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 110,
+            "type": "Liquid",
+            "fan_size": 120,
+            "bearing_type": "Ceramic bearing pump",
+            "airflow": 70.0,
+            "noise_level": 33.0,
+            "speed_control": true,
+            "rgb_lighting": true,
+            "dimensions": "391 x 124 x 30 mm",
+            "weight": 2300,
+            "compatibility": "Intel LGA 1700, 1200, 1150, 1151, 1155, 2066; AMD AM4"
+        }
+    }
+]

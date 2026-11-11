@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+
+{% block meta %}
+<meta name="description" content="Your cart - Check cart contents before checkout">
+{% endblock meta %}
+
+{% block content %}
+
+{% comment %} 
+<div class="row">
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class=" bg-white p-4 mb-4 mx-2 rounded ">
+				<h3 class="text-center mb-4">Кошик</h3>
+				<div class="container" id="cart-items-container">
+					{% include "carts/included_cart.html" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+{% endcomment %}
+
+{% include "carts/cart.html" %}
+
+{% endblock content %}

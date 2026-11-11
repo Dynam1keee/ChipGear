@@ -1,0 +1,190 @@
+{% load static %}
+{% load goods_tags %}
+{% load carts_tags %}
+{% user_carts request as carts %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'tools/bootstrap/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/my_css.css' %}" type="text/css">
+    <link rel="icon" href="{% static 'icons/favicon.png' %}">
+    <title>{{ title }}</title>
+    
+    {% block meta %}{% endblock meta %}
+  </head>
+  <body>
+    <header>
+      {% comment %} Navbar {% endcomment %}
+      <nav class="navbar fixed-top navbar-expand-sm p-0 bg-secondary">
+        <div class="container-fluid mx-3 mx-md-5">
+          <a class="navbar-brand text-white" href="{% url 'main:index' %}"><strong>ChipGear</strong></a>
+
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row">
+              {% if not user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link text-white p-3" href="{% url "user:login" %}">Log in</a>
+              </li>
+              {% elif user.is_admin or user.is_staff %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white px-2 py-3 ps-0 ps-md-2 mt-1" href="{% url "user:profile" %}" role="button" aria-expanded="false">
+                  <object width=25 height=25 type="image/svg+xml" data="{% static 'icons/user_icon.svg' %}"></object>
+                </a>
+                <ul class="dropdown-menu rounded-0 p-0 border-0">
+                  <li>
+                    <a class="dropdown-item text-white" href="{% url 'admin:index' %}">Admin panel</a>
+                  </li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link mt-1" href="{% url "user:profile" %}">
+                  <object width=25 height=25 type="image/svg+xml" data="{% static 'icons/user_icon.svg' %}"></object>
+                </a>
+              </li>
+              {% endif %}
+              <li class="nav-item dropdown" id="cart-btn">
+                <a class="nav-link dropdown-toggle p-0 h-100 w-auto" href="{% url "user:users_cart" %}">
+                  <div class="h-100 position-relative align-content-center">
+                    <div class="px-3 mt-1">
+                      <object width=25 height=25 type="image/svg+xml" data="{% static 'icons/cart_icon.svg' %}"></object>
+                    </div>
+                    <span class="badge rounded-pill badge-notification bg-danger{% if not carts %} d-none{% endif %}" id="goods-counter">
+                      {% if carts %}{{ carts.total_quantity }}
+                      {% else %}0{% endif %}
+                    </span>
+                  </div>
+                </a>
+                <div id="cart-container" class="d-none d-md-block">
+                  {% if carts and not is_profile_page and not is_cart_page %}
+                  <div class="dropdown-menu rounded-0 p-0 bg-white border-top-0 overflow-y-auto" style="max-height: 420px;">
+                    {% for cart in carts %} 
+                    <div class="mt-2" style="width: 400px;">
+                      <div class="row mx-2 align-content-center" style="height: 90px;">
+                        <div class="col-3 align-self-center">
+                          <img src="{{ cart.product.category.image.url }}" 
+                          alt="{{ product }}" class="img-fluid">
+                        </div>
+                        <div class="col">
+                          <h6 class="mb-2">
+                            <a href="{% url 'catalog:product' cart.product.category.slug cart.product.slug %}" 
+                            class="text-dark d-inline-block align-middle">{{ cart.product.name }}</a>
+                          </h6>
+                          <h5><strong>${{ cart.products_price }} &times; <span class="text-success">{{ cart.quantity }}</span></strong></h5>
+                        </div>
+                        <div class="col-1 align-self-center">
+                          <a href="{% url 'cart:cart_remove' %}" class="remove-from-cart"
+                            data-cart-id="{{ cart.id }}">
+                            {% csrf_token %}
+                            <object width="16" height="16" type="image/svg+xml" data="{% static 'icons/delete_icon.svg' %}"></object>
+                          </a>
+                        </div>
+                        {% comment %} ! <img src="{% if cart.product.image %}{{ cart.product.category.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}" 
+                        alt="{{ product }}" class="img-fluid" width="100" style="min-width: 100px;"> {% endcomment %}
+                      </div>
+                    </div>
+                    <div><hr class="dropdown-divider m-0"></div>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav m-auto">
+              <form id="search-form" class="d-flex py-2" role="search" data-url-all="{% url 'catalog:search' %}" 
+              data-url-category="{% url 'catalog:search_in_category' 'placeholder' %}" action="{% url 'catalog:search' %}" method="get">
+                <div class="input-group">
+                  <select id="category-select" class="form-select rounded-0" aria-label="Default select example">
+                    <option value="all" {% if not slug_url %}selected{% endif %}>All categories</option>
+                    {% for category in categories %}
+                    <option value="{{ category.slug }}" {% if slug_url == category.slug %}selected{% endif %}>{{ category }}</option>
+                    {% endfor %}
+                  </select>
+                  <input id="search-input" class="form-control border-start rounded-0 w-25" type="search" name="q" placeholder="Search..." aria-label="Search" value="{{ request.GET.q|default:'' }}" autocomplete="off" data-suggestions-url="{% url 'catalog:search' %}" data-category="{{ slug_url|default:'' }}"/>
+                  <div
+                    id="search-suggestions"
+                    class="search-suggestions dropdown-menu rounded-0 p-0 bg-white shadow-sm"
+                    style="display: none;">
+                  </div>
+                  <button class="bg-transparent border-0 mt-1 px-2" type="submit">
+                    <object width=25 height=25 type="image/svg+xml" data="{% static 'icons/search_icon.svg' %}"></object>
+                  </button>
+                  {% comment %} <ul id="suggestions-list" class="list-group position-absolute w-25" style="z-index: 1000;"></ul> {% endcomment %}
+                </div>
+              </form>
+            </ul>
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white py-3 mt-1" href="{% url "user:logout" %}">
+                  <object width=25 height=25 type="image/svg+xml" data="{% static 'icons/logout_icon.svg' %}"></object>
+                </a>
+              </li>
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="content mx-md-4 pt-4">
+      {% comment %} CONTENT {% endcomment %}
+      {% block content %} 
+      
+      {% endblock content %}
+    </section>
+    <footer class="row row-cols-2 row-cols-md-5 py-5 mx-0 mt-5 border-top bg-secondary w-100">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <img src="{% static "icons/favicon.png" %}" alt="CG Logo" width="50px" height="50px">
+        </a>
+        <p class="text-white">ChipGear &copy; 2024</p>
+      </div>
+      <div class="col mb-3"></div>
+      <div class="col mb-3">
+        <h5 class="text-white">Components</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Products</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Prices</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQ</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About us</a></li>
+        </ul>
+      </div>
+      <div class="col mb-3">
+        <h5 class="text-white">Service</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Support</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Warranty</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Shipping</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Returns</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contacts</a></li>
+        </ul>
+      </div>
+      <div class="col mb-3">
+        <h5 class="text-white">Resources</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Latest news</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Technical articles</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Customer reviews</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Our blog</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Join us</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="{% static 'tools/jquery/jquery-3.7.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'tools/jquery/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'tools/bootstrap/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/content_p.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/cart.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/search.js' %}" type="text/javascript"></script>
+    {% block scripts %}
+    
+    {% endblock scripts %}
+  </body>
+</html>

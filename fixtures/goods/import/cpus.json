@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 1,
+        "fields": {
+            "name": "AMD Ryzen 5 5600X",
+            "slug": "amd-ryzen-5-5600x",
+            "manufacturer": "AMD",
+            "description": "The AMD Ryzen 5 5600X is a 6-core, 12-thread desktop processor built on 7nm technology. With a 3.7 GHz base clock, boost speeds up to 4.6 GHz, 32 MB of L3 cache, and a 65W TDP, it delivers reliable performance for gaming and everyday computing.",
+            "image": "categories/processors/amd-ryzen-5-5600x.jpg",
+            "price": "200.00",
+            "discount": 10.00,
+            "quantity": 12,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 1,
+            "socket": "AM4",
+            "cores": 6,
+            "threads": 12,
+            "base_clock": "3.70",
+            "boost_clock": "4.60",
+            "cache": "32 MB L3",
+            "lithography": "7 nm",
+            "thermal_design_power": 65,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 2,
+        "fields": {
+            "name": "Intel Core i5-12600K",
+            "slug": "intel-core-i5-12600k",
+            "manufacturer": "Intel",
+            "description": "The Intel Core i5-12600K features 10 cores and 16 threads, with a 3.4 GHz base clock and boost speeds up to 4.9 GHz. Its 20 MB of L3 cache and hybrid architecture make it suitable for gaming, multitasking, and productivity workloads. The processor has a 125W base power rating.",
+            "image": "categories/processors/intel-core-i5-12600k.jpg",
+            "price": "267.00",
+            "discount": 5.00,
+            "quantity": 18,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 2,
+            "socket": "LGA 1700",
+            "cores": 10,
+            "threads": 16,
+            "base_clock": "3.70",
+            "boost_clock": "4.90",
+            "cache": "20 MB L3",
+            "lithography": "Intel 7",
+            "thermal_design_power": 125,
+            "integrated_graphics": true,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 3,
+        "fields": {
+            "name": "AMD Ryzen 7 5800X3D",
+            "slug": "amd-ryzen-7-5800x3d",
+            "manufacturer": "AMD",
+            "description": "Designed for demanding gaming workloads, the AMD Ryzen 7 5800X3D combines 8 cores and 16 threads with 96 MB of L3 cache. It operates at a 3.4 GHz base clock and boosts up to 4.5 GHz. Its 105W TDP and 3D V-Cache technology make it a strong option for gaming systems.",
+            "image": "categories/processors/amd-ryzen-7-5800x3d.jpg",
+            "price": "334.00",
+            "discount": 7.00,
+            "quantity": 15,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 3,
+            "socket": "AM4",
+            "cores": 8,
+            "threads": 16,
+            "base_clock": "3.40",
+            "boost_clock": "4.50",
+            "cache": "96 MB L3",
+            "lithography": "7 nm",
+            "thermal_design_power": 105,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 4,
+        "fields": {
+            "name": "Intel Core i7-12700K",
+            "slug": "intel-core-i7-12700k",
+            "manufacturer": "Intel",
+            "description": "The Intel Core i7-12700K is a 12-core, 20-thread desktop processor with a 3.6 GHz base clock and boost frequencies up to 5.0 GHz. Equipped with 25 MB of L3 cache and a hybrid core design, it is suitable for demanding gaming, content creation, and multitasking.",
+            "image": "categories/processors/intel-core-i7-12700k.jpg",
+            "price": "379.00",
+            "discount": 3.00,
+            "quantity": 20,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 4,
+            "socket": "LGA 1700",
+            "cores": 12,
+            "threads": 20,
+            "base_clock": "3.60",
+            "boost_clock": "5.00",
+            "cache": "25 MB L3",
+            "lithography": "Intel 7",
+            "thermal_design_power": 125,
+            "integrated_graphics": true,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 5,
+        "fields": {
+            "name": "AMD Ryzen 9 5950X",
+            "slug": "amd-ryzen-9-5950x",
+            "manufacturer": "AMD",
+            "description": "The AMD Ryzen 9 5950X offers 16 cores and 32 threads for demanding workloads. With a 3.4 GHz base clock, boost speeds up to 4.9 GHz, 64 MB of L3 cache, and a 105W TDP, it is well suited to intensive multitasking and professional content creation.",
+            "image": "categories/processors/amd-ryzen-9-5950x.jpg",
+            "price": "512.00",
+            "discount": 2.00,
+            "quantity": 10,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 5,
+            "socket": "AM4",
+            "cores": 16,
+            "threads": 32,
+            "base_clock": "3.40",
+            "boost_clock": "4.90",
+            "cache": "64 MB L3",
+            "lithography": "7 nm",
+            "thermal_design_power": 105,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 6,
+        "fields": {
+            "name": "Intel Core i9-12900K",
+            "slug": "intel-core-i9-12900k",
+            "manufacturer": "Intel",
+            "description": "The Intel Core i9-12900K features 16 cores and 24 threads, a 3.2 GHz base clock, and boost speeds up to 5.2 GHz for its performance cores. Its 30 MB of L3 cache and hybrid architecture support demanding gaming, content creation, and compute-intensive applications.",
+            "image": "categories/processors/intel-core-i9-12900k.jpg",
+            "price": "557.00",
+            "discount": 1.50,
+            "quantity": 8,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 6,
+            "socket": "LGA 1700",
+            "cores": 16,
+            "threads": 24,
+            "base_clock": "3.20",
+            "boost_clock": "5.20",
+            "cache": "30 MB L3",
+            "lithography": "Intel 7",
+            "thermal_design_power": 125,
+            "integrated_graphics": true,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 7,
+        "fields": {
+            "name": "AMD Ryzen Threadripper PRO 5965WX",
+            "slug": "amd-ryzen-threadripper-pro-5965wx",
+            "manufacturer": "AMD",
+            "description": "The AMD Ryzen Threadripper PRO 5965WX is a workstation processor with 24 cores and 48 threads. Built on 7nm technology, it offers a 3.8 GHz base clock, boost speeds up to 4.5 GHz, 256 MB of L3 cache, and a 280W TDP for demanding professional workloads.",
+            "image": "categories/processors/amd-ryzen-threadripper-5960x.jpg",
+            "price": "1559.00",
+            "discount": 0.50,
+            "quantity": 5,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 7,
+            "socket": "sWRX8",
+            "cores": 24,
+            "threads": 48,
+            "base_clock": "3.80",
+            "boost_clock": "4.50",
+            "cache": "256 MB L3",
+            "lithography": "7 nm",
+            "thermal_design_power": 280,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 8,
+        "fields": {
+            "name": "Intel Core i9-12900KS",
+            "slug": "intel-core-i9-12900ks",
+            "manufacturer": "Intel",
+            "description": "The Intel Core i9-12900KS is a high-performance desktop processor with 16 cores, 24 threads, and 30 MB of L3 cache. It boosts up to 5.5 GHz on its performance cores and has a 150W base power rating, making it suitable for demanding gaming and compute-intensive applications.",
+            "image": "categories/processors/intel-core-i9-12900ks.jpg",
+            "price": "735.00",
+            "discount": 0.25,
+            "quantity": 3,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 8,
+            "socket": "LGA 1700",
+            "cores": 16,
+            "threads": 24,
+            "base_clock": "3.40",
+            "boost_clock": "5.50",
+            "cache": "30 MB L3",
+            "lithography": "Intel 7",
+            "thermal_design_power": 150,
+            "integrated_graphics": true,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 9,
+        "fields": {
+            "name": "AMD Ryzen 9 5900X",
+            "slug": "amd-ryzen-9-5900x",
+            "manufacturer": "AMD",
+            "description": "The AMD Ryzen 9 5900X combines 12 cores and 24 threads with 64 MB of L3 cache. Featuring a 3.7 GHz base clock, boost speeds up to 4.8 GHz, and a 105W TDP, it offers strong performance for gaming, software development, and demanding productivity tasks.",
+            "image": "categories/processors/amd-ryzen-9-5900x.jpg",
+            "price": "423.00",
+            "discount": 4.00,
+            "quantity": 12,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 9,
+            "socket": "AM4",
+            "cores": 12,
+            "threads": 24,
+            "base_clock": "3.70",
+            "boost_clock": "4.80",
+            "cache": "64 MB L3",
+            "lithography": "7 nm",
+            "thermal_design_power": 105,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 10,
+        "fields": {
+            "name": "Intel Core i7-12700KF",
+            "slug": "intel-core-i7-12700kf",
+            "manufacturer": "Intel",
+            "description": "The Intel Core i7-12700KF features 12 cores, 20 threads, a 3.6 GHz base clock, and boost speeds up to 5.0 GHz. With 25 MB of L3 cache and no integrated graphics, it is designed for high-performance gaming and multitasking in systems using a discrete graphics card.",
+            "image": "categories/processors/intel-core-i7-12700kf.jpg",
+            "price": "356.00",
+            "discount": 6.00,
+            "quantity": 15,
+            "category": 1
+        }
+    },
+    {
+        "model": "goods.cpu",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 10,
+            "socket": "LGA 1700",
+            "cores": 12,
+            "threads": 20,
+            "base_clock": "3.60",
+            "boost_clock": "5.00",
+            "cache": "25 MB L3",
+            "lithography": "Intel 7",
+            "thermal_design_power": 125,
+            "integrated_graphics": false,
+            "hyperthreading": true
+        }
+    }
+]

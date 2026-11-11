@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% load goods_tags %}
+
+{% load carts_tags %}
+{% user_carts request as carts %}
+
+{% block meta %}
+<meta name="robots" content="index, follow">
+<meta name="description" content="{{category_name}}. We offer a wide range of computer components">
+{% endblock meta %}
+
+{% block content %}
+<div class="d-flex row w-100 m-0">
+	{% if request.GET.q %}
+		<h3 class="mt-4">Search results for query <strong>"{{ request.GET.q }}"</strong>{% if category_name %} in category <a href="{% url 'catalog:goods_list' slug_url %}" class="text-black">{{category_name}}</a>{% endif %}</h3>
+		{% if goods %}
+			<div class="py-3" id="products-quantity">
+				Found products matching the query: {{goods_count}}
+			</div>
+			{% include "all_goods.html" %}
+		{% else %}
+			<h2 class="mt-4">NOTHING FOUND :(</h2>
+		{% endif %}
+	{% else %}
+		<nav aria-label="breadcrumb" class="p-0">
+			<ol class="breadcrumb p-3 bg-body-tertiary">
+				<li class="breadcrumb-item">
+					<a class="align-middle" href="{% url 'main:index' %}">
+						<object style="width: 1rem;" type="image/svg+xml" data="{% static 'icons/home_icon.svg' %}"></object>
+					</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">
+					{{ category }}
+				</li>
+			</ol>
+		</nav>
+		<h3 class="mb-3">{{ category }}</h3>
+		{% include "all_goods.html" %}
+	{% endif %}
+</div>
+
+{% comment %} PAGINATION {% endcomment %}
+{% if goods %}
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center my-4">
+			<div class="custom-shadow d-flex">
+				<li class="page-item 
+				{% if not goods.has_previous %} disabled {% endif %}">
+					<a class="page-link" href="
+					{% if goods.has_previous %} ?{% change_params page=goods.previous_page_number %}
+					{% else %} # {% endif %}"><<<</a>
+				</li>
+				{% for page in goods.paginator.page_range %}
+					{% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+					<li class="page-item 
+					{% if goods.number == page %} active {% endif %}">
+						<a class="page-link" href="
+						{% if goods.number == page %} javascript:void(0)
+						{% else %} ?{% change_params page=page %} {% endif %}">{{ page }}</a></li>
+					{% endif %}
+				{% endfor %}
+				<li class="page-item 
+				{% if not goods.has_next %} disabled {% endif %}">
+					<a class="page-link" href="
+					{% if goods.has_next %} ?{% change_params page=goods.next_page_number %}
+					{% else %} # {% endif %}">>>></a>
+				</li>
+			</div>
+		</ul>
+	</nav>
+{% endif %}
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'scripts/filter.js' %}" type="text/javascript"></script>
+{% endblock scripts %}

@@ -1,0 +1,322 @@
+[
+    {
+        "model": "goods.product",
+        "pk": 71,
+        "fields": {
+            "name": "WD Blue 1TB SATA III Hard Drive",
+            "slug": "wd-blue-1tb-sata-iii-hard-drive",
+            "manufacturer": "Western Digital",
+            "description": "The WD Blue 1TB SATA III hard drive is an affordable storage solution for everyday computing. It features a 7200 RPM spindle speed for responsive data access and is designed for reliable desktop storage.",
+            "image": "categories/hard-drives/harddrive_wd_blue_1tb_sata_iii.jpg",
+            "price": 29.00,
+            "discount": 10,
+            "quantity": 100,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 1,
+        "fields": {
+            "product_ptr": 71,
+            "interface": "SATA III",
+            "capacity": "1 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "16 MB",
+            "read_speed": 150,
+            "write_speed": 150,
+            "average_seek_time": "5.7 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 72,
+        "fields": {
+            "name": "Seagate BarraCuda 2TB SATA III Hard Drive",
+            "slug": "seagate-barracuda-2tb-sata-iii-hard-drive",
+            "manufacturer": "Seagate",
+            "description": "The Seagate BarraCuda 2TB SATA III hard drive provides ample storage for games, applications, and personal files. Its 7200 RPM spindle speed helps deliver responsive access to stored data.",
+            "image": "categories/hard-drives/harddrive_seagate_barracuda_2tb_sata_iii.jpg",
+            "price": 56.00,
+            "discount": 0,
+            "quantity": 50,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 2,
+        "fields": {
+            "product_ptr": 72,
+            "interface": "SATA III",
+            "capacity": "2 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "32 MB",
+            "read_speed": 180,
+            "write_speed": 180,
+            "average_seek_time": "5.9 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 73,
+        "fields": {
+            "name": "Toshiba DT01ACA000 500GB SATA III Hard Drive",
+            "slug": "toshiba-dt01aca000-500gb-sata-iii-hard-drive",
+            "manufacturer": "Toshiba",
+            "description": "The Toshiba DT01ACA000 500GB SATA III hard drive is a storage solution for desktop computers. Its 7200 RPM spindle speed provides responsive data access for everyday computing tasks.",
+            "image": "categories/hard-drives/harddrive_toshiba_dt01aca000_500gb_sata_iii.jpg",
+            "price": 20.00,
+            "discount": 5,
+            "quantity": 75,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 3,
+        "fields": {
+            "product_ptr": 73,
+            "interface": "SATA III",
+            "capacity": "500 GB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "8 MB",
+            "read_speed": 160,
+            "write_speed": 160,
+            "average_seek_time": "5.5 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 74,
+        "fields": {
+            "name": "Samsung HD103SJ 1TB SATA III Hard Drive",
+            "slug": "samsung-hd103sj-1tb-sata-iii-hard-drive",
+            "manufacturer": "Samsung",
+            "description": "The Samsung HD103SJ 1TB SATA III hard drive provides storage for home and office computers. Its 7200 RPM spindle speed supports responsive access to files and applications.",
+            "image": "categories/hard-drives/harddrive_samsung_hd103sj_1tb_sata_iii.jpg",
+            "price": 27.00,
+            "discount": 0,
+            "quantity": 120,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 4,
+        "fields": {
+            "product_ptr": 74,
+            "interface": "SATA III",
+            "capacity": "1 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "32 MB",
+            "read_speed": 180,
+            "write_speed": 180,
+            "average_seek_time": "5.9 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 75,
+        "fields": {
+            "name": "Hitachi HGST HTS540012A7E640 4TB SATA III Hard Drive",
+            "slug": "hitachi-hgst-hts540012a7e640-4tb-sata-iii-hard-drive",
+            "manufacturer": "Hitachi",
+            "description": "This Hitachi HGST storage drive is listed with a 4TB capacity and a SATA III interface. Its stated 5400 RPM spindle speed is intended to provide quieter operation and lower power consumption.",
+            "image": "categories/hard-drives/harddrive_hitachi_hgst_hts540012a7e640_4tb_sata_iii.jpg",
+            "price": 89.00,
+            "discount": 12,
+            "quantity": 30,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 5,
+        "fields": {
+            "product_ptr": 75,
+            "interface": "SATA III",
+            "capacity": "4 TB",
+            "form_factor": "3.5\"",
+            "rpm": 5400,
+            "cache": "64 MB",
+            "read_speed": 150,
+            "write_speed": 150,
+            "average_seek_time": "11.5 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 76,
+        "fields": {
+            "name": "Seagate BarraCuda Pro 2TB SATA III Hard Drive",
+            "slug": "seagate-barracuda-pro-2tb-sata-iii-hard-drive",
+            "manufacturer": "Seagate",
+            "description": "The Seagate BarraCuda Pro 2TB SATA III hard drive is designed for users who need high-capacity desktop storage and responsive performance. Its 7200 RPM spindle speed supports fast access to frequently used files and applications.",
+            "image": "categories/hard-drives/harddrive_seagate_barracuda_pro_2tb_sata_iii.jpg",
+            "price": 62.00,
+            "discount": 7,
+            "quantity": 45,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 6,
+        "fields": {
+            "product_ptr": 76,
+            "interface": "SATA III",
+            "capacity": "2 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "64 MB",
+            "read_speed": 220,
+            "write_speed": 220,
+            "average_seek_time": "5.9 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 77,
+        "fields": {
+            "name": "Western Digital Black 1TB SATA III Hard Drive",
+            "slug": "western-digital-black-1tb-sata-iii-hard-drive",
+            "manufacturer": "Western Digital",
+            "description": "The Western Digital Black 1TB SATA III hard drive is designed for desktop users who need responsive performance for gaming and demanding applications. Its 7200 RPM spindle speed supports fast access to stored data.",
+            "image": "categories/hard-drives/harddrive_western_digital_black_1tb_sata_iii.jpg",
+            "price": 36.00,
+            "discount": 0,
+            "quantity": 60,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 7,
+        "fields": {
+            "product_ptr": 77,
+            "interface": "SATA III",
+            "capacity": "1 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "64 MB",
+            "read_speed": 250,
+            "write_speed": 200,
+            "average_seek_time": "5.3 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 78,
+        "fields": {
+            "name": "Seagate BarraCuda 1TB SATA III Hard Drive",
+            "slug": "seagate-barracuda-1tb-sata-iii-hard-drive",
+            "manufacturer": "Seagate",
+            "description": "The Seagate BarraCuda 1TB SATA III hard drive provides desktop storage for applications, games, and personal files. Its 7200 RPM spindle speed offers responsive performance for everyday computing.",
+            "image": "categories/hard-drives/harddrive_seagate_barracuda_1tb_sata_iii.jpg",
+            "price": 31.00,
+            "discount": 0,
+            "quantity": 150,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 8,
+        "fields": {
+            "product_ptr": 78,
+            "interface": "SATA III",
+            "capacity": "1 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "64 MB",
+            "read_speed": 210,
+            "write_speed": 210,
+            "average_seek_time": "4.2 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "101.6 x 146.99 x 20.17 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 79,
+        "fields": {
+            "name": "Seagate BarraCuda Compute 2TB SATA III Hard Drive",
+            "slug": "seagate-barracuda-compute-2tb-sata-iii-hard-drive",
+            "manufacturer": "Seagate",
+            "description": "The Seagate BarraCuda Compute 2TB SATA III hard drive offers high-capacity storage for desktop computers and everyday workloads. Its 7200 RPM spindle speed supports responsive file access and general-purpose computing.",
+            "image": "categories/hard-drives/harddrive_seagate_barracuda_compute_2tb_sata_iii.jpg",
+            "price": 58.00,
+            "discount": 0,
+            "quantity": 25,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 9,
+        "fields": {
+            "product_ptr": 79,
+            "interface": "SATA III",
+            "capacity": "2 TB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "32 MB",
+            "read_speed": 220,
+            "write_speed": 220,
+            "average_seek_time": "5.9 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 80,
+        "fields": {
+            "name": "Toshiba DT01AC000 500GB SATA III Hard Drive",
+            "slug": "toshiba-dt01ac000-500gb-sata-iii-hard-drive",
+            "manufacturer": "Toshiba",
+            "description": "The Toshiba DT01AC000 500GB SATA III hard drive is an affordable storage option for desktop computers. Its 7200 RPM spindle speed supports responsive data access for everyday use.",
+            "image": "categories/hard-drives/harddrive_toshiba_dt01ac000_500gb_sata_iii.jpg",
+            "price": 18.00,
+            "discount": 10,
+            "quantity": 100,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.harddrive",
+        "pk": 10,
+        "fields": {
+            "product_ptr": 80,
+            "interface": "SATA III",
+            "capacity": "500 GB",
+            "form_factor": "3.5\"",
+            "rpm": 7200,
+            "cache": "8 MB",
+            "read_speed": 160,
+            "write_speed": 160,
+            "average_seek_time": "5.5 ms",
+            "interface_speed": "6 Gbit/s",
+            "dimensions": "102 x 147 x 26 mm"
+        }
+    }
+]

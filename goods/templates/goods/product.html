@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+{% include "cart_button.html" %}
+{% endblock modal_cart %}
+
+{% block meta %}
+<meta name="robots" content="index, follow">
+<meta name="description" content="Buy {{product}} online - High performance at a great price">
+{% endblock meta %}
+
+{% block content %}
+<div class="container p-0">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb p-3 mb-1 mb-md-3 bg-body-tertiary">
+			<li class="breadcrumb-item">
+				<a class="align-middle" href="{% url 'main:index' %}">
+					<object style="width: 1rem;" type="image/svg+xml" data="{% static 'icons/home_icon.svg' %}"></object>
+				</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a class="text-black fw-semibold text-decoration-none" href="{% url 'catalog:goods_list' product.category.slug %}">{{ product.category }}</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">
+				{{ product }}
+			</li>
+		</ol>
+	</nav>
+	<div class="card rounded-0">
+		<div class="row mt-3 mx-0">
+			{% comment %} Фото {% endcomment %}
+			<div class="col-md-4 px-3">
+				<img src="{% if product.image.url %}{{ product.image.url }}{% else %}{{ product.category.image.url }}{% endif %}" class="card-img-top" alt="...">
+				{% comment %} ! <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}" class="card-img-top" alt="..."> {% endcomment %}
+				{% comment %} <img src="{{ product.image.url }}" class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1"> {% endcomment %}
+			</div>
+			<div class="col-md-8 px-3">
+				<h4 class="card-title fw-semibold">{{ product.name }}</h4>
+				<div class="d-flex justify-content-between">
+					<div class="buy-info">
+						<div class="price">
+							{% if product.discount %}
+								<p class="m-0"><s>${{ product.price }}</s></p>
+								<h4 class="m-0"><strong class="d-price">${{ product.sell_price }}</strong></h4>
+							{% else %}
+								<h4 class="m-0"><strong>${{ product.price }}</strong></h4>
+							{% endif %}
+						</div>
+						{% if product.quantity == 0 %}
+							<p class="text-danger fw-semibold"><small>Out of stock</small></p>
+							<a href="#" class="btn btn-success disabled" style="width: max-content;">
+								Add to cart</a>
+						{% else %}
+							<p class="text-success fw-semibold"><small>In stock</small></p>
+							<a href="{% url 'carts:cart_add' %}" class="btn btn-success add-to-cart" style="width: max-content;" data-product-id='{{ product.id }}'>{% csrf_token %}
+								Add to cart</a>
+						{% endif %}
+					</div>
+					<p class="text-end fw-light">Product ID: {{ product.display_id }}</p>
+				</div>
+				<p class="card-text mt-3">{{ product.description }}</p>
+			</div>
+			{% comment %} 
+			Модальне вікно
+			<div class="modal fade" id="imageModal1" tabindex="-1"
+				aria-labelledby="imageModal1Label" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="imageModal1Label">{{ product.name }}</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Закрыть"></button>
+						</div>
+						<div class="modal-body">
+							<img src="{{ product.image.url }}"
+								class="img-fluid" alt="Изображение 1">
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endcomment %}
+		</div>
+		{% comment %} Характеристики {% endcomment %}
+		<div class="card-body">
+			<h3 class="my-3 ps-2">Specifications</h3>
+			<table class="table table-striped m-0">
+				<tbody>
+					{% for key, value in product.get_values_dict.items %}
+						<tr>
+							<td><strong>{{ key }}</strong></td>
+							<td>{% if value is True %}&#10003;{% elif value is False %}&#10005;{% else %}{{ value }}{% endif %}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	{% if related_products %}
+	<h3 class="my-4">Customers also buy with this item</h3>
+	<div class="p-0">
+		<div class="bg-transparent p-0 m-0 row flex-nowrap overflow-x-auto row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 position-relative">
+			{% comment %} Add progress bar {% endcomment %}
+			<div class="overlay m-1 d-none pe-auto"></div>
+			{% comment %} Товари {% endcomment %}
+			{% for product in related_products %}
+				{% include "goods/product_item.html" %}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if recently_viewed_products %}
+	<h3 class="my-4">Recently viewed products</h3>
+	<div class="p-0">
+		<div class="bg-transparent p-0 m-0 row flex-nowrap overflow-x-auto row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 position-relative">
+			{% comment %} Add progress bar {% endcomment %}
+			<div class="overlay m-1 d-none pe-auto"></div>
+			{% comment %} Товари {% endcomment %}
+			{% for product in recently_viewed_products %}
+				{% include "goods/product_item.html" %}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</div>
+{% endblock content %}
