@@ -2,6 +2,9 @@
 
 ChipGear is an online store for computer hardware and accessories, built with Django.
 
+**Live Demo:** [Visit ChipGear](http://92.5.126.107/)
+**Note:** The website is currently accessible via HTTP only. Use `http://` instead of `https://`.
+
 The project provides a platform for browsing computer components, searching and filtering products, managing a shopping cart, and placing orders.
 
 ## Features
