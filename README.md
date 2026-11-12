@@ -18,6 +18,23 @@ The project provides a platform for browsing computer components, searching and 
 - Order creation and management.
 - Django administration panel.
 
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Product Catalog
+![Product Catalog](screenshots/catalog.png)
+
+### Product Details
+![Product Details](screenshots/product_detail.png)
+
+### Shopping Cart
+![Shopping Cart](screenshots/cart.png)
+
+### Checkout
+![Checkout](screenshots/checkout.png)
+
 ## Technologies
 
 - Python 3.12
