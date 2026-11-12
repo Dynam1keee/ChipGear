@@ -26,10 +26,8 @@
 					{% for cart in carts %}
 					<tr height="100">
 						<th scope="row" class="border-0 p-0 align-middle" width="100">
-							<img src="{% if cart.product.image.url %}{{ cart.product.category.image.url }}{% else %}{{ cart.product.image.url }}{% endif %}" 
-							alt="{{ product }}" class="img-fluid" width="100" style="min-width: 100px;">
-							{% comment %} ! <img src="{% if cart.product.image %}{{ cart.product.category.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}" 
-							alt="{{ product }}" class="img-fluid" width="100" style="min-width: 100px;"> {% endcomment %}
+							<img src="{% if cart.product.image %}{{ cart.product.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}"
+								alt="{{ cart.product.name }}" class="img-fluid" width="100" style="min-width: 100px;">
 						</th>
 						<td class="border-0 align-middle">
 							<h6 class="ms-3 mb-0">

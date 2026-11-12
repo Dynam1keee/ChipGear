@@ -68,8 +68,8 @@
                     <div class="mt-2" style="width: 400px;">
                       <div class="row mx-2 align-content-center" style="height: 90px;">
                         <div class="col-3 align-self-center">
-                          <img src="{{ cart.product.category.image.url }}" 
-                          alt="{{ product }}" class="img-fluid">
+                          <img src="{% if cart.product.image %}{{ cart.product.image.url }}{% else %}{% static 'images/image_not_found.jpg' %}{% endif %}"
+                          alt="{{ cart.product.name }}" class="img-fluid">
                         </div>
                         <div class="col">
                           <h6 class="mb-2">
