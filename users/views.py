@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.contrib import auth, messages
 from carts.models import Cart
 from orders.models import Order, OrderItem
@@ -24,7 +25,16 @@ def login(request):
                 Cart.objects.filter(session_key=session_key).update(user=user)
 
             redirect_page = request.POST.get('next', None)
-            if redirect_page and redirect_page != reverse('user:logout'):
+            # Redirect only to this site, never to an address given by an attacker
+            if (
+                redirect_page
+                and redirect_page != reverse('user:logout')
+                and url_has_allowed_host_and_scheme(
+                    redirect_page,
+                    allowed_hosts={request.get_host()},
+                    require_https=request.is_secure(),
+                )
+            ):
                 return HttpResponseRedirect(redirect_page)
 
             return HttpResponseRedirect(reverse('main:index'))
