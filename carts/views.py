@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.template.loader import render_to_string
 
 from carts.models import Cart
@@ -46,7 +46,8 @@ def cart_change(request):
     cart_id = request.POST.get('cart_id')
     quantity = request.POST.get('quantity')
 
-    cart = Cart.objects.get(id=cart_id)
+    # Only carts that belong to the current user/session can be changed
+    cart = get_object_or_404(get_user_carts(request), id=cart_id)
 
     cart.quantity = quantity
     cart.save()
@@ -67,7 +68,8 @@ def cart_change(request):
 def cart_remove(request):
     cart_id = request.POST.get('cart_id')
 
-    cart = Cart.objects.get(id=cart_id)
+    # Only carts that belong to the current user/session can be removed
+    cart = get_object_or_404(get_user_carts(request), id=cart_id)
     quantity = cart.quantity
     cart.delete()
 
