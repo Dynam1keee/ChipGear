@@ -54,11 +54,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'main',
     'goods',
     'users',
     'carts',
     'orders',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -151,6 +154,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Django REST Framework (JSON API used by the React frontend)
+REST_FRAMEWORK = {
+    # JSON only: the browsable API needs extra static files on the server
+    'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
+    # Same cookie session as the Django site; it also enforces CSRF on POST
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.SessionAuthentication'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20,  # same as the catalog page
+}
 
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/user/login/'
