@@ -38,7 +38,7 @@ The project provides a platform for browsing computer components, searching and 
 
 ## Technologies
 
-- Python 3.12
+- Python 3.10 or newer (production runs on Python 3.10)
 - Django 4.2
 - SQLite
 - HTML, CSS, JavaScript
@@ -58,7 +58,7 @@ cd ChipGear
 
 ### 2. Check Python version
 
-**Python 3.12 is required to run this project.**
+**Python 3.10 or newer is required to run this project.** The production server uses Python 3.10.
 
 Check your Python version:
 
@@ -66,21 +66,21 @@ Check your Python version:
 python --version
 ```
 
-Make sure the output indicates Python 3.12.x before proceeding.
+Make sure the output shows Python 3.10 or a newer version before proceeding.
 
 ### 3. Create a virtual environment
 
 **Windows:**
 
 ```bash
-py -3.12 -m venv .venv
+py -3 -m venv .venv
 .venv\Scripts\activate
 ```
 
 **Linux / macOS:**
 
 ```bash
-python3.12 -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -136,6 +136,14 @@ python manage.py runserver
 Open the application in your browser:
 
 http://127.0.0.1:8000/
+
+## Running tests
+
+Set the same environment variables as for the development server (at least `DJANGO_SECRET_KEY`) and run:
+
+```bash
+python manage.py test
+```
 
 ## Administration
 
