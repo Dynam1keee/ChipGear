@@ -17,12 +17,15 @@ def login(request):
         if form.is_valid():
             # AuthenticationForm сама перевіряє дані та зберігає користувача
             user = form.get_user()
+
+            # Read the guest session key BEFORE auth.login(): login() creates
+            # a new session key, so the guest cart could not be found after it.
+            session_key = request.session.session_key
             auth.login(request, user)
             messages.success(request, 'You have logged in')
 
-            session_key = request.session.session_key
             if session_key:
-                Cart.objects.filter(session_key=session_key).update(user=user)
+                Cart.objects.filter(session_key=session_key, user__isnull=True).update(user=user)
 
             redirect_page = request.POST.get('next', None)
             # Redirect only to this site, never to an address given by an attacker
