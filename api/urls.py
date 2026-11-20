@@ -7,6 +7,8 @@ app_name = 'api'
 urlpatterns = [
     # localhost/api/categories/
     path('categories/', views.CategoryListView.as_view(), name='category_list'),
+    # localhost/api/filters/
+    path('filters/', views.FilterFacetsView.as_view(), name='filters'),
     # localhost/api/products/
     path('products/', views.ProductListView.as_view(), name='product_list'),
     # localhost/api/products/product_slug/

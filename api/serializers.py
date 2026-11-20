@@ -65,6 +65,7 @@ class ProductQuerySerializer(serializers.Serializer):
     q = serializers.CharField(required=False, allow_blank=True)
     min_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=Decimal('0'))
     max_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=Decimal('0'))
+    manufacturer = serializers.ListField(child=serializers.CharField(), required=False)
     ordering = serializers.ChoiceField(
         required=False,
         choices=['default', 'price', '-price', 'name', '-name'],
