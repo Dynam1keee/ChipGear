@@ -10,9 +10,10 @@ import {
   fetchProducts,
   login,
   logout,
+  register,
   removeCartItem,
 } from './api'
-import type { Credentials } from './api'
+import type { Credentials, Registration } from './api'
 import type { Cart, User } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
@@ -121,4 +122,8 @@ export function useLogin() {
 
 export function useLogout() {
   return useAuthMutation(() => logout(), () => null)
+}
+
+export function useRegister() {
+  return useAuthMutation((data: Registration) => register(data), (user) => user)
 }

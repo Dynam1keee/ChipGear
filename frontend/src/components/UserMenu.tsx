@@ -22,6 +22,7 @@ export default function UserMenu() {
   return (
     <span className="user-menu">
       <Link to="/login">Log in</Link>
+      <Link to="/register">Register</Link>
     </span>
   )
 }

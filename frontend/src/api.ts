@@ -148,6 +148,21 @@ export async function login(credentials: Credentials): Promise<User> {
   return data.user
 }
 
+export interface Registration {
+  first_name: string
+  last_name: string
+  username: string
+  email: string
+  password1: string
+  password2: string
+}
+
+// The server creates the user and logs them in at once
+export async function register(data: Registration): Promise<User> {
+  const result = await request<{ user: User }>('/api/auth/register/', { method: 'POST', body: data })
+  return result.user
+}
+
 export function logout(): Promise<void> {
   return request<void>('/api/auth/logout/', { method: 'POST' })
 }

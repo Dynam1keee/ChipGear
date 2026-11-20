@@ -1,15 +1,9 @@
 import type { FormEvent } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { formErrors } from '../api'
 import FormField from '../components/FormField'
+import { safeNext } from '../safeNext'
 import { useLogin } from '../queries'
-
-// After the login we go to the page from ?next=..., but only inside this site.
-// Otherwise a crafted link (?next=https://evil.example) could send the user to another site.
-function safeNext(next: string | null): string {
-  if (next && next.startsWith('/') && !next.startsWith('//') && !next.startsWith('/\\')) return next
-  return '/'
-}
 
 export default function LoginPage() {
   const login = useLogin()
@@ -45,6 +39,9 @@ export default function LoginPage() {
       <button type="submit" disabled={login.isPending}>
         {login.isPending ? 'Logging in...' : 'Log in'}
       </button>
+      <p>
+        No account? <Link to="/register">Register</Link>
+      </p>
     </form>
   )
 }
