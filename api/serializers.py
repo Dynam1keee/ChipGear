@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from rest_framework import serializers
 
 from goods.models import Category, Product
@@ -61,8 +63,8 @@ class ProductQuerySerializer(serializers.Serializer):
 
     category = serializers.SlugField(required=False)
     q = serializers.CharField(required=False, allow_blank=True)
-    min_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=0)
-    max_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=0)
+    min_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=Decimal('0'))
+    max_price = serializers.DecimalField(required=False, max_digits=9, decimal_places=2, min_value=Decimal('0'))
     ordering = serializers.ChoiceField(
         required=False,
         choices=['default', 'price', '-price', 'name', '-name'],
