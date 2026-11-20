@@ -4,6 +4,7 @@ from rest_framework import serializers
 
 from carts.models import Cart
 from goods.models import Category, Product
+from users.models import User
 
 
 def image_url(image_field):
@@ -109,3 +110,11 @@ class AddToCartSerializer(serializers.Serializer):
 
 class ChangeQuantitySerializer(serializers.Serializer):
     quantity = serializers.IntegerField(min_value=1, max_value=32767)  # the limit of the database field
+
+
+# --- users ------------------------------------------------------------------
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'first_name', 'last_name', 'email']

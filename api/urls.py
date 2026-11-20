@@ -1,12 +1,18 @@
 from django.urls import path
 
-from api import cart, views
+from api import auth, cart, views
 
 app_name = 'api'
 
 urlpatterns = [
     # localhost/api/categories/
     path('categories/', views.CategoryListView.as_view(), name='category_list'),
+    # localhost/api/auth/csrf/ , me/ , login/ , register/ , logout/
+    path('auth/csrf/', auth.CsrfView.as_view(), name='csrf'),
+    path('auth/me/', auth.MeView.as_view(), name='me'),
+    path('auth/login/', auth.LoginView.as_view(), name='login'),
+    path('auth/register/', auth.RegisterView.as_view(), name='register'),
+    path('auth/logout/', auth.LogoutView.as_view(), name='logout'),
     # localhost/api/cart/
     path('cart/', cart.CartView.as_view(), name='cart'),
     # localhost/api/cart/items/
