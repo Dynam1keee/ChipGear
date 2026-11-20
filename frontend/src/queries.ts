@@ -5,11 +5,15 @@ import {
   fetchCart,
   fetchCategories,
   fetchFacets,
+  fetchMe,
   fetchProduct,
   fetchProducts,
+  login,
+  logout,
   removeCartItem,
 } from './api'
-import type { Cart } from './types'
+import type { Credentials } from './api'
+import type { Cart, User } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
 // The queryKey is the "name" of the data: the same key means the same cached data,
@@ -82,4 +86,39 @@ export function useChangeCartItem() {
 
 export function useRemoveCartItem() {
   return useCartMutation((itemId: number) => removeCartItem(itemId))
+}
+
+// --- the logged in user ---
+// The data is the user, or null for a guest.
+
+export function useMe() {
+  return useQuery({
+    queryKey: ['me'],
+    queryFn: ({ signal }) => fetchMe(signal),
+    staleTime: Infinity, // it changes only when we log in or out, and then we update it ourselves
+  })
+}
+
+// After a login or a logout the cart on the server is another one (the guest cart is merged
+// into the user's cart), so we ask for the cart again.
+function useAuthMutation<Variables, Result>(
+  mutationFn: (variables: Variables) => Promise<Result>,
+  getUser: (result: Result) => User | null,
+) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn,
+    onSuccess: (result) => {
+      queryClient.setQueryData(['me'], getUser(result))
+      void queryClient.invalidateQueries({ queryKey: ['cart'] })
+    },
+  })
+}
+
+export function useLogin() {
+  return useAuthMutation((credentials: Credentials) => login(credentials), (user) => user)
+}
+
+export function useLogout() {
+  return useAuthMutation(() => logout(), () => null)
 }

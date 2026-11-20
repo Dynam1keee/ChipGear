@@ -1,7 +1,9 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import CartLink from './components/CartLink'
 import NotFound from './components/NotFound'
+import UserMenu from './components/UserMenu'
 import CartPage from './pages/CartPage'
+import LoginPage from './pages/LoginPage'
 import CatalogPage from './pages/CatalogPage'
 import ProductPage from './pages/ProductPage'
 
@@ -13,7 +15,10 @@ export default function App() {
         <Link to="/">
           <h1>ChipGear</h1>
         </Link>
-        <CartLink />
+        <nav className="header-links">
+          <UserMenu />
+          <CartLink />
+        </nav>
       </header>
 
       <main>
@@ -21,6 +26,7 @@ export default function App() {
           <Route path="/" element={<CatalogPage />} />
           <Route path="/products/:slug" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

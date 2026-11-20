@@ -1,4 +1,4 @@
-import type { Cart, Category, Facets, Page, Product, ProductDetail } from './types'
+import type { Cart, Category, Facets, Page, Product, ProductDetail, User } from './types'
 
 // An error that remembers the HTTP status (and the JSON the server sent), so the
 // pages can react to 404 or show the reason of a 400
@@ -22,6 +22,24 @@ export function errorText(error: unknown): string {
     if (typeof message === 'string') return message
   }
   return error instanceof Error ? error.message : 'Unknown error'
+}
+
+// The errors of a form that the server rejected (400): {"username": ["This field is required."]}.
+// The errors of the whole form (for example a wrong password) are under "non_field_errors".
+export function formErrors(error: unknown): Record<string, string[]> {
+  if (!error) return {}
+
+  if (error instanceof ApiError && error.status === 400 && error.details && typeof error.details === 'object') {
+    const result: Record<string, string[]> = {}
+    for (const [field, messages] of Object.entries(error.details as Record<string, unknown>)) {
+      if (Array.isArray(messages)) {
+        result[field] = messages.filter((message): message is string => typeof message === 'string')
+      }
+    }
+    return result
+  }
+
+  return { non_field_errors: [errorText(error)] }
 }
 
 // Django keeps the CSRF token in a cookie. Requests that change data must send it back
@@ -112,4 +130,24 @@ export function changeCartItem(itemId: number, quantity: number): Promise<Cart> 
 
 export function removeCartItem(itemId: number): Promise<Cart> {
   return request<Cart>(`/api/cart/items/${itemId}/`, { method: 'DELETE' })
+}
+
+// Users. The server keeps the login in a session cookie.
+export async function fetchMe(signal?: AbortSignal): Promise<User | null> {
+  const data = await request<{ user: User | null }>('/api/auth/me/', { signal })
+  return data.user
+}
+
+export interface Credentials {
+  username: string
+  password: string
+}
+
+export async function login(credentials: Credentials): Promise<User> {
+  const data = await request<{ user: User }>('/api/auth/login/', { method: 'POST', body: credentials })
+  return data.user
+}
+
+export function logout(): Promise<void> {
+  return request<void>('/api/auth/logout/', { method: 'POST' })
 }
