@@ -1,6 +1,5 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { fetchCategories, fetchProduct, fetchProducts } from './api'
-import type { ProductParams } from './api'
+import { fetchCategories, fetchFacets, fetchProduct, fetchProducts } from './api'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
 // The queryKey is the "name" of the data: the same key means the same cached data,
@@ -15,11 +14,21 @@ export function useCategories() {
   })
 }
 
-export function useProducts(params: ProductParams) {
+// params is the query string of the catalog page. A string is used in the key,
+// because React Query compares keys by value and URLSearchParams has no useful value.
+export function useProducts(params: URLSearchParams) {
   return useQuery({
-    queryKey: ['products', params],
+    queryKey: ['products', params.toString()],
     queryFn: ({ signal }) => fetchProducts(params, signal),
     // While the next page loads, keep showing the previous one (no flicker)
+    placeholderData: keepPreviousData,
+  })
+}
+
+export function useFacets(params: URLSearchParams) {
+  return useQuery({
+    queryKey: ['facets', params.toString()],
+    queryFn: ({ signal }) => fetchFacets(params, signal),
     placeholderData: keepPreviousData,
   })
 }

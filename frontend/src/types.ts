@@ -38,3 +38,22 @@ export interface Page<T> {
   previous: string | null
   results: T[]
 }
+
+// One choice in a filter group, with the number of products it would give
+export interface FilterOption {
+  value: string | number | boolean
+  count: number
+}
+
+export interface SpecFacet {
+  name: string // the query parameter, for example "key_switches"
+  label: string // for people, for example "Key switches"
+  values: FilterOption[]
+}
+
+// GET /api/filters/: everything the filter sidebar needs
+export interface Facets {
+  price_range: { min: number; max: number }
+  manufacturers: FilterOption[]
+  specs: SpecFacet[] // empty when no category is chosen
+}

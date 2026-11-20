@@ -1,4 +1,4 @@
-import type { Category, Page, Product, ProductDetail } from './types'
+import type { Category, Facets, Page, Product, ProductDetail } from './types'
 
 // An error that remembers the HTTP status, so the pages can react to 404
 export class ApiError extends Error {
@@ -19,25 +19,23 @@ async function getJson<T>(url: string, signal?: AbortSignal): Promise<T> {
   return (await response.json()) as T
 }
 
+function withQuery(path: string, params: URLSearchParams): string {
+  const query = params.toString()
+  return query ? `${path}?${query}` : path
+}
+
 export function fetchCategories(signal?: AbortSignal): Promise<Category[]> {
   return getJson<Category[]>('/api/categories/', signal)
 }
 
-export interface ProductParams {
-  category?: string
-  page?: number
+// The address of the catalog page and the API use the same parameter names, for example
+// ?category=keyboards&layout=ANSI&min_price=50, so the address can be sent to the API as it is.
+export function fetchProducts(params: URLSearchParams, signal?: AbortSignal): Promise<Page<Product>> {
+  return getJson<Page<Product>>(withQuery('/api/products/', params), signal)
 }
 
-export function fetchProducts(
-  { category, page }: ProductParams = {},
-  signal?: AbortSignal,
-): Promise<Page<Product>> {
-  const query = new URLSearchParams()
-  if (category) query.set('category', category)
-  if (page && page > 1) query.set('page', String(page))
-
-  const queryString = query.toString()
-  return getJson<Page<Product>>(`/api/products/${queryString ? `?${queryString}` : ''}`, signal)
+export function fetchFacets(params: URLSearchParams, signal?: AbortSignal): Promise<Facets> {
+  return getJson<Facets>(withQuery('/api/filters/', params), signal)
 }
 
 export function fetchProduct(slug: string, signal?: AbortSignal): Promise<ProductDetail> {

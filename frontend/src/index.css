@@ -165,3 +165,90 @@ header a {
   color: #65676b;
   font-weight: normal;
 }
+
+.catalog {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter-sidebar {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.filter-form,
+.option-group {
+  margin-bottom: 16px;
+}
+
+.filter-form h4 {
+  margin: 0 0 6px;
+}
+
+.filter-form input,
+.results-header select {
+  font: inherit;
+  padding: 6px;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+}
+
+.filter-form input[type='search'] {
+  width: 100%;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.price-inputs input {
+  width: 100%;
+  min-width: 0;
+}
+
+.option-group summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.option-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.option-group label.disabled {
+  color: #9a9da1;
+}
+
+.option-count {
+  margin-left: auto;
+  color: #65676b;
+  font-size: 0.85rem;
+}
+
+.reset-filters {
+  width: 100%;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
