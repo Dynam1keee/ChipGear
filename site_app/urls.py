@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 from site_app import settings
 from site_app import views
 
-handler400 = 'site_app.views.error_view'
-handler403 = 'site_app.views.error_view'
-handler404 = 'site_app.views.error_view'
-handler500 = 'site_app.views.error_view'
+handler400 = 'site_app.views.bad_request_view'
+handler403 = 'site_app.views.permission_denied_view'
+handler404 = 'site_app.views.not_found_view'
+handler500 = 'site_app.views.server_error_view'
 
 urlpatterns = [
     #localhost/admin/
