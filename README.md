@@ -137,6 +137,24 @@ Open the application in your browser:
 
 http://127.0.0.1:8000/
 
+## Frontend (React + TypeScript, work in progress)
+
+The new frontend lives in the `frontend/` folder and uses the JSON API under `/api/`. It needs Node.js 20 or newer.
+
+Start Django and the frontend in two terminals:
+
+```bash
+# terminal 1 (project root)
+python manage.py runserver
+
+# terminal 2
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173. Vite forwards `/api` and `/media` to Django on port 8000, so no CORS settings are needed.
+
 ## Running tests
 
 Set the same environment variables as for the development server (at least `DJANGO_SECRET_KEY`) and run:
