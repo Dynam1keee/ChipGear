@@ -1,12 +1,18 @@
 from django.urls import path
 
-from api import views
+from api import cart, views
 
 app_name = 'api'
 
 urlpatterns = [
     # localhost/api/categories/
     path('categories/', views.CategoryListView.as_view(), name='category_list'),
+    # localhost/api/cart/
+    path('cart/', cart.CartView.as_view(), name='cart'),
+    # localhost/api/cart/items/
+    path('cart/items/', cart.CartItemListView.as_view(), name='cart_items'),
+    # localhost/api/cart/items/cart_item_id/
+    path('cart/items/<int:item_id>/', cart.CartItemDetailView.as_view(), name='cart_item'),
     # localhost/api/filters/
     path('filters/', views.FilterFacetsView.as_view(), name='filters'),
     # localhost/api/products/

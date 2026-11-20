@@ -2,6 +2,7 @@ from decimal import Decimal
 
 from rest_framework import serializers
 
+from carts.models import Cart
 from goods.models import Category, Product
 
 
@@ -70,3 +71,41 @@ class ProductQuerySerializer(serializers.Serializer):
         required=False,
         choices=['default', 'price', '-price', 'name', '-name'],
     )
+
+
+# --- cart -------------------------------------------------------------------
+
+class CartProductSerializer(ProductSerializer):
+    """The product inside a cart item: no long description."""
+
+    class Meta(ProductSerializer.Meta):
+        fields = [
+            'id', 'name', 'slug', 'image', 'price', 'discount', 'sell_price',
+            'quantity', 'in_stock', 'category',
+        ]
+
+
+class CartItemSerializer(serializers.ModelSerializer):
+    product = CartProductSerializer()
+    # price of this line: the price after discount times the quantity
+    total = serializers.DecimalField(max_digits=10, decimal_places=2, source='products_price')
+
+    class Meta:
+        model = Cart
+        fields = ['id', 'product', 'quantity', 'total']
+
+
+class CartSerializer(serializers.Serializer):
+    """The whole cart: used for every cart response."""
+
+    items = CartItemSerializer(many=True)
+    total_quantity = serializers.IntegerField()
+    total_price = serializers.DecimalField(max_digits=10, decimal_places=2)
+
+
+class AddToCartSerializer(serializers.Serializer):
+    product_id = serializers.IntegerField(min_value=1)
+
+
+class ChangeQuantitySerializer(serializers.Serializer):
+    quantity = serializers.IntegerField(min_value=1, max_value=32767)  # the limit of the database field
