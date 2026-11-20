@@ -57,3 +57,28 @@ export interface Facets {
   manufacturers: FilterOption[]
   specs: SpecFacet[] // empty when no category is chosen
 }
+
+// The product inside a cart item (no description and manufacturer)
+export type CartProduct = Omit<Product, 'manufacturer' | 'description'>
+
+export interface CartItem {
+  id: number
+  product: CartProduct
+  quantity: number
+  total: string // the price of this line: the price after discount times the quantity
+}
+
+// Every cart response is the whole cart
+export interface Cart {
+  items: CartItem[]
+  total_quantity: number
+  total_price: string
+}
+
+export interface User {
+  id: number
+  username: string
+  first_name: string
+  last_name: string
+  email: string
+}

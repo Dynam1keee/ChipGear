@@ -1,5 +1,15 @@
-import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { fetchCategories, fetchFacets, fetchProduct, fetchProducts } from './api'
+import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import {
+  addToCart,
+  changeCartItem,
+  fetchCart,
+  fetchCategories,
+  fetchFacets,
+  fetchProduct,
+  fetchProducts,
+  removeCartItem,
+} from './api'
+import type { Cart } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
 // The queryKey is the "name" of the data: the same key means the same cached data,
@@ -38,4 +48,38 @@ export function useProduct(slug: string) {
     queryKey: ['product', slug],
     queryFn: ({ signal }) => fetchProduct(slug, signal),
   })
+}
+
+// --- cart ---
+// A query only reads data. A mutation changes data on the server (add, change, remove).
+// Every cart response is the whole cart, so after a mutation we simply put it into the cache
+// under the key ['cart']: everything that shows the cart (the header, the cart page) updates at once.
+
+export function useCart() {
+  return useQuery({
+    queryKey: ['cart'],
+    queryFn: ({ signal }) => fetchCart(signal),
+  })
+}
+
+function useCartMutation<Variables>(mutationFn: (variables: Variables) => Promise<Cart>) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn,
+    onSuccess: (cart) => queryClient.setQueryData(['cart'], cart),
+  })
+}
+
+export function useAddToCart() {
+  return useCartMutation((productId: number) => addToCart(productId))
+}
+
+export function useChangeCartItem() {
+  return useCartMutation(({ itemId, quantity }: { itemId: number; quantity: number }) =>
+    changeCartItem(itemId, quantity),
+  )
+}
+
+export function useRemoveCartItem() {
+  return useCartMutation((itemId: number) => removeCartItem(itemId))
 }

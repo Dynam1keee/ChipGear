@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Product } from '../types'
+import AddToCartButton from './AddToCartButton'
 import Price from './Price'
 
 interface ProductCardProps {
@@ -25,6 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <p className={product.in_stock ? 'stock in-stock' : 'stock out-of-stock'}>
         {product.in_stock ? 'In stock' : 'Out of stock'}
       </p>
+      <AddToCartButton product={product} />
     </article>
   )
 }

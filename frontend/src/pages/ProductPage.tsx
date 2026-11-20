@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { ApiError } from '../api'
+import AddToCartButton from '../components/AddToCartButton'
 import NotFound from '../components/NotFound'
 import Price from '../components/Price'
 import { useProduct } from '../queries'
@@ -39,6 +40,7 @@ export default function ProductPage() {
             {product.in_stock ? `In stock: ${product.quantity}` : 'Out of stock'}
           </p>
           {product.description !== '-' && <p>{product.description}</p>}
+          <AddToCartButton product={product} />
         </div>
       </div>
 
