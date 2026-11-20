@@ -23,6 +23,14 @@ export interface Product {
   category: string // category slug
 }
 
+// A specification value depends on the category (text, number, yes/no, ...)
+export type SpecValue = string | number | boolean | null
+
+// GET /api/products/<slug>/ also sends the specifications of the category
+export interface ProductDetail extends Product {
+  specs: Record<string, SpecValue>
+}
+
 // The shape of every paginated response from DRF
 export interface Page<T> {
   count: number

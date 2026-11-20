@@ -1,26 +1,27 @@
+import { Link } from 'react-router-dom'
 import type { Product } from '../types'
+import Price from './Price'
 
 interface ProductCardProps {
   product: Product
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const hasDiscount = product.discount > 0
+  // Link changes the address without reloading the page
+  const productUrl = `/products/${product.slug}`
 
   return (
     <article className="product-card">
-      {product.image && <img src={product.image} alt={product.name} loading="lazy" />}
-      <h3>{product.name}</h3>
+      {product.image && (
+        <Link to={productUrl}>
+          <img src={product.image} alt={product.name} loading="lazy" />
+        </Link>
+      )}
+      <h3>
+        <Link to={productUrl}>{product.name}</Link>
+      </h3>
       <p className="manufacturer">{product.manufacturer}</p>
-      <p className="price">
-        <strong>${product.sell_price}</strong>
-        {hasDiscount && (
-          <>
-            <s className="price-old">${product.price}</s>
-            <span className="badge">-{product.discount}%</span>
-          </>
-        )}
-      </p>
+      <Price product={product} />
       <p className={product.in_stock ? 'stock in-stock' : 'stock out-of-stock'}>
         {product.in_stock ? 'In stock' : 'Out of stock'}
       </p>
