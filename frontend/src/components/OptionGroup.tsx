@@ -19,6 +19,7 @@ export default function OptionGroup({ title, options, selected, onToggle }: Opti
   return (
     <details className="option-group" open>
       <summary>{title}</summary>
+      <div className="option-list">
       {options.map((option) => {
         const value = String(option.value) // the same text goes into the address
         const checked = selected.includes(value)
@@ -34,10 +35,11 @@ export default function OptionGroup({ title, options, selected, onToggle }: Opti
               onChange={() => onToggle(value)}
             />
             {formatOption(option.value)}
-            <span className="option-count">{option.count}</span>
+            <span className="option-count">({option.count})</span>
           </label>
         )
       })}
+      </div>
     </details>
   )
 }

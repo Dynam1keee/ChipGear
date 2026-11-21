@@ -1,18 +1,10 @@
 import { useSearchParams } from 'react-router-dom'
-import CategoryFilter from '../components/CategoryFilter'
+import Breadcrumbs from '../components/Breadcrumbs'
 import FilterSidebar from '../components/FilterSidebar'
 import Pagination from '../components/Pagination'
 import ProductCard from '../components/ProductCard'
-import { facetParams, parsePage, productParams, setParam } from '../filters'
+import { facetParams, parsePage, productParams } from '../filters'
 import { useCategories, useFacets, useProducts } from '../queries'
-
-const SORT_OPTIONS = [
-  { value: 'default', label: 'Default order' },
-  { value: 'price', label: 'Price: low to high' },
-  { value: '-price', label: 'Price: high to low' },
-  { value: 'name', label: 'Name: A to Z' },
-  { value: '-name', label: 'Name: Z to A' },
-]
 
 export default function CatalogPage() {
   // Everything the user chose lives in the address, for example
@@ -26,11 +18,6 @@ export default function CatalogPage() {
   const productsQuery = useProducts(productParams(searchParams))
   const facetsQuery = useFacets(facetParams(searchParams))
 
-  function handleCategorySelect(slug: string | null) {
-    // A new category starts with no filters (each category has its own specifications)
-    setSearchParams(slug ? { category: slug } : {})
-  }
-
   function handlePageChange(newPage: number) {
     const next = new URLSearchParams(searchParams)
     if (newPage > 1) next.set('page', String(newPage))
@@ -41,13 +28,16 @@ export default function CatalogPage() {
   const { data, error, isPending, isPlaceholderData } = productsQuery
   const facets = facetsQuery.data
 
+  // The title: the name of the category, or "Search results" for a search in all categories
+  const categoryName = categoriesQuery.data?.find((item) => item.slug === category)?.name ?? category
+  const searchText = searchParams.get('q')
+  const title = categoryName ?? 'Search results'
+
   return (
     <>
-      <CategoryFilter
-        categories={categoriesQuery.data ?? []}
-        selected={category}
-        onSelect={handleCategorySelect}
-      />
+      <Breadcrumbs items={[{ label: title }]} />
+      <h2 className="catalog-title">{title}</h2>
+      {searchText && <p className="search-note">Search: &ldquo;{searchText}&rdquo;</p>}
 
       <div className="catalog">
         <aside>
@@ -65,25 +55,6 @@ export default function CatalogPage() {
             <div className={isPlaceholderData ? 'stale' : undefined}>
               <div className="results-header">
                 <p className="count">{data.count} products</p>
-                <select
-                  aria-label="Sort by"
-                  value={searchParams.get('ordering') ?? 'default'}
-                  onChange={(event) =>
-                    setSearchParams(
-                      setParam(
-                        searchParams,
-                        'ordering',
-                        event.target.value === 'default' ? '' : event.target.value,
-                      ),
-                    )
-                  }
-                >
-                  {SORT_OPTIONS.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
               </div>
 
               {data.results.length === 0 && <p>No products found.</p>}
