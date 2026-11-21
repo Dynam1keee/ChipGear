@@ -14,8 +14,9 @@ import {
   logout,
   register,
   removeCartItem,
+  updateProfile,
 } from './api'
-import type { Credentials, NewOrder, Registration } from './api'
+import type { Credentials, NewOrder, Profile, Registration } from './api'
 import type { Cart, User } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
@@ -151,5 +152,14 @@ export function useCreateOrder() {
       void queryClient.invalidateQueries({ queryKey: ['products'] })
       void queryClient.invalidateQueries({ queryKey: ['product'] })
     },
+  })
+}
+
+export function useUpdateProfile() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (profile: Profile) => updateProfile(profile),
+    // The answer of the server is the updated user, so the header shows the new name at once
+    onSuccess: (user) => queryClient.setQueryData(['me'], user),
   })
 }

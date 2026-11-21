@@ -13,7 +13,7 @@ from rest_framework.views import APIView
 
 from api.serializers import UserSerializer
 from carts.utils import merge_guest_cart
-from users.forms import UserLoginForm, UserRegistrationForm
+from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm
 
 
 def form_errors(form):
@@ -46,6 +46,23 @@ class MeView(APIView):
     def get(self, request):
         user = UserSerializer(request.user).data if request.user.is_authenticated else None
         return Response({'user': user})
+
+    def patch(self, request):
+        """PATCH /api/auth/me/ {"first_name": ..., "last_name": ..., "username": ..., "email": ...}"""
+        if not request.user.is_authenticated:
+            return Response({'detail': 'Authentication credentials were not provided.'}, status=403)
+
+        # Only these fields can be changed here; the avatar is not sent as JSON
+        data = {
+            field: request.data.get(field, getattr(request.user, field))
+            for field in ('first_name', 'last_name', 'username', 'email')
+        }
+        form = ProfileForm(data=data, instance=request.user)
+        if not form.is_valid():
+            return Response(form_errors(form), status=400)
+
+        user = form.save()
+        return Response({'user': UserSerializer(user).data})
 
 
 class LoginView(CsrfProtectedView):

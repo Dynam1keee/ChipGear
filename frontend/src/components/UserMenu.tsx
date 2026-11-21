@@ -11,7 +11,7 @@ export default function UserMenu() {
   if (user) {
     return (
       <span className="user-menu">
-        <span>Hi, {user.first_name || user.username}</span>
+        <Link to="/profile">Hi, {user.first_name || user.username}</Link>
         <Link to="/orders">Orders</Link>
         <button type="button" disabled={logout.isPending} onClick={() => logout.mutate()}>
           Log out

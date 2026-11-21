@@ -244,3 +244,51 @@ class CsrfProtectionTests(AuthApiTestCase):
         token = self.strict.cookies['csrftoken'].value
         response = self.strict.post(url, {'product_id': self.cpu.id}, HTTP_X_CSRFTOKEN=token)
         self.assertEqual(response.status_code, 200)
+
+
+class ProfileTests(AuthApiTestCase):
+    def patch_me(self, data, client=None):
+        return (client or self.client).patch(
+            reverse('api:me'), data=json.dumps(data), content_type='application/json'
+        )
+
+    def test_guest_cannot_change_a_profile(self):
+        self.assertEqual(self.patch_me({'first_name': 'Eve'}).status_code, 403)
+
+    def test_user_can_change_own_profile(self):
+        self.login()
+
+        response = self.patch_me({'first_name': 'Alicia', 'last_name': 'Smith', 'email': 'new@example.com'})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['user']['first_name'], 'Alicia')
+        self.alice.refresh_from_db()
+        self.assertEqual((self.alice.first_name, self.alice.last_name, self.alice.email), ('Alicia', 'Smith', 'new@example.com'))
+        self.assertEqual(self.alice.username, 'alice')  # not sent, so not changed
+        self.assertTrue(self.alice.check_password('pass12345'))
+
+    def test_username_must_be_unique(self):
+        User.objects.create_user(username='bob', password='pass12345')
+        self.login()
+
+        response = self.patch_me({'username': 'bob'})
+
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('username', response.json())
+        self.alice.refresh_from_db()
+        self.assertEqual(self.alice.username, 'alice')
+
+    def test_user_stays_logged_in_after_changing_username(self):
+        self.login()
+
+        self.assertEqual(self.patch_me({'username': 'alice2'}).status_code, 200)
+
+        self.assertEqual(self.me()['username'], 'alice2')
+
+    def test_password_cannot_be_changed_here(self):
+        self.login()
+
+        self.patch_me({'password': 'hacked12345'})
+
+        self.alice.refresh_from_db()
+        self.assertTrue(self.alice.check_password('pass12345'))

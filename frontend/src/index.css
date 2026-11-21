@@ -406,3 +406,8 @@ header a {
 .order ul {
   padding-left: 20px;
 }
+
+.success {
+  color: #188038;
+  margin: 0;
+}

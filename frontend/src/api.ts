@@ -182,3 +182,11 @@ export function fetchOrders(signal?: AbortSignal): Promise<Order[]> {
 export function createOrder(order: NewOrder): Promise<Order> {
   return request<Order>('/api/orders/', { method: 'POST', body: order })
 }
+
+// The profile: the name, the username and the email of the logged in user
+export type Profile = Pick<User, 'first_name' | 'last_name' | 'username' | 'email'>
+
+export async function updateProfile(profile: Profile): Promise<User> {
+  const data = await request<{ user: User }>('/api/auth/me/', { method: 'PATCH', body: profile })
+  return data.user
+}
