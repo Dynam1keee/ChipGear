@@ -1,5 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import CartLink from './components/CartLink'
+import HeaderSearch from './components/HeaderSearch'
+import SiteFooter from './components/SiteFooter'
 import NotFound from './components/NotFound'
 import UserMenu from './components/UserMenu'
 import CartPage from './pages/CartPage'
@@ -16,13 +18,14 @@ export default function App() {
   return (
     <div className="app">
       <header className="site-header">
-        <Link to="/">
-          <h1>ChipGear</h1>
+        <Link to="/" className="brand">
+          ChipGear
         </Link>
         <nav className="header-links">
           <UserMenu />
           <CartLink />
         </nav>
+        <HeaderSearch />
       </header>
 
       <main>
@@ -38,6 +41,8 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+
+      <SiteFooter />
     </div>
   )
 }
