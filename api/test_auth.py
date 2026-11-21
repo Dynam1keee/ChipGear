@@ -281,7 +281,9 @@ class ProfileTests(AuthApiTestCase):
     def test_user_stays_logged_in_after_changing_username(self):
         self.login()
 
-        self.assertEqual(self.patch_me({'username': 'alice2'}).status_code, 200)
+        # the profile form requires a last name, and alice has none yet
+        response = self.patch_me({'username': 'alice2', 'last_name': 'Liddell'})
+        self.assertEqual(response.status_code, 200)
 
         self.assertEqual(self.me()['username'], 'alice2')
 
