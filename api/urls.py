@@ -1,6 +1,6 @@
 from django.urls import path
 
-from api import auth, cart, orders, views
+from api import auth, cart, orders, pc_builder, views
 
 app_name = 'api'
 
@@ -19,6 +19,11 @@ urlpatterns = [
     path('cart/items/', cart.CartItemListView.as_view(), name='cart_items'),
     # localhost/api/cart/items/cart_item_id/
     path('cart/items/<int:item_id>/', cart.CartItemDetailView.as_view(), name='cart_item'),
+    # localhost/api/builder/ , builder/<slot>/ , builder/<slot>/options/ , builder/add-to-cart/
+    path('builder/', pc_builder.BuildView.as_view(), name='builder'),
+    path('builder/add-to-cart/', pc_builder.AddBuildToCartView.as_view(), name='builder_add_to_cart'),
+    path('builder/<slug:slot>/', pc_builder.BuildSlotView.as_view(), name='builder_slot'),
+    path('builder/<slug:slot>/options/', pc_builder.SlotOptionsView.as_view(), name='builder_options'),
     # localhost/api/orders/
     path('orders/', orders.OrderListView.as_view(), name='orders'),
     # localhost/api/filters/
