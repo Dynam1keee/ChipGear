@@ -82,3 +82,24 @@ export interface User {
   last_name: string
   email: string
 }
+
+export interface OrderItem {
+  id: number
+  name: string
+  price: string
+  quantity: number
+  total: string
+}
+
+export interface Order {
+  id: number
+  created_timestamp: string
+  status: string
+  phone_number: string
+  requires_delivery: boolean
+  delivery_address: string | null
+  payment_on_get: boolean
+  is_paid: boolean
+  items: OrderItem[]
+  total_price: string
+}

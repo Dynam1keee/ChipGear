@@ -1,4 +1,4 @@
-import type { Cart, Category, Facets, Page, Product, ProductDetail, User } from './types'
+import type { Cart, Category, Facets, Page, Order, Product, ProductDetail, User } from './types'
 
 // An error that remembers the HTTP status (and the JSON the server sent), so the
 // pages can react to 404 or show the reason of a 400
@@ -165,4 +165,20 @@ export async function register(data: Registration): Promise<User> {
 
 export function logout(): Promise<void> {
   return request<void>('/api/auth/logout/', { method: 'POST' })
+}
+
+// Orders (only for logged in users)
+export interface NewOrder {
+  phone_number: string
+  requires_delivery: boolean
+  delivery_address: string
+  payment_on_get: boolean
+}
+
+export function fetchOrders(signal?: AbortSignal): Promise<Order[]> {
+  return request<Order[]>('/api/orders/', { signal })
+}
+
+export function createOrder(order: NewOrder): Promise<Order> {
+  return request<Order>('/api/orders/', { method: 'POST', body: order })
 }

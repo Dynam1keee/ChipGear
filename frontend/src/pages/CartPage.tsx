@@ -90,6 +90,9 @@ export default function CartPage() {
         {cart.total_quantity} {cart.total_quantity === 1 ? 'item' : 'items'}, total:{' '}
         <strong>${cart.total_price}</strong>
       </p>
+      <Link to="/checkout" className="button-link">
+        Checkout
+      </Link>
     </section>
   )
 }

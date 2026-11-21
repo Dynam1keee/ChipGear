@@ -4,8 +4,10 @@ import {
   changeCartItem,
   fetchCart,
   fetchCategories,
+  createOrder,
   fetchFacets,
   fetchMe,
+  fetchOrders,
   fetchProduct,
   fetchProducts,
   login,
@@ -13,7 +15,7 @@ import {
   register,
   removeCartItem,
 } from './api'
-import type { Credentials, Registration } from './api'
+import type { Credentials, NewOrder, Registration } from './api'
 import type { Cart, User } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
@@ -126,4 +128,28 @@ export function useLogout() {
 
 export function useRegister() {
   return useAuthMutation((data: Registration) => register(data), (user) => user)
+}
+
+// --- orders ---
+
+export function useOrders(enabled: boolean) {
+  return useQuery({
+    queryKey: ['orders'],
+    queryFn: ({ signal }) => fetchOrders(signal),
+    enabled, // guests have no orders: the server would answer 403
+  })
+}
+
+// An order takes the products from the cart and from the stock, so both are changed on the server
+export function useCreateOrder() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (order: NewOrder) => createOrder(order),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ['cart'] })
+      void queryClient.invalidateQueries({ queryKey: ['orders'] })
+      void queryClient.invalidateQueries({ queryKey: ['products'] })
+      void queryClient.invalidateQueries({ queryKey: ['product'] })
+    },
+  })
 }

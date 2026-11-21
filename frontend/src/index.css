@@ -367,3 +367,42 @@ header a {
 .form-field input[aria-invalid='true'] {
   border-color: #d93025;
 }
+
+.button-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.check-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-field textarea {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+}
+
+.order {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.order header {
+  display: flex;
+  gap: 16px;
+}
+
+.order ul {
+  padding-left: 20px;
+}
