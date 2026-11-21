@@ -318,5 +318,133 @@
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2, HDMI, DisplayPort, 2.5 Gb Ethernet"
         }
+    },
+    {
+        "model": "goods.product",
+        "pk": 121,
+        "fields": {
+            "name": "ASUS ROG Strix B550-F Gaming",
+            "slug": "asus-rog-strix-b550-f-gaming",
+            "manufacturer": "ASUS",
+            "description": "An ATX motherboard featuring the AMD B550 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, a PCIe 4.0 x16 slot, and 2.5 Gb Ethernet.",
+            "image": "images/image_not_found.jpg",
+            "price": 189.0,
+            "discount": 0,
+            "quantity": 9,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.motherboard",
+        "pk": 20,
+        "fields": {
+            "product_ptr": 121,
+            "socket": "AM4",
+            "chipset": "AMD B550",
+            "form_factor": "ATX",
+            "memory_slots": 4,
+            "max_memory": "128 GB",
+            "memory_type": "DDR4",
+            "expansion_slots": 3,
+            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "onboard_graphics": false,
+            "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, 2.5 Gb Ethernet"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 122,
+        "fields": {
+            "name": "MSI MAG B550M Mortar",
+            "slug": "msi-mag-b550m-mortar",
+            "manufacturer": "MSI",
+            "description": "A Micro-ATX motherboard featuring the AMD B550 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, a PCIe 4.0 x16 slot, and 2.5 Gb Ethernet.",
+            "image": "images/image_not_found.jpg",
+            "price": 129.0,
+            "discount": 0,
+            "quantity": 14,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.motherboard",
+        "pk": 21,
+        "fields": {
+            "product_ptr": 122,
+            "socket": "AM4",
+            "chipset": "AMD B550",
+            "form_factor": "Micro ATX",
+            "memory_slots": 4,
+            "max_memory": "128 GB",
+            "memory_type": "DDR4",
+            "expansion_slots": 3,
+            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "onboard_graphics": false,
+            "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, 2.5 Gb Ethernet"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 123,
+        "fields": {
+            "name": "Gigabyte X570 AORUS Elite",
+            "slug": "gigabyte-x570-aorus-elite",
+            "manufacturer": "Gigabyte",
+            "description": "An ATX motherboard featuring the AMD X570 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, PCIe 4.0 slots, and Gigabit Ethernet.",
+            "image": "images/image_not_found.jpg",
+            "price": 199.0,
+            "discount": 0,
+            "quantity": 8,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.motherboard",
+        "pk": 22,
+        "fields": {
+            "product_ptr": 123,
+            "socket": "AM4",
+            "chipset": "AMD X570",
+            "form_factor": "ATX",
+            "memory_slots": 4,
+            "max_memory": "128 GB",
+            "memory_type": "DDR4",
+            "expansion_slots": 4,
+            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "onboard_graphics": false,
+            "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, Gigabit Ethernet"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 124,
+        "fields": {
+            "name": "ASUS ROG Strix B660-I Gaming WiFi",
+            "slug": "asus-rog-strix-b660-i-gaming-wifi",
+            "manufacturer": "ASUS",
+            "description": "A Mini-ITX motherboard featuring the Intel B660 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, a PCIe 5.0 x16 slot, Wi-Fi 6, and 2.5 Gb Ethernet.",
+            "image": "images/image_not_found.jpg",
+            "price": 219.0,
+            "discount": 0,
+            "quantity": 6,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.motherboard",
+        "pk": 23,
+        "fields": {
+            "product_ptr": 124,
+            "socket": "LGA 1700",
+            "chipset": "Intel B660",
+            "form_factor": "Mini-ITX",
+            "memory_slots": 2,
+            "max_memory": "64 GB",
+            "memory_type": "DDR5",
+            "expansion_slots": 1,
+            "storage_interfaces": "M.2 NVMe x2, PCIe 5.0 x16, SATA 6Gb/s",
+            "onboard_graphics": false,
+            "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet, Wi-Fi 6"
+        }
     }
 ]

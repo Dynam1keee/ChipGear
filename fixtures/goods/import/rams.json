@@ -318,5 +318,133 @@
             "rgb": true,
             "dimensions": "128 x 42 x 39 mm"
         }
+    },
+    {
+        "model": "goods.product",
+        "pk": 125,
+        "fields": {
+            "name": "Corsair Vengeance 32GB (2x16GB) DDR5 5600MHz CL36 DIMM RAM",
+            "slug": "operativna-pamjat-corsair-vengeance-32gb-ddr5-5600mhz-cl36-dimm",
+            "manufacturer": "Corsair",
+            "description": "The Corsair Vengeance 32GB (2x16GB) DDR5 5600MHz CL36 kit is a fast memory kit for modern gaming and productivity PCs.",
+            "image": "images/image_not_found.jpg",
+            "price": "119.00",
+            "discount": 0,
+            "quantity": 16,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.ram",
+        "pk": 11,
+        "fields": {
+            "product_ptr": 125,
+            "capacity": "32GB",
+            "type": "DDR5",
+            "speed": 5600,
+            "modules": 2,
+            "voltage": 1.25,
+            "latency": "CL36",
+            "heat_spreader": true,
+            "ecc": false,
+            "rgb": false,
+            "dimensions": "133 x 34 x 7 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 126,
+        "fields": {
+            "name": "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz CL30 DIMM RAM",
+            "slug": "operativna-pamjat-gskill-trident-z5-rgb-32gb-ddr5-6000mhz-cl30-dimm",
+            "manufacturer": "G.Skill",
+            "description": "The G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz CL30 kit offers high speed and low latency with customizable RGB lighting.",
+            "image": "images/image_not_found.jpg",
+            "price": "159.00",
+            "discount": 5,
+            "quantity": 10,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.ram",
+        "pk": 12,
+        "fields": {
+            "product_ptr": 126,
+            "capacity": "32GB",
+            "type": "DDR5",
+            "speed": 6000,
+            "modules": 2,
+            "voltage": 1.35,
+            "latency": "CL30",
+            "heat_spreader": true,
+            "ecc": false,
+            "rgb": true,
+            "dimensions": "135 x 44 x 8 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 127,
+        "fields": {
+            "name": "Kingston Fury Beast 16GB (2x8GB) DDR5 5200MHz CL40 DIMM RAM",
+            "slug": "operativna-pamjat-kingston-fury-beast-16gb-ddr5-5200mhz-cl40-dimm",
+            "manufacturer": "Kingston",
+            "description": "The Kingston Fury Beast 16GB (2x8GB) DDR5 5200MHz CL40 kit is an affordable way to move to DDR5 memory.",
+            "image": "images/image_not_found.jpg",
+            "price": "79.00",
+            "discount": 0,
+            "quantity": 22,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.ram",
+        "pk": 13,
+        "fields": {
+            "product_ptr": 127,
+            "capacity": "16GB",
+            "type": "DDR5",
+            "speed": 5200,
+            "modules": 2,
+            "voltage": 1.25,
+            "latency": "CL40",
+            "heat_spreader": true,
+            "ecc": false,
+            "rgb": false,
+            "dimensions": "133 x 34 x 7 mm"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 128,
+        "fields": {
+            "name": "Crucial 32GB (2x16GB) DDR5 4800MHz CL40 DIMM RAM",
+            "slug": "operativna-pamjat-crucial-32gb-ddr5-4800mhz-cl40-dimm",
+            "manufacturer": "Crucial",
+            "description": "The Crucial 32GB (2x16GB) DDR5 4800MHz CL40 kit is a reliable memory kit for everyday work and gaming.",
+            "image": "images/image_not_found.jpg",
+            "price": "109.00",
+            "discount": 0,
+            "quantity": 18,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.ram",
+        "pk": 14,
+        "fields": {
+            "product_ptr": 128,
+            "capacity": "32GB",
+            "type": "DDR5",
+            "speed": 4800,
+            "modules": 2,
+            "voltage": 1.1,
+            "latency": "CL40",
+            "heat_spreader": false,
+            "ecc": false,
+            "rgb": false,
+            "dimensions": "133 x 31 x 8 mm"
+        }
     }
 ]
