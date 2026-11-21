@@ -4,6 +4,7 @@ import HeaderSearch from './components/HeaderSearch'
 import SiteFooter from './components/SiteFooter'
 import NotFound from './components/NotFound'
 import UserMenu from './components/UserMenu'
+import BuilderPage from './pages/BuilderPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
 import LoginPage from './pages/LoginPage'
@@ -30,6 +31,7 @@ export default function App() {
           ChipGear
         </Link>
         <nav className="header-links">
+          <Link to="/builder">PC Builder</Link>
           <UserMenu />
           <CartLink />
         </nav>
@@ -41,6 +43,7 @@ export default function App() {
           <Route path="/" element={<HomeOrCatalog />} />
           <Route path="/products/:slug" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/builder" element={<BuilderPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/profile" element={<ProfilePage />} />

@@ -103,3 +103,27 @@ export interface Order {
   items: OrderItem[]
   total_price: string
 }
+
+// --- PC builder ---
+
+export type SlotName = 'cpu' | 'motherboard' | 'ram' | 'gpu' | 'storage' | 'psu' | 'case' | 'cooling'
+
+export interface BuildProblem {
+  slots: SlotName[]
+  message: string
+}
+
+// GET /api/builder/ : the parts in the slots, the problems, the price and the power
+export interface Build {
+  slots: Record<SlotName, Product | null>
+  problems: BuildProblem[]
+  total_price: string
+  estimated_power: number | null
+  recommended_psu: number | null
+}
+
+// A part that can be put into a slot: "compatible" and the "reasons" when it does not fit
+export interface PartOption extends Product {
+  compatible: boolean
+  reasons: string[]
+}

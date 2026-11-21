@@ -1,4 +1,4 @@
-import type { Cart, Category, Facets, Page, Order, Product, ProductDetail, User } from './types'
+import type { Build, Cart, Category, Facets, Page, Order, PartOption, Product, ProductDetail, SlotName, User } from './types'
 
 // An error that remembers the HTTP status (and the JSON the server sent), so the
 // pages can react to 404 or show the reason of a 400
@@ -59,7 +59,7 @@ async function csrfToken(): Promise<string | null> {
 }
 
 interface RequestOptions {
-  method?: 'GET' | 'POST' | 'PATCH' | 'DELETE'
+  method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
   body?: unknown
   signal?: AbortSignal
 }
@@ -189,4 +189,30 @@ export type Profile = Pick<User, 'first_name' | 'last_name' | 'username' | 'emai
 export async function updateProfile(profile: Profile): Promise<User> {
   const data = await request<{ user: User }>('/api/auth/me/', { method: 'PATCH', body: profile })
   return data.user
+}
+
+// PC builder (only for logged in users)
+export function fetchBuild(signal?: AbortSignal): Promise<Build> {
+  return request<Build>('/api/builder/', { signal })
+}
+
+export function putPart(slot: SlotName, productId: number): Promise<Build> {
+  return request<Build>(`/api/builder/${slot}/`, { method: 'PUT', body: { product_id: productId } })
+}
+
+export function clearSlot(slot: SlotName): Promise<Build> {
+  return request<Build>(`/api/builder/${slot}/`, { method: 'DELETE' })
+}
+
+export function clearBuild(): Promise<Build> {
+  return request<Build>('/api/builder/', { method: 'DELETE' })
+}
+
+export function fetchOptions(slot: SlotName, signal?: AbortSignal): Promise<PartOption[]> {
+  return request<PartOption[]>(`/api/builder/${slot}/options/`, { signal })
+}
+
+// The parts go to the cart; the answer is the whole cart
+export function addBuildToCart(): Promise<Cart> {
+  return request<Cart>('/api/builder/add-to-cart/', { method: 'POST' })
 }

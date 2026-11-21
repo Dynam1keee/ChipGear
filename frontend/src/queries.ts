@@ -4,20 +4,26 @@ import {
   changeCartItem,
   fetchCart,
   fetchCategories,
+  addBuildToCart,
+  clearBuild,
+  clearSlot,
   createOrder,
   fetchFacets,
+  fetchBuild,
   fetchMe,
+  fetchOptions,
   fetchOrders,
   fetchProduct,
   fetchProducts,
   login,
   logout,
   register,
+  putPart,
   removeCartItem,
   updateProfile,
 } from './api'
 import type { Credentials, NewOrder, Profile, Registration } from './api'
-import type { Cart, User } from './types'
+import type { Build, Cart, SlotName, User } from './types'
 
 // useQuery loads data and gives back { data, error, isPending, ... }.
 // The queryKey is the "name" of the data: the same key means the same cached data,
@@ -115,6 +121,9 @@ function useAuthMutation<Variables, Result>(
     onSuccess: (result) => {
       queryClient.setQueryData(['me'], getUser(result))
       void queryClient.invalidateQueries({ queryKey: ['cart'] })
+      // the builder and the orders belong to a user
+      void queryClient.invalidateQueries({ queryKey: ['builder'] })
+      void queryClient.invalidateQueries({ queryKey: ['orders'] })
     },
   })
 }
@@ -161,5 +170,57 @@ export function useUpdateProfile() {
     mutationFn: (profile: Profile) => updateProfile(profile),
     // The answer of the server is the updated user, so the header shows the new name at once
     onSuccess: (user) => queryClient.setQueryData(['me'], user),
+  })
+}
+
+// --- PC builder ---
+// All the builder queries start with 'builder', so one invalidate refreshes the build and the options.
+
+export function useBuild(enabled: boolean) {
+  return useQuery({
+    queryKey: ['builder'],
+    queryFn: ({ signal }) => fetchBuild(signal),
+    enabled,
+  })
+}
+
+export function useSlotOptions(slot: SlotName | null) {
+  return useQuery({
+    queryKey: ['builder', 'options', slot],
+    queryFn: ({ signal }) => fetchOptions(slot as SlotName, signal),
+    enabled: slot !== null,
+  })
+}
+
+// Every change of the build answers with the whole build. We keep it, and the lists of
+// options are asked again, because what fits depends on the chosen parts.
+function useBuildMutation<Variables>(mutationFn: (variables: Variables) => Promise<Build>) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn,
+    onSuccess: (build) => {
+      queryClient.setQueryData(['builder'], build)
+      void queryClient.invalidateQueries({ queryKey: ['builder', 'options'] })
+    },
+  })
+}
+
+export function usePutPart() {
+  return useBuildMutation(({ slot, productId }: { slot: SlotName; productId: number }) => putPart(slot, productId))
+}
+
+export function useClearSlot() {
+  return useBuildMutation((slot: SlotName) => clearSlot(slot))
+}
+
+export function useClearBuild() {
+  return useBuildMutation(() => clearBuild())
+}
+
+export function useAddBuildToCart() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: () => addBuildToCart(),
+    onSuccess: (cart) => queryClient.setQueryData(['cart'], cart),
   })
 }
