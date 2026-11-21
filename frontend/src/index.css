@@ -67,26 +67,103 @@ button:disabled {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: #e5e5e5;
+  border: 1px solid #e5e5e5;
 }
 
 .product-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 16px;
+  background: var(--block-bg);
+}
+
+.product-card-image {
+  position: relative;
+  display: block;
+  padding-top: 24px;
 }
 
 .product-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1.15;
   object-fit: contain;
 }
 
+/* The yellow square in the corner of the picture */
+.discount-badge {
+  position: absolute;
+  top: 0;
+  right: -16px;
+  padding: 8px 14px;
+  background: var(--sale);
+  color: #000;
+  font-weight: 700;
+}
+
 .product-card h3 {
-  margin: 8px 0 4px;
-  font-size: 1rem;
+  margin: 16px 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.product-card h3 a,
+.product-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.product-card-description {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.product-card-buy {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.card-price s {
+  color: #6c757d;
+}
+
+.card-price strong {
+  font-size: 1.4rem;
+}
+
+.card-price .sale {
+  color: var(--price);
+}
+
+.product-card .add-to-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.product-card .icon-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.product-card .stock {
+  margin: 8px 0 0;
 }
 
 .manufacturer {
@@ -110,7 +187,7 @@ button:disabled {
 }
 
 .in-stock {
-  color: #188038;
+  color: var(--success);
 }
 
 .out-of-stock {
