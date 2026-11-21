@@ -1,7 +1,7 @@
-import type { FormEvent } from 'react'
 import { clearFilters, hasActiveFilters, setParam, toggleValue } from '../filters'
 import type { Facets } from '../types'
 import OptionGroup from './OptionGroup'
+import PriceFilter from './PriceFilter'
 
 interface FilterSidebarProps {
   facets: Facets
@@ -22,14 +22,6 @@ export default function FilterSidebar({ facets, params, onChange }: FilterSideba
   const maxPrice = params.get('max_price') ?? ''
   const ordering = params.get('ordering') ?? 'default'
 
-  function handlePrice(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const min = String(data.get('min_price') ?? '')
-    const max = String(data.get('max_price') ?? '')
-    onChange(setParam(setParam(params, 'min_price', min), 'max_price', max))
-  }
-
   return (
     <details className="filter-sidebar" open>
       <summary className="filters-title">Filters</summary>
@@ -48,36 +40,12 @@ export default function FilterSidebar({ facets, params, onChange }: FilterSideba
         ))}
       </fieldset>
 
-      <form onSubmit={handlePrice} className="filter-form">
-        <h4>Price, $</h4>
-        <div className="price-inputs">
-          <label>
-            From
-            <input
-              key={`min-${minPrice}`}
-              name="min_price"
-              type="number"
-              min={0}
-              step="any"
-              placeholder={String(facets.price_range.min)}
-              defaultValue={minPrice}
-            />
-          </label>
-          <label>
-            To
-            <input
-              key={`max-${maxPrice}`}
-              name="max_price"
-              type="number"
-              min={0}
-              step="any"
-              placeholder={String(facets.price_range.max)}
-              defaultValue={maxPrice}
-            />
-          </label>
-        </div>
-        <button type="submit">Apply</button>
-      </form>
+      <PriceFilter
+        range={facets.price_range}
+        min={minPrice}
+        max={maxPrice}
+        onApply={(min, max) => onChange(setParam(setParam(params, 'min_price', min), 'max_price', max))}
+      />
 
       <OptionGroup
         title="Manufacturer"

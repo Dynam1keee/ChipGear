@@ -1007,3 +1007,89 @@ details[open] > summary::after {
   align-items: center;
   gap: 8px;
 }
+
+/* --- price slider with two handles --- */
+
+.range-slider {
+  position: relative;
+  height: 24px;
+  margin: 12px 10px 4px;
+}
+
+.range-track,
+.range-fill {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 2px;
+}
+
+.range-track {
+  left: 0;
+  right: 0;
+  background: #dee2e6;
+}
+
+.range-fill {
+  background: #212529;
+}
+
+.range-slider input[type='range'] {
+  position: absolute;
+  left: -10px;
+  width: calc(100% + 20px);
+  top: 0;
+  height: 24px;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.range-slider input[type='range']::-webkit-slider-runnable-track {
+  background: none;
+  height: 24px;
+}
+
+.range-slider input[type='range']::-moz-range-track {
+  background: none;
+}
+
+.range-slider input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 0;
+  background: #8a9099;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.range-slider input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 0;
+  background: #8a9099;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.crumb-select {
+  font: inherit;
+  color: inherit;
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.crumb-select:hover,
+.crumb-select:focus-visible {
+  border-color: #adb5bd;
+}

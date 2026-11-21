@@ -35,7 +35,21 @@ export default function CatalogPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: title }]} />
+      <Breadcrumbs
+        items={[
+          category && categoriesQuery.data
+            ? {
+                label: title,
+                select: {
+                  value: category,
+                  options: categoriesQuery.data.map((item) => ({ value: item.slug, label: item.name })),
+                  // A new category starts with no filters (each category has its own specifications)
+                  onChange: (slug) => setSearchParams({ category: slug }),
+                },
+              }
+            : { label: title },
+        ]}
+      />
       <h2 className="catalog-title">{title}</h2>
       {searchText && <p className="search-note">Search: &ldquo;{searchText}&rdquo;</p>}
 
