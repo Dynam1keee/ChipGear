@@ -32,9 +32,9 @@ export function formErrors(error: unknown): Record<string, string[]> {
   if (error instanceof ApiError && error.status === 400 && error.details && typeof error.details === 'object') {
     const result: Record<string, string[]> = {}
     for (const [field, messages] of Object.entries(error.details as Record<string, unknown>)) {
-      if (Array.isArray(messages)) {
-        result[field] = messages.filter((message): message is string => typeof message === 'string')
-      }
+      // DRF gives a list of messages, but sometimes a single string
+      const list = Array.isArray(messages) ? messages : [messages]
+      result[field] = list.filter((message): message is string => typeof message === 'string')
     }
     return result
   }

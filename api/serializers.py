@@ -160,5 +160,5 @@ class CreateOrderSerializer(serializers.Serializer):
 
     def validate(self, data):
         if data['requires_delivery'] and not data['delivery_address'].strip():
-            raise serializers.ValidationError({'delivery_address': 'Enter the delivery address.'})
+            raise serializers.ValidationError({'delivery_address': ['Enter the delivery address.']})
         return data

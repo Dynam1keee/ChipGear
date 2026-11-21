@@ -35,7 +35,7 @@ class OrderListView(APIView):
         with transaction.atomic():
             cart_items = list(Cart.objects.filter(user=request.user).select_related('product').order_by('id'))
             if not cart_items:
-                raise serializers.ValidationError({'non_field_errors': 'Your cart is empty.'})
+                raise serializers.ValidationError({'non_field_errors': ['Your cart is empty.']})
 
             # Lock the products, so two orders at the same time cannot take the same stock
             products = {
@@ -58,7 +58,7 @@ class OrderListView(APIView):
                 if product.quantity < item.quantity:
                     # Raising inside atomic() cancels everything, including the order
                     raise serializers.ValidationError({
-                        'non_field_errors': f'Not enough "{product.name}" in stock. Available: {product.quantity}.'
+                        'non_field_errors': [f'Not enough "{product.name}" in stock. Available: {product.quantity}.']
                     })
                 OrderItem.objects.create(
                     order=order,
