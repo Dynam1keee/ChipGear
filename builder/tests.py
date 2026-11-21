@@ -98,6 +98,13 @@ class RuleTests(SimpleTestCase):
         self.assertEqual(self.messages({'cpu': cpu('LGA 1700'), 'cooling': cooler()}), [])
         self.assertEqual(len(self.messages({'cpu': cpu('sWRX8'), 'cooling': cooler()})), 1)
 
+    def test_a_part_of_a_water_loop_is_not_a_cooler(self):
+        radiator = cooler('Custom liquid-cooling loops with compatible fittings and 120 mm fans')
+        self.assertFalse(rules.is_cpu_cooler(radiator))
+        # one message, with or without a processor
+        self.assertEqual(len(self.messages({'cooling': radiator})), 1)
+        self.assertEqual(len(self.messages({'cpu': cpu(), 'cooling': radiator})), 1)
+
     def test_power(self):
         # 125 + 300 + 150 = 575 W, with the margin 690 W
         parts = {'cpu': cpu(tdp=125), 'gpu': gpu('8-pin x 2')}
@@ -162,12 +169,12 @@ class CheckBuilderDataTests(TestCase):
             call_command('check_builder_data')
         self.assertIn('Cube', str(context.exception))
 
-    def test_cooler_without_sockets_is_reported(self):
+    def test_cooler_without_sockets_is_only_a_note(self):
         CoolingSystem.objects.create(
-            name='Cooler', slug='cooler', manufacturer='Acme', price=10, quantity=1, category=self.category,
+            name='Radiator', slug='radiator', manufacturer='Acme', price=10, quantity=1, category=self.category,
             type='Air', fan_size=120, bearing_type='x', airflow=1, noise_level=1, dimensions='1 mm',
-            compatibility='universal',
+            compatibility='Custom liquid-cooling loops',
         )
-        with self.assertRaises(CommandError) as context:
-            call_command('check_builder_data')
-        self.assertIn('Cooler', str(context.exception))
+        out = StringIO()
+        call_command('check_builder_data', stdout=out)
+        self.assertIn('Note: "Radiator"', out.getvalue())

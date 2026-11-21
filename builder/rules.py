@@ -130,10 +130,23 @@ def _case_rule(parts):
         return f'The {board.form_factor} motherboard does not fit into the "{case.form_factor}" case.'
 
 
+def is_cpu_cooler(cooling):
+    """
+    A processor cooler lists the sockets it supports. Parts of custom water loops
+    (radiators and so on) do not, so the builder does not use them as a cooler.
+    """
+    return bool(cooling_sockets(cooling.compatibility))
+
+
 def _cooling_rule(parts):
     cpu, cooling = parts['cpu'], parts['cooling']
-    if normalize(cpu.socket) not in cooling_sockets(cooling.compatibility):
+    if is_cpu_cooler(cooling) and normalize(cpu.socket) not in cooling_sockets(cooling.compatibility):
         return f'The cooler does not support the {cpu.socket} socket.'
+
+
+def _not_a_cooler_rule(parts):
+    if not is_cpu_cooler(parts['cooling']):
+        return 'This is not a processor cooler (it has no list of supported sockets).'
 
 
 def _power_rule(parts):
@@ -147,6 +160,7 @@ RULES = [
     (('cpu', 'motherboard'), _socket_rule),
     (('ram', 'motherboard'), _memory_rule),
     (('motherboard', 'case'), _case_rule),
+    (('cooling',), _not_a_cooler_rule),
     (('cpu', 'cooling'), _cooling_rule),
     # the power depends on the processor and the graphics card, if they are chosen
     (('psu',), _power_rule),

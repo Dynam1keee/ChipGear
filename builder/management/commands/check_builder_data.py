@@ -22,8 +22,9 @@ class Command(BaseCommand):
                 problems.append(f'Motherboard "{board.name}": unknown form factor "{board.form_factor}"')
 
         for cooling in models.CoolingSystem.objects.all():
-            if not rules.cooling_sockets(cooling.compatibility):
-                problems.append(f'Cooler "{cooling.name}": no sockets found in "{cooling.compatibility}"')
+            if not rules.is_cpu_cooler(cooling):
+                # Not an error: for example a radiator of a custom water loop
+                self.stdout.write(f'Note: "{cooling.name}" has no sockets, so it is not offered as a cooler.')
 
         for gpu in models.GraphicsCard.objects.all():
             if 'pin' not in gpu.power_connector.lower():
