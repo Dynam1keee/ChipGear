@@ -4,6 +4,7 @@ from rest_framework import serializers
 
 from carts.models import Cart
 from goods.models import Category, Product
+from orders.models import Order, OrderItem
 from users.models import User
 
 
@@ -118,3 +119,46 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'email']
+
+
+# --- orders -----------------------------------------------------------------
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    total = serializers.SerializerMethodField()
+
+    class Meta:
+        model = OrderItem
+        fields = ['id', 'name', 'price', 'quantity', 'total']
+
+    def get_total(self, item):
+        return f'{item.products_price():.2f}'
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(source='orderitem_set', many=True, read_only=True)
+    total_price = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Order
+        fields = [
+            'id', 'created_timestamp', 'status', 'phone_number', 'requires_delivery',
+            'delivery_address', 'payment_on_get', 'is_paid', 'items', 'total_price',
+        ]
+
+    def get_total_price(self, order):
+        # orderitem_set is prefetched, so this does not make extra queries
+        return f'{sum(item.products_price() for item in order.orderitem_set.all()):.2f}'
+
+
+class CreateOrderSerializer(serializers.Serializer):
+    phone_number = serializers.RegexField(
+        r'^\d{10}$', error_messages={'invalid': 'Phone number must be 10 digits.'}
+    )
+    requires_delivery = serializers.BooleanField(default=False)
+    delivery_address = serializers.CharField(required=False, allow_blank=True, default='')
+    payment_on_get = serializers.BooleanField(default=False)
+
+    def validate(self, data):
+        if data['requires_delivery'] and not data['delivery_address'].strip():
+            raise serializers.ValidationError({'delivery_address': 'Enter the delivery address.'})
+        return data
