@@ -2,8 +2,9 @@
 // They never change the given URLSearchParams: they return a new one.
 // Any change of a filter removes "page", because the user should see the first page again.
 
-// Parameters that are not filters
-const NOT_FILTERS = ['category', 'page', 'ordering']
+// Parameters that are not filters: the category and the search text say WHAT we look at,
+// the page is a position. The sorting is not here, so the reset button also resets it.
+const NOT_FILTERS = ['category', 'q', 'page']
 
 // Add the value if it is not chosen yet, remove it if it is (a checkbox was clicked)
 export function toggleValue(params: URLSearchParams, name: string, value: string): URLSearchParams {
@@ -26,14 +27,16 @@ export function setParam(params: URLSearchParams, name: string, value: string): 
   return next
 }
 
+// True when there is something to reset: a filter or a sorting
 export function hasActiveFilters(params: URLSearchParams): boolean {
   return Array.from(params.keys()).some((name) => !NOT_FILTERS.includes(name))
 }
 
-// Remove all the filters, but keep the category and the sorting
+// Remove all the filters and the sorting, but keep the category and the search text
+// (without both of them the address would be "/", which is the home page)
 export function clearFilters(params: URLSearchParams): URLSearchParams {
   const next = new URLSearchParams()
-  for (const name of ['category', 'ordering']) {
+  for (const name of ['category', 'q']) {
     const value = params.get(name)
     if (value) next.set(name, value)
   }
