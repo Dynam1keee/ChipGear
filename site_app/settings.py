@@ -130,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'EET' # 'UTC'
+TIME_ZONE = 'Europe/Kyiv'  # same offset and DST as EET; a real zone name also exists on minimal Linux systems
 
 USE_I18N = True
 
