@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { errorText } from '../api'
 import { useCart, useChangeCartItem, useRemoveCartItem } from '../queries'
 import type { CartItem } from '../types'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 interface CartItemRowProps {
   item: CartItem
@@ -60,6 +61,7 @@ function CartItemRow({ item, busy, onChange, onRemove }: CartItemRowProps) {
 }
 
 export default function CartPage() {
+  useDocumentTitle('Cart - ChipGear')
   const { data: cart, error, isPending, isError } = useCart()
   const changeItem = useChangeCartItem()
   const removeItem = useRemoveCartItem()

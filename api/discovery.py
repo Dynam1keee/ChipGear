@@ -4,13 +4,15 @@ Product discovery for the home page and the product page.
 GET  /api/top-sales/                 - the best selling products (empty until there are enough sales)
 GET  /api/products/<slug>/related/   - products that are bought together with this one
 POST /api/products/<slug>/view/      - remember that the current visitor has opened this product
+GET  /api/search-suggestions/        - up to 4 products for the search box (?q=text, optional ?category=slug)
 GET  /api/recently-viewed/           - the products the visitor has opened lately, the newest first
                                        (?exclude=<slug> leaves one product out)
 
 Recently viewed products of a logged in user are kept in the database (RecentlyViewed),
 the ones of a guest in the session.
 """
-from django.db.models import Case, Count, IntegerField, Sum, When
+from django.db.models import Case, Count, IntegerField, OuterRef, Subquery, Sum, Value, When
+from django.db.models.functions import Coalesce
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -107,4 +109,32 @@ class RecentlyViewedView(APIView):
             skip = Product.objects.filter(slug=exclude).values_list('pk', flat=True).first()
             ids = [pk for pk in ids if pk != skip]
         products = products_by_ids(ids[:HISTORY_LIMIT])
+        return Response(ProductSerializer(products, many=True).data)
+
+
+SUGGESTIONS_LIMIT = 4
+SUGGESTIONS_MIN_LENGTH = 2
+
+
+class SearchSuggestionsView(APIView):
+    """The products in stock whose name contains the text, the best sellers first."""
+
+    def get(self, request):
+        text = request.query_params.get('q', '').strip()
+        category = request.query_params.get('category', '').strip()
+        if len(text) < SUGGESTIONS_MIN_LENGTH:
+            return Response([])
+
+        sold = (
+            OrderItem.objects.filter(product=OuterRef('pk'))
+            .values('product')
+            .annotate(total=Sum('quantity'))
+            .values('total')[:1]
+        )
+        products = Product.objects.filter(name__icontains=text, quantity__gt=0).select_related('category')
+        if category:
+            products = products.filter(category__slug=category)
+        products = products.annotate(
+            sales=Coalesce(Subquery(sold, output_field=IntegerField()), Value(0))
+        ).order_by('-sales', 'name')[:SUGGESTIONS_LIMIT]
         return Response(ProductSerializer(products, many=True).data)

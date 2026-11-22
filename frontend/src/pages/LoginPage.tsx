@@ -4,8 +4,10 @@ import { formErrors } from '../api'
 import FormField from '../components/FormField'
 import { safeNext } from '../safeNext'
 import { useLogin } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 export default function LoginPage() {
+  useDocumentTitle('Log in - ChipGear')
   const login = useLogin()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()

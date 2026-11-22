@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { formErrors } from '../api'
 import FormField from '../components/FormField'
 import { useMe, useUpdateProfile } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 export default function ProfilePage() {
+  useDocumentTitle('Profile - ChipGear')
   const { data: user, isPending } = useMe()
   const update = useUpdateProfile()
   const errors = formErrors(update.error)

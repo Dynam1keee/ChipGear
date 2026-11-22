@@ -4,8 +4,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { formErrors } from '../api'
 import FormField from '../components/FormField'
 import { useCart, useCreateOrder, useMe } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 export default function CheckoutPage() {
+  useDocumentTitle('Order placement - ChipGear')
   const { data: user, isPending: userPending } = useMe()
   const { data: cart, error: cartError, isPending: cartPending } = useCart()
   const createOrder = useCreateOrder()

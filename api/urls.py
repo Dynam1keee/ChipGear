@@ -30,7 +30,8 @@ urlpatterns = [
     path('filters/', views.FilterFacetsView.as_view(), name='filters'),
     # localhost/api/products/
     path('products/', views.ProductListView.as_view(), name='product_list'),
-    # localhost/api/top-sales/ , recently-viewed/
+    # localhost/api/search-suggestions/ , top-sales/ , recently-viewed/
+    path('search-suggestions/', discovery.SearchSuggestionsView.as_view(), name='search_suggestions'),
     path('top-sales/', discovery.TopSalesView.as_view(), name='top_sales'),
     path('recently-viewed/', discovery.RecentlyViewedView.as_view(), name='recently_viewed'),
     # localhost/api/products/product_slug/related/ , view/

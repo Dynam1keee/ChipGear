@@ -5,6 +5,7 @@ import PartPicker from '../components/PartPicker'
 import Price from '../components/Price'
 import { useAddBuildToCart, useBuild, useClearBuild, useClearSlot, useMe } from '../queries'
 import type { SlotName } from '../types'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 const SLOTS: { slot: SlotName; label: string }[] = [
   { slot: 'cpu', label: 'Processor' },
@@ -18,6 +19,7 @@ const SLOTS: { slot: SlotName; label: string }[] = [
 ]
 
 export default function BuilderPage() {
+  useDocumentTitle('PC Builder - ChipGear')
   const { data: user, isPending: userPending } = useMe()
   const build = useBuild(Boolean(user))
   const clearSlot = useClearSlot()

@@ -4,10 +4,12 @@ import { formErrors } from '../api'
 import FormField from '../components/FormField'
 import { useRegister } from '../queries'
 import { safeNext } from '../safeNext'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 const FIELDS = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2'] as const
 
 export default function RegisterPage() {
+  useDocumentTitle('Registration - ChipGear')
   const register = useRegister()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()

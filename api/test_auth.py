@@ -60,8 +60,14 @@ class MeAndCsrfTests(AuthApiTestCase):
         self.assertEqual(
             self.me(),
             {'id': self.alice.id, 'username': 'alice', 'first_name': 'Alice',
-             'last_name': '', 'email': 'alice@example.com'},
+             'last_name': '', 'email': 'alice@example.com', 'is_staff': False},
         )
+
+    def test_me_tells_if_the_user_is_staff(self):
+        self.alice.is_staff = True
+        self.alice.save()
+        self.client.force_login(self.alice)
+        self.assertTrue(self.me()['is_staff'])
 
     def test_csrf_endpoint_sets_the_cookie(self):
         response = self.client.get(reverse('api:csrf'))

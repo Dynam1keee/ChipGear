@@ -30,12 +30,9 @@ export default function App() {
         <Link to="/" className="brand">
           ChipGear
         </Link>
-        <nav className="header-links">
-          <Link to="/builder">PC Builder</Link>
-          <UserMenu />
-          <CartLink />
-        </nav>
         <HeaderSearch />
+        <UserMenu />
+        <CartLink />
       </header>
 
       <main>

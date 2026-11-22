@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useMe, useOrders } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 export default function OrdersPage() {
+  useDocumentTitle('My orders - ChipGear')
   const { data: user, isPending: userPending } = useMe()
   const orders = useOrders(Boolean(user))
 

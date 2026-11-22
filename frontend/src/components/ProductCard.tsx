@@ -14,7 +14,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const hasDiscount = product.discount > 0
 
   return (
-    <article className="product-card">
+    <article className={product.in_stock ? 'product-card' : 'product-card unavailable'}>
       <Link to={productUrl} className="product-card-image">
         <img src={product.image ?? '/icons/image_not_found.jpg'} alt={product.name} loading="lazy" />
         {hasDiscount && <span className="discount-badge">-{product.discount}%</span>}

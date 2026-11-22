@@ -7,6 +7,7 @@ import NotFound from '../components/NotFound'
 import ProductRow from '../components/ProductRow'
 import { useCategories, useMarkViewed, useProduct, useRecentlyViewed, useRelated } from '../queries'
 import type { SpecValue } from '../types'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 const LOW_STOCK = 5 // from this quantity the page says how many are left
 const HIGHLIGHTS = 4 // how many specifications are shown next to the price
@@ -26,6 +27,10 @@ export default function ProductPage() {
   const recentlyViewed = useRecentlyViewed(slug)
   const markViewed = useMarkViewed()
   const navigate = useNavigate()
+  useDocumentTitle(
+    product ? `${product.name} - ChipGear` : 'ChipGear',
+    product ? `Buy ${product.name} online - High performance at a great price` : undefined,
+  )
 
   // Put the product into the history of views once it has been loaded.
   // mutate has a stable identity, so only a change of the product runs it again.

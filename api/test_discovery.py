@@ -116,3 +116,31 @@ class RecentlyViewedTests(DiscoveryTestCase):
 
     def test_unknown_product_is_404(self):
         self.assertEqual(self.view('nope').status_code, 404)
+
+
+class SearchSuggestionsTests(DiscoveryTestCase):
+    def suggest(self, **params):
+        return self.names(self.client.get(reverse('api:search_suggestions'), params))
+
+    def test_short_text_gives_nothing(self):
+        self.assertEqual(self.suggest(q='m'), [])
+        self.assertEqual(self.suggest(), [])
+
+    def test_at_most_four_products_by_name(self):
+        self.assertEqual(len(self.suggest(q='mouse')), discovery.SUGGESTIONS_LIMIT)
+        self.assertEqual(self.suggest(q='MOUSE 7'), ['Mouse 7'])
+
+    def test_best_sellers_come_first(self):
+        self.sell(self.products[5], quantity=3)
+        self.sell(self.products[2], quantity=9)
+        self.assertEqual(self.suggest(q='mouse')[:2], ['Mouse 2', 'Mouse 5'])
+
+    def test_products_out_of_stock_are_left_out(self):
+        Product.objects.filter(pk=self.products[1].pk).update(quantity=0)
+        self.assertEqual(self.suggest(q='mouse 1'), [])
+
+    def test_category_limits_the_search(self):
+        other = Category.objects.create(name='Keyboards', slug='keyboards', model_name='Keyboard')
+        Product.objects.create(name='Mouse pad', slug='pad', manufacturer='Acme', price=5, discount=0, quantity=1, category=other)
+        self.assertEqual(self.suggest(q='mouse pad', category='keyboards'), ['Mouse pad'])
+        self.assertEqual(self.suggest(q='mouse pad', category='mice'), [])

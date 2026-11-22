@@ -5,6 +5,7 @@ import Pagination from '../components/Pagination'
 import ProductCard from '../components/ProductCard'
 import { facetParams, parsePage, productParams } from '../filters'
 import { useCategories, useFacets, useProducts } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 export default function CatalogPage() {
   // Everything the user chose lives in the address, for example
@@ -32,6 +33,10 @@ export default function CatalogPage() {
   const categoryName = categoriesQuery.data?.find((item) => item.slug === category)?.name ?? category
   const searchText = searchParams.get('q')
   const title = categoryName ?? 'Search results'
+  useDocumentTitle(
+    searchText ? `Search: ${searchText} - ChipGear` : `${title} - ChipGear`,
+    `${title}. We offer a wide range of computer components`,
+  )
 
   return (
     <>

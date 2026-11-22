@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import ProductRow from '../components/ProductRow'
 import { useCategories, useRecentlyViewed, useTopSales } from '../queries'
+import { useDocumentTitle } from '../useDocumentTitle'
 
 // The first page: the categories, the top sales and the products seen lately
 export default function HomePage() {
+  useDocumentTitle('ChipGear - Home')
   const { data: categories, error, isPending, isError } = useCategories()
   const topSales = useTopSales()
   const recentlyViewed = useRecentlyViewed()

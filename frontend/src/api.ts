@@ -124,6 +124,12 @@ export function fetchRelated(slug: string, signal?: AbortSignal): Promise<Produc
   return request<Product[]>(`/api/products/${encodeURIComponent(slug)}/related/`, { signal })
 }
 
+export function fetchSuggestions(text: string, category: string, signal?: AbortSignal): Promise<Product[]> {
+  const params = new URLSearchParams({ q: text })
+  if (category) params.set('category', category)
+  return request<Product[]>(`/api/search-suggestions/?${params.toString()}`, { signal })
+}
+
 export function fetchRecentlyViewed(exclude?: string, signal?: AbortSignal): Promise<Product[]> {
   const query = exclude ? `?exclude=${encodeURIComponent(exclude)}` : ''
   return request<Product[]>(`/api/recently-viewed/${query}`, { signal })

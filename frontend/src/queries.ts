@@ -16,6 +16,7 @@ import {
   fetchProduct,
   fetchRecentlyViewed,
   fetchRelated,
+  fetchSuggestions,
   fetchTopSales,
   markViewed,
   fetchProducts,
@@ -82,6 +83,16 @@ export function useRelated(slug: string) {
     queryKey: ['related', slug],
     queryFn: ({ signal }) => fetchRelated(slug, signal),
     staleTime: 60 * 1000,
+  })
+}
+
+// The products for the dropdown of the search box. The text is already debounced by the caller.
+export function useSuggestions(text: string, category: string) {
+  return useQuery({
+    queryKey: ['suggestions', category, text],
+    queryFn: ({ signal }) => fetchSuggestions(text, category, signal),
+    enabled: text.length >= 2,
+    staleTime: 30 * 1000,
   })
 }
 

@@ -118,7 +118,8 @@ class ChangeQuantitySerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email']
+        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'is_staff']
+        read_only_fields = ['is_staff']  # the profile form cannot make a user a staff member
 
 
 # --- orders -----------------------------------------------------------------
