@@ -27,7 +27,6 @@ export default function UserMenu() {
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >
-        <img src="/icons/user_icon.svg" alt="" width={25} height={25} />
         <span className="user-label">{label}</span>
         <span className="chevron" aria-hidden="true" />
       </button>

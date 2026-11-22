@@ -27,7 +27,9 @@ class Order(models.Model):
         verbose_name_plural = 'Orders'
 
     def __str__(self):
-        return f'Order # {self.pk} | Customer: {self.user.first_name} {self.user.last_name}'
+        # the user can be empty: the account was deleted or the order was made by a guest
+        customer = (f'{self.user.first_name} {self.user.last_name}'.strip() or self.user.username) if self.user else 'Guest'
+        return f'Order # {self.pk} | Customer: {customer}'
     
 class OrderItem(models.Model):
     order = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name='Order')
