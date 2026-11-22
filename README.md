@@ -2,52 +2,70 @@
 
 ![CI](https://github.com/Dynam1keee/ChipGear/actions/workflows/ci.yml/badge.svg?branch=react-migration)
 
-ChipGear is an online store for computer hardware and accessories, built with Django.
+ChipGear is an online store for computer hardware. The backend is a Django REST API. The frontend is a single-page app built with React 19 and TypeScript.
 
 **Live Demo:** [Visit ChipGear](http://92.5.126.107/)
 
-**Note:** The website is currently accessible via HTTP only. Use `http://` instead of `https://`.
-
-The project provides a platform for browsing computer components, searching and filtering products, managing a shopping cart, and placing orders.
+**Note:** The live demo is still the first (server-rendered) version of the site. It is accessible via HTTP only. Use `http://` instead of `https://`. The React version lives in the `react-migration` branch.
 
 ## Features
 
-- Product catalog with categories.
-- Product search.
-- Product filtering, including price filtering.
-- Product details with images and specifications.
-- Shopping cart management.
-- User registration and authentication.
-- Order creation and management.
-- Django administration panel.
+- Product catalog with 12 categories, filters (price, manufacturer, specifications), sorting and pagination. Filters are kept in the URL, so every result can be shared.
+- Product search with suggestions while you type.
+- Product page with images, key specifications and a full specification table.
+- "Top sales" on the home page (it appears after enough products have been sold).
+- "Customers also buy with this item" (based on real orders) and "Recently viewed" (saved in the database for users and in the session for guests).
+- Shopping cart for guests and users, with a quick preview in the header.
+- Registration, login and a profile page.
+- Checkout and order history.
+- PC builder: pick parts for each slot, with compatibility checks (socket, memory type and others), then add the whole build to the cart.
+- Sticky header, responsive layout for phones, page titles for every page.
+- Django administration panel for products, orders and users.
 
 ## Screenshots
 
-### Homepage
-![Homepage](screenshots/homepage.png)
+### Home
+![Home](docs/screenshots/home.png)
 
-### Product Catalog
-![Product Catalog](screenshots/catalog.png)
+### Product catalog
+![Product catalog](docs/screenshots/catalog.png)
 
-### Product Details
-![Product Details](screenshots/product_detail.png)
+### Product page
+![Product page](docs/screenshots/product.png)
 
-### Shopping Cart
-![Shopping Cart](screenshots/cart.png)
+### PC builder
+![PC builder](docs/screenshots/builder.png)
 
-### Checkout
-![Checkout](screenshots/checkout.png)
+### Shopping cart
+![Shopping cart](docs/screenshots/cart.png)
+
+### Mobile layout
+![Mobile layout](docs/screenshots/mobile.png)
+
+The folder `screenshots/` keeps the interface of the first version of the site.
 
 ## Technologies
 
+**Backend**
+
 - Python 3.10 or newer (production runs on Python 3.10)
-- Django 4.2
+- Django 4.2 and Django REST Framework
 - SQLite
-- HTML, CSS, JavaScript
 - Pillow
-- django-debug-toolbar
-- django-nested-admin
-- django-polymorphic
+- django-polymorphic and django-nested-admin (the admin panel)
+- django-debug-toolbar (development)
+
+**Frontend**
+
+- React 19 and TypeScript (strict mode)
+- Vite
+- React Router
+- TanStack Query (server state, caching)
+- Plain CSS with design tokens, no UI library
+
+**Tooling**
+
+- GitHub Actions: backend tests and the frontend build on every push
 
 ## Installation and Setup
 
@@ -139,9 +157,9 @@ Open the application in your browser:
 
 http://127.0.0.1:8000/
 
-## Frontend (React + TypeScript, work in progress)
+## Frontend (React + TypeScript)
 
-The new frontend lives in the `frontend/` folder and uses the JSON API under `/api/`. It needs Node.js 20 or newer.
+The frontend lives in the `frontend/` folder and uses the JSON API under `/api/`. It needs Node.js 20 or newer.
 
 Start Django and the frontend in two terminals:
 
@@ -151,11 +169,38 @@ python manage.py runserver
 
 # terminal 2
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
-Open http://localhost:5173. Vite forwards `/api` and `/media` to Django on port 8000, so no CORS settings are needed.
+Open http://localhost:5173. Vite forwards `/api`, `/admin`, `/static` and `/media` to Django on port 8000, so no CORS settings are needed.
+
+Use `npm ci` (not `npm install`): it installs the exact versions from `package-lock.json`. To check types and build the production bundle:
+
+```bash
+npm run build
+```
+
+### API
+
+All endpoints are under `/api/`. Authentication uses Django sessions with CSRF protection.
+
+| Endpoint | Purpose |
+| --- | --- |
+| `categories/`, `filters/` | Categories and filter options |
+| `products/`, `products/<slug>/` | Product list (filters, sorting, pages) and one product |
+| `products/<slug>/related/`, `products/<slug>/view/` | Bought together, and recording a product view |
+| `search-suggestions/`, `top-sales/`, `recently-viewed/` | Search hints, top sales, viewing history |
+| `auth/csrf/`, `me/`, `login/`, `register/`, `logout/` | Accounts |
+| `cart/`, `cart/items/`, `cart/items/<id>/` | Cart |
+| `orders/` | Order history and checkout |
+| `builder/`, `builder/<slot>/`, `builder/<slot>/options/`, `builder/add-to-cart/` | PC builder |
+
+### Known limitations
+
+- It is a single-page app without server-side rendering, so search engines and link previews see only the general page title and description.
+- There is no rate limiting on login.
+- Products without a photo show a placeholder image.
 
 ## Running tests
 
@@ -164,6 +209,8 @@ Set the same environment variables as for the development server (at least `DJAN
 ```bash
 python manage.py test
 ```
+
+The same tests and the frontend build run in GitHub Actions on every push.
 
 ## Administration
 
@@ -176,6 +223,8 @@ python manage.py createsuperuser
 Then start the development server and open:
 
 http://127.0.0.1:8000/admin/
+
+**Note:** the SQLite database is committed to the repository. If you create an administrator account to edit products, delete it before you commit `db.sqlite3`, so the password hash does not end up in git.
 
 ## Static and Media Files
 
@@ -199,10 +248,12 @@ ChipGear/
 ├── users/              # User model and forms
 ├── site_app/           # Project configuration and settings
 ├── frontend/           # React + TypeScript single-page app
+│   └── src/            # pages/, components/, api.ts (requests), queries.ts (TanStack Query)
 │
 ├── fixtures/           # Project fixtures
 ├── media/              # Uploaded media files
-├── screenshots/        # Screenshots of the original interface
+├── docs/screenshots/   # Screenshots for this README
+├── screenshots/        # Screenshots of the first version of the site
 │
 ├── db.sqlite3          # SQLite database
 ├── manage.py
