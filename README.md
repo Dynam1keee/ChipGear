@@ -177,36 +177,33 @@ http://127.0.0.1:8000/admin/
 
 ## Static and Media Files
 
-The repository includes the project's static and media files.
-
-During local development, Django serves these files when `DJANGO_DEBUG=True`.
-
-To collect static files into the configured `STATIC_ROOT` directory, run:
+Uploaded product images live in `media/`; during development Django serves them when `DJANGO_DEBUG=True`.
+The only static files Django has left are those of the admin panel. For deployment collect them with:
 
 ```bash
 python manage.py collectstatic --noinput
 ```
-
-This command is generally used when preparing the application for deployment.
 
 ## Project Structure
 
 ```text
 ChipGear/
 │
-├── carts/              # Shopping cart application
-├── goods/              # Product catalog and categories
-├── main/               # Main pages
-├── orders/             # Order management
-├── users/              # User authentication and accounts
+├── api/                # JSON API (DRF) used by the React app
+├── builder/            # PC builder: compatibility rules and saved builds
+├── carts/              # Shopping cart models and helpers
+├── goods/              # Product catalog and categories (models, admin)
+├── orders/             # Orders (models, admin)
+├── users/              # User model and forms
 ├── site_app/           # Project configuration and settings
+├── frontend/           # React + TypeScript single-page app
 │
 ├── fixtures/           # Project fixtures
 ├── media/              # Uploaded media files
-├── static/             # Static files (CSS, JavaScript, images)
-├── templates/          # HTML templates
+├── screenshots/        # Screenshots of the original interface
 │
 ├── db.sqlite3          # SQLite database
 ├── manage.py
 ├── requirements.txt
 └── .env                # Environment variables (not included in repository)
+```
