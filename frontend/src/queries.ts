@@ -14,6 +14,10 @@ import {
   fetchOptions,
   fetchOrders,
   fetchProduct,
+  fetchRecentlyViewed,
+  fetchRelated,
+  fetchTopSales,
+  markViewed,
   fetchProducts,
   login,
   logout,
@@ -61,6 +65,40 @@ export function useProduct(slug: string) {
   return useQuery({
     queryKey: ['product', slug],
     queryFn: ({ signal }) => fetchProduct(slug, signal),
+  })
+}
+
+// Top sales stay empty until the shop has enough sales; the home page then hides the block
+export function useTopSales() {
+  return useQuery({
+    queryKey: ['top-sales'],
+    queryFn: ({ signal }) => fetchTopSales(signal),
+    staleTime: 60 * 1000,
+  })
+}
+
+export function useRelated(slug: string) {
+  return useQuery({
+    queryKey: ['related', slug],
+    queryFn: ({ signal }) => fetchRelated(slug, signal),
+    staleTime: 60 * 1000,
+  })
+}
+
+// exclude: the product that is open now, it is not shown in its own history
+export function useRecentlyViewed(exclude?: string) {
+  return useQuery({
+    queryKey: ['recently-viewed', exclude ?? null],
+    queryFn: ({ signal }) => fetchRecentlyViewed(exclude, signal),
+  })
+}
+
+// Remember that the product was opened. The history changes, so its queries are reloaded.
+export function useMarkViewed() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (slug: string) => markViewed(slug),
+    onSuccess: () => void queryClient.invalidateQueries({ queryKey: ['recently-viewed'] }),
   })
 }
 
@@ -124,6 +162,8 @@ function useAuthMutation<Variables, Result>(
       // the builder and the orders belong to a user
       void queryClient.invalidateQueries({ queryKey: ['builder'] })
       void queryClient.invalidateQueries({ queryKey: ['orders'] })
+      // the history of views is kept per user, a guest has its own
+      void queryClient.invalidateQueries({ queryKey: ['recently-viewed'] })
     },
   })
 }

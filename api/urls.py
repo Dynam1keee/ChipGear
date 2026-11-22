@@ -1,6 +1,6 @@
 from django.urls import path
 
-from api import auth, cart, orders, pc_builder, views
+from api import auth, cart, discovery, orders, pc_builder, views
 
 app_name = 'api'
 
@@ -30,6 +30,12 @@ urlpatterns = [
     path('filters/', views.FilterFacetsView.as_view(), name='filters'),
     # localhost/api/products/
     path('products/', views.ProductListView.as_view(), name='product_list'),
+    # localhost/api/top-sales/ , recently-viewed/
+    path('top-sales/', discovery.TopSalesView.as_view(), name='top_sales'),
+    path('recently-viewed/', discovery.RecentlyViewedView.as_view(), name='recently_viewed'),
+    # localhost/api/products/product_slug/related/ , view/
+    path('products/<slug:slug>/related/', discovery.RelatedProductsView.as_view(), name='product_related'),
+    path('products/<slug:slug>/view/', discovery.ViewProductView.as_view(), name='product_view'),
     # localhost/api/products/product_slug/
     path('products/<slug:slug>/', views.ProductDetailView.as_view(), name='product_detail'),
 ]

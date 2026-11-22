@@ -115,6 +115,24 @@ export function fetchProduct(slug: string, signal?: AbortSignal): Promise<Produc
   return request<ProductDetail>(`/api/products/${encodeURIComponent(slug)}/`, { signal })
 }
 
+// Discovery: the top sales, the products bought together, the history of views
+export function fetchTopSales(signal?: AbortSignal): Promise<Product[]> {
+  return request<Product[]>('/api/top-sales/', { signal })
+}
+
+export function fetchRelated(slug: string, signal?: AbortSignal): Promise<Product[]> {
+  return request<Product[]>(`/api/products/${encodeURIComponent(slug)}/related/`, { signal })
+}
+
+export function fetchRecentlyViewed(exclude?: string, signal?: AbortSignal): Promise<Product[]> {
+  const query = exclude ? `?exclude=${encodeURIComponent(exclude)}` : ''
+  return request<Product[]>(`/api/recently-viewed/${query}`, { signal })
+}
+
+export function markViewed(slug: string): Promise<void> {
+  return request<void>(`/api/products/${encodeURIComponent(slug)}/view/`, { method: 'POST' })
+}
+
 // Cart: every call returns the whole cart
 export function fetchCart(signal?: AbortSignal): Promise<Cart> {
   return request<Cart>('/api/cart/', { signal })
