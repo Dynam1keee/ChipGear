@@ -1713,3 +1713,10 @@ details[open] > summary::after {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+
+/* the result counter is a separate block with a gap before the grid */
+.results-header { margin-bottom: 16px; }
+
+/* the greeting menu must stay above the search field (and its suggestions) */
+.user-menu { position: relative; z-index: 130; }
+.header-search { z-index: 1; }

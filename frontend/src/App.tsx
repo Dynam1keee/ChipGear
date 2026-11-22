@@ -1,4 +1,5 @@
-import { Link, Route, Routes, useSearchParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, Route, Routes, useLocation, useSearchParams } from 'react-router-dom'
 import CartLink from './components/CartLink'
 import HeaderSearch from './components/HeaderSearch'
 import SiteFooter from './components/SiteFooter'
@@ -22,10 +23,20 @@ function HomeOrCatalog() {
   return isCatalog ? <CatalogPage /> : <HomePage />
 }
 
+// A new page opens at the top (the browser keeps the old scroll position in a single-page app)
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
 // App only holds the page frame and decides which page to show for which address.
 export default function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <header className="site-header">
         <Link to="/" className="brand">
           ChipGear

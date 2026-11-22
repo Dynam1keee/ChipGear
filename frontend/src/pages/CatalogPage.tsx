@@ -73,7 +73,7 @@ export default function CatalogPage() {
             // isPlaceholderData = new results are loading, the old ones are still shown
             <div className={isPlaceholderData ? 'stale' : undefined}>
               <div className="results-header">
-                <p className="count">{data.count} products</p>
+                <p className="count">{data.count} {data.count === 1 ? 'product' : 'products'}</p>
               </div>
 
               {data.results.length === 0 && <p>No products found.</p>}
