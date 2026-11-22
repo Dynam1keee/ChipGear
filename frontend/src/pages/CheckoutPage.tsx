@@ -80,7 +80,7 @@ export default function CheckoutPage() {
         <input type="checkbox" name="payment_on_get" />
         <span>Pay on receipt</span>
       </label>
-      <button type="submit" disabled={createOrder.isPending}>
+      <button type="submit" className="primary" disabled={createOrder.isPending}>
         {createOrder.isPending ? 'Placing the order...' : 'Place the order'}
       </button>
     </form>

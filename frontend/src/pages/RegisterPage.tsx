@@ -51,7 +51,7 @@ export default function RegisterPage() {
         autoComplete="new-password"
         errors={errors.password2}
       />
-      <button type="submit" disabled={register.isPending}>
+      <button type="submit" className="primary" disabled={register.isPending}>
         {register.isPending ? 'Registering...' : 'Register'}
       </button>
       <p>

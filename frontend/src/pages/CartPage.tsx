@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { errorText } from '../api'
-import Price from '../components/Price'
 import { useCart, useChangeCartItem, useRemoveCartItem } from '../queries'
 import type { CartItem } from '../types'
 
@@ -13,14 +12,24 @@ interface CartItemRowProps {
 
 function CartItemRow({ item, busy, onChange, onRemove }: CartItemRowProps) {
   const { product, quantity } = item
+  const hasDiscount = product.discount > 0
 
   return (
     <li className="cart-item">
-      {product.image && <img src={product.image} alt={product.name} />}
+      <Link to={`/products/${product.slug}`}>
+        <img src={product.image ?? '/icons/image_not_found.jpg'} alt={product.name} />
+      </Link>
+
       <div className="cart-item-info">
         <Link to={`/products/${product.slug}`}>{product.name}</Link>
-        <Price product={product} />
+        <p className="price">
+          <strong>${product.sell_price}</strong>
+          {hasDiscount && <s className="price-old">${product.price}</s>}
+          {hasDiscount && <span className="discount-tag">-{product.discount}%</span>}
+        </p>
+        {quantity >= product.quantity && <p className="cart-item-note">The maximum in stock</p>}
       </div>
+
       <div className="quantity-controls">
         <button
           type="button"
@@ -40,9 +49,11 @@ function CartItemRow({ item, busy, onChange, onRemove }: CartItemRowProps) {
           +
         </button>
       </div>
+
       <strong className="cart-item-total">${item.total}</strong>
-      <button type="button" disabled={busy} onClick={onRemove}>
-        Remove
+
+      <button type="button" className="icon-button" aria-label={`Remove ${product.name}`} title="Remove" disabled={busy} onClick={onRemove}>
+        <img src="/icons/delete_icon.svg" alt="" width={22} height={22} />
       </button>
     </li>
   )
@@ -60,7 +71,12 @@ export default function CartPage() {
     return (
       <div className="not-found">
         <h2>Your cart is empty</h2>
-        <Link to="/">Back to the catalog</Link>
+        <p>Add something from the catalog, or build a PC from the parts.</p>
+        <p>
+          <Link to="/" className="button-link">
+            Browse the catalog
+          </Link>
+        </p>
       </div>
     )
   }
@@ -71,28 +87,38 @@ export default function CartPage() {
 
   return (
     <section className="cart-page">
-      <h2>Your cart</h2>
-      <ul className="cart-items">
-        {cart.items.map((item) => (
-          <CartItemRow
-            key={item.id}
-            item={item}
-            busy={busy}
-            onChange={(quantity) => changeItem.mutate({ itemId: item.id, quantity })}
-            onRemove={() => removeItem.mutate(item.id)}
-          />
-        ))}
-      </ul>
+      <h2 className="page-title left">Shopping cart</h2>
 
-      {mutationError && <p className="error">{errorText(mutationError)}</p>}
+      <div className="cart-layout">
+        <ul className="cart-items">
+          {cart.items.map((item) => (
+            <CartItemRow
+              key={item.id}
+              item={item}
+              busy={busy}
+              onChange={(quantity) => changeItem.mutate({ itemId: item.id, quantity })}
+              onRemove={() => removeItem.mutate(item.id)}
+            />
+          ))}
+        </ul>
 
-      <p className="cart-total">
-        {cart.total_quantity} {cart.total_quantity === 1 ? 'item' : 'items'}, total:{' '}
-        <strong>${cart.total_price}</strong>
-      </p>
-      <Link to="/checkout" className="button-link">
-        Checkout
-      </Link>
+        <aside className="cart-summary">
+          <h3>Order summary</h3>
+          <p className="cart-total">
+            <span>
+              {cart.total_quantity} {cart.total_quantity === 1 ? 'item' : 'items'}
+            </span>
+            <strong>${cart.total_price}</strong>
+          </p>
+          {mutationError && <p className="error">{errorText(mutationError)}</p>}
+          <Link to="/checkout" className="button-link">
+            Checkout
+          </Link>
+          <Link to="/" className="continue-link">
+            Continue shopping
+          </Link>
+        </aside>
+      </div>
     </section>
   )
 }

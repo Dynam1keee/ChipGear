@@ -30,7 +30,7 @@ export default function OrdersPage() {
 
   return (
     <section className="orders-page">
-      <h2>Your orders</h2>
+      <h2 className="page-title left">Your orders</h2>
       {orders.data.map((order) => (
         <article key={order.id} className="order">
           <header>

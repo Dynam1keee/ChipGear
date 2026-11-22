@@ -44,7 +44,7 @@ export default function ProfilePage() {
       <FormField label="Last name" name="last_name" defaultValue={user.last_name} errors={errors.last_name} />
       <FormField label="Username" name="username" defaultValue={user.username} errors={errors.username} />
       <FormField label="Email" name="email" type="email" defaultValue={user.email} errors={errors.email} />
-      <button type="submit" disabled={update.isPending}>
+      <button type="submit" className="primary" disabled={update.isPending}>
         {update.isPending ? 'Saving...' : 'Save'}
       </button>
       {update.isSuccess && <p className="success">Profile updated.</p>}

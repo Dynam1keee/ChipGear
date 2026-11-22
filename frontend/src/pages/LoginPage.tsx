@@ -36,7 +36,7 @@ export default function LoginPage() {
         autoComplete="current-password"
         errors={errors.password}
       />
-      <button type="submit" disabled={login.isPending}>
+      <button type="submit" className="primary" disabled={login.isPending}>
         {login.isPending ? 'Logging in...' : 'Log in'}
       </button>
       <p>
