@@ -56,7 +56,6 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'main',
     'goods',
     'users',
     'carts',
@@ -80,7 +79,7 @@ ROOT_URLCONF = 'site_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,9 +87,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                # SHOW CATEGORIES
-                'main.context_processors.categories_processor',
             ],
         },
     },
@@ -145,8 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR / 'static' ] # FOR DEV
-STATIC_ROOT = BASE_DIR / 'staticfiles' # FOR PROD, COLLECTED STATIC
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic: admin panel files
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -167,7 +162,6 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.User'
-LOGIN_URL = '/user/login/'
 
 INTERNAL_IPS = [
     # ...

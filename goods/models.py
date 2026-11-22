@@ -1,6 +1,5 @@
 import os
 from django.db import models
-from django.urls import reverse
 from users.models import User
 
 def category_image_path(instance, filename):
@@ -65,7 +64,7 @@ class Product(models.Model):
     
     
     def get_absolute_url(self):
-        return reverse("catalog:product", kwargs={"category_slug": self.category.slug, "product_slug": self.slug})
+        return f"/products/{self.slug}"  # the page of the React app
     
     def sell_price(self):
         if self.discount:

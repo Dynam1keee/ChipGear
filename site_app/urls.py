@@ -14,32 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls.static import static
 
-from site_app import settings
-from site_app import views
-
-handler400 = 'site_app.views.bad_request_view'
-handler403 = 'site_app.views.permission_denied_view'
-handler404 = 'site_app.views.not_found_view'
-handler500 = 'site_app.views.server_error_view'
-
+# This project is the backend only: the admin panel and the JSON API.
+# The React app (frontend/) is served separately: by Vite in development, by Nginx in production.
 urlpatterns = [
-    #localhost/admin/
+    # localhost/admin/
     path('admin/', admin.site.urls),
-    #localhost/
-    path('', include('main.urls', namespace='main')),
-    #localhost/catalog/
-    path('catalog/', include('goods.urls', namespace='catalog')),
-    #localhost/user/
-    path('user/', include('users.urls', namespace='user')),
-    #localhost/cart/
-    path('cart/', include('carts.urls', namespace='cart')),
-    #localhost/orders/
-    path('orders/', include('orders.urls', namespace='orders')),
-    #localhost/api/
+    # localhost/api/
     path('api/', include('api.urls', namespace='api')),
 ]
 
@@ -49,4 +34,3 @@ if settings.DEBUG:
             path('__debug__/', include('debug_toolbar.urls')),
         ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
