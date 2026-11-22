@@ -1,5 +1,7 @@
 # ChipGear
 
+![CI](https://github.com/Dynam1keee/ChipGear/actions/workflows/ci.yml/badge.svg?branch=react-migration)
+
 ChipGear is an online store for computer hardware and accessories, built with Django.
 
 **Live Demo:** [Visit ChipGear](http://92.5.126.107/)
