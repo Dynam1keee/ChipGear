@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { clearFilters, hasActiveFilters, setParam, toggleValue } from '../filters'
 import type { Facets } from '../types'
 import OptionGroup from './OptionGroup'
@@ -18,12 +19,15 @@ const SORT_OPTIONS = [
 ]
 
 export default function FilterSidebar({ facets, params, onChange }: FilterSidebarProps) {
+  // On a phone the filters start closed, so the products are visible at once.
+  // Only the first value is used: later the browser keeps the open/closed state itself.
+  const [startOpen] = useState(() => !window.matchMedia || window.matchMedia('(min-width: 801px)').matches)
   const minPrice = params.get('min_price') ?? ''
   const maxPrice = params.get('max_price') ?? ''
   const ordering = params.get('ordering') ?? 'default'
 
   return (
-    <details className="filter-sidebar" open>
+    <details className="filter-sidebar" open={startOpen}>
       <summary className="filters-title">Filters</summary>
       <fieldset className="sort-options">
         <legend>Sort by:</legend>
