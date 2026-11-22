@@ -6,17 +6,17 @@
             "name": "Kingston HyperX Fury 8GB DDR4 3200MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-kingston-hyperx-fury-8gb-ddr4-3200mhz-cl16-dimm",
             "manufacturer": "Kingston",
-            "description": "The Kingston HyperX Fury 8GB DDR4 3200MHz CL16 DIMM is a high-performance memory module ideal for gamers, enthusiasts, and professionals.",
+            "description": "Single 8 GB DDR4-3200 module, CL16, 1.35 V, with a low-profile heat spreader. A simple upgrade for a home or office PC.",
             "image": "categories/ram/ram_kingston_hyperx_fury.jpg",
-            "price": "36.00",
+            "price": 36.0,
             "discount": 10,
-            "quantity": 20,
+            "quantity": 18,
             "category": 6
         }
     },
     {
         "model": "goods.ram",
-        "pk": 1,
+        "pk": 51,
         "fields": {
             "product_ptr": 51,
             "capacity": "8GB",
@@ -35,12 +35,12 @@
         "model": "goods.product",
         "pk": 52,
         "fields": {
-            "name": "Crucial Ballistix 16GB DDR4 3600MHz CL16 DIMM RAM",
+            "name": "Crucial Ballistix 16GB (2x8GB) DDR4 3600MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-crucial-ballistix-16gb-ddr4-3600mhz-cl16-dimm",
             "manufacturer": "Crucial",
-            "description": "The Crucial Ballistix 16GB DDR4 3600MHz CL16 DIMM is a high-speed memory kit suitable for gamers, enthusiasts, and overclockers.",
+            "description": "Kit of two 8 GB DDR4-3600 modules, CL16, 1.35 V, with heat spreaders. Fast memory for a gaming PC.",
             "image": "categories/ram/ram_crucial_ballistix.jpg",
-            "price": "71.00",
+            "price": 71.0,
             "discount": 5,
             "quantity": 15,
             "category": 6
@@ -48,7 +48,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 2,
+        "pk": 52,
         "fields": {
             "product_ptr": 52,
             "capacity": "16GB",
@@ -67,12 +67,12 @@
         "model": "goods.product",
         "pk": 53,
         "fields": {
-            "name": "Patriot Viper Steel 32GB DDR4 3200MHz CL16 DIMM RAM",
+            "name": "Patriot Viper Steel 32GB (2x16GB) DDR4 3200MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-patriot-viper-steel-32gb-ddr4-3200mhz-cl16-dimm",
             "manufacturer": "Patriot",
-            "description": "The Patriot Viper Steel 32GB DDR4 3200MHz CL16 DIMM is a high-performance memory kit with an aggressive design, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 16 GB DDR4-3200 modules, CL16, 1.35 V, with aluminium heat spreaders. No RGB lighting.",
             "image": "categories/ram/ram_patriot_viper_steel.jpg",
-            "price": "107.00",
+            "price": 107.0,
             "discount": 0,
             "quantity": 10,
             "category": 6
@@ -80,7 +80,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 3,
+        "pk": 53,
         "fields": {
             "product_ptr": 53,
             "capacity": "32GB",
@@ -91,7 +91,7 @@
             "latency": "CL16",
             "heat_spreader": true,
             "ecc": false,
-            "rgb": true,
+            "rgb": false,
             "dimensions": "128 x 42 x 39 mm"
         }
     },
@@ -99,12 +99,12 @@
         "model": "goods.product",
         "pk": 54,
         "fields": {
-            "name": "G.Skill Trident Z Royal 16GB DDR4 3600MHz CL16 DIMM RAM",
+            "name": "G.Skill Trident Z Royal 16GB (2x8GB) DDR4 3600MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-gskill-trident-z-royal-16gb-ddr4-3600mhz-cl16-dimm",
             "manufacturer": "G.Skill",
-            "description": "The G.Skill Trident Z Royal 16GB DDR4 3600MHz CL16 DIMM is a high-speed memory kit featuring an elegant design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 8 GB DDR4-3600 modules, CL16, 1.35 V, with a crystalline RGB light bar and aluminium heat spreaders.",
             "image": "categories/ram/ram_gskill_trident_z_royal.jpg",
-            "price": "89.00",
+            "price": 89.0,
             "discount": 7,
             "quantity": 8,
             "category": 6
@@ -112,7 +112,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 4,
+        "pk": 54,
         "fields": {
             "product_ptr": 54,
             "capacity": "16GB",
@@ -131,12 +131,12 @@
         "model": "goods.product",
         "pk": 55,
         "fields": {
-            "name": "Corsair Vengeance RGB Pro SL 16GB DDR4 3200MHz CL16 DIMM RAM",
+            "name": "Corsair Vengeance RGB Pro SL 16GB (2x8GB) DDR4 3200MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-corsair-vengeance-rgb-pro-sl-16gb-ddr4-3200mhz-cl16-dimm",
             "manufacturer": "Corsair",
-            "description": "The Corsair Vengeance RGB Pro SL 16GB DDR4 3200MHz CL16 DIMM is a high-performance memory kit with an elegant design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 8 GB DDR4-3200 modules, CL16, 1.35 V, with a slim heat spreader and addressable RGB lighting.",
             "image": "categories/ram/ram_corsair_vengeance_rgb_pro_sl.jpg",
-            "price": "80.00",
+            "price": 80.0,
             "discount": 12,
             "quantity": 15,
             "category": 6
@@ -144,7 +144,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 5,
+        "pk": 55,
         "fields": {
             "product_ptr": 55,
             "capacity": "16GB",
@@ -163,12 +163,12 @@
         "model": "goods.product",
         "pk": 56,
         "fields": {
-            "name": "TeamGroup T-Force Delta RGB 32GB DDR4 3600MHz CL18 DIMM RAM",
+            "name": "TeamGroup T-Force Delta RGB 32GB (2x16GB) DDR4 3600MHz CL18 DIMM RAM",
             "slug": "operativna-pamjat-teamgroup-t-force-delta-rgb-32gb-ddr4-3600mhz-cl18-dimm",
             "manufacturer": "TeamGroup",
-            "description": "The TeamGroup T-Force Delta RGB 32GB DDR4 3600MHz CL18 DIMM is a high-speed memory kit with an aggressive design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 16 GB DDR4-3600 modules, CL18, 1.35 V, with a wide RGB light panel and heat spreaders.",
             "image": "categories/ram/ram_teamgroup_t-force_delta_rgb.jpg",
-            "price": "116.00",
+            "price": 116.0,
             "discount": 0,
             "quantity": 7,
             "category": 6
@@ -176,7 +176,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 6,
+        "pk": 56,
         "fields": {
             "product_ptr": 56,
             "capacity": "32GB",
@@ -195,12 +195,12 @@
         "model": "goods.product",
         "pk": 57,
         "fields": {
-            "name": "ADATA XPG Spectrix D450 RGB 16GB DDR4 3600MHz CL16 DIMM RAM",
-            "slug": "operativna-pamjat-adata-xpg-spectrix-d450-rgb-16gb-ddr4-3600mhz-cl16-dimm",
+            "name": "ADATA XPG Spectrix D50 RGB 16GB (2x8GB) DDR4 3600MHz CL18 DIMM RAM",
+            "slug": "adata-xpg-spectrix-d50-rgb-16gb-ddr4-3600mhz",
             "manufacturer": "ADATA",
-            "description": "The ADATA XPG Spectrix D450 RGB 16GB DDR4 3600MHz CL16 DIMM is a high-speed memory kit with an elegant design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 8 GB DDR4-3600 modules, CL18, 1.35 V, with an RGB light bar and heat spreaders.",
             "image": "categories/ram/ram_adata_xpg_spectrix_d450_rgb.jpg",
-            "price": "85.00",
+            "price": 85.0,
             "discount": 8,
             "quantity": 12,
             "category": 6
@@ -208,7 +208,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 7,
+        "pk": 57,
         "fields": {
             "product_ptr": 57,
             "capacity": "16GB",
@@ -227,12 +227,12 @@
         "model": "goods.product",
         "pk": 58,
         "fields": {
-            "name": "Crucial Ballistix Max 32GB DDR4 3200MHz CL16 DIMM RAM",
+            "name": "Crucial Ballistix MAX 32GB (2x16GB) DDR4 3200MHz CL16 DIMM RAM",
             "slug": "operativna-pamjat-crucial-ballistix-max-32gb-ddr4-3200mhz-cl16-dimm",
             "manufacturer": "Crucial",
-            "description": "The Crucial Ballistix Max 32GB DDR4 3200MHz CL16 DIMM is a high-performance memory kit with an elegant design, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 16 GB DDR4-3200 modules, CL16, 1.35 V, with aluminium heat spreaders. No RGB lighting.",
             "image": "categories/ram/ram_crucial_ballistix_max.jpg",
-            "price": "120.00",
+            "price": 120.0,
             "discount": 0,
             "quantity": 5,
             "category": 6
@@ -240,7 +240,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 8,
+        "pk": 58,
         "fields": {
             "product_ptr": 58,
             "capacity": "32GB",
@@ -259,12 +259,12 @@
         "model": "goods.product",
         "pk": 59,
         "fields": {
-            "name": "G.Skill Trident Z RGB Neo 16GB DDR4 3600MHz CL16 DIMM RAM",
-            "slug": "operativna-pamjat-gskill-trident-z-rgb-neo-16gb-ddr4-3600mhz-cl16-dimm",
+            "name": "G.Skill Trident Z Neo 16GB (2x8GB) DDR4 3600MHz CL16 DIMM RAM",
+            "slug": "gskill-trident-z-neo-16gb-ddr4-3600mhz",
             "manufacturer": "G.Skill",
-            "description": "The G.Skill Trident Z RGB Neo 16GB DDR4 3600MHz CL16 DIMM is a high-speed memory kit with an elegant design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 8 GB DDR4-3600 modules, CL16, 1.35 V, with RGB lighting. Tuned for AMD Ryzen systems.",
             "image": "categories/ram/ram_gskill_trident_z_rgb_neo.jpg",
-            "price": "94.00",
+            "price": 94.0,
             "discount": 6,
             "quantity": 10,
             "category": 6
@@ -272,7 +272,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 9,
+        "pk": 59,
         "fields": {
             "product_ptr": 59,
             "capacity": "16GB",
@@ -291,12 +291,12 @@
         "model": "goods.product",
         "pk": 60,
         "fields": {
-            "name": "Patriot Viper Steel Elite RGB 32GB DDR4 3200MHz CL16 DIMM RAM",
-            "slug": "operativna-pamjat-patriot-viper-steel-elite-rgb-32gb-ddr4-3200mhz-cl16-dimm",
+            "name": "Patriot Viper RGB 32GB (2x16GB) DDR4 3200MHz CL16 DIMM RAM",
+            "slug": "patriot-viper-rgb-32gb-ddr4-3200mhz",
             "manufacturer": "Patriot",
-            "description": "The Patriot Viper Steel Elite RGB 32GB DDR4 3200MHz CL16 DIMM is a high-performance memory kit with an aggressive design and RGB lighting, suitable for gamers and enthusiasts.",
+            "description": "Kit of two 16 GB DDR4-3200 modules, CL16, 1.35 V, with RGB lighting and heat spreaders.",
             "image": "categories/ram/ram_patriot_viper_steel_elite_rgb.jpg",
-            "price": "111.00",
+            "price": 111.0,
             "discount": 0,
             "quantity": 8,
             "category": 6
@@ -304,7 +304,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 10,
+        "pk": 60,
         "fields": {
             "product_ptr": 60,
             "capacity": "32GB",
@@ -326,9 +326,9 @@
             "name": "Corsair Vengeance 32GB (2x16GB) DDR5 5600MHz CL36 DIMM RAM",
             "slug": "operativna-pamjat-corsair-vengeance-32gb-ddr5-5600mhz-cl36-dimm",
             "manufacturer": "Corsair",
-            "description": "The Corsair Vengeance 32GB (2x16GB) DDR5 5600MHz CL36 kit is a fast memory kit for modern gaming and productivity PCs.",
+            "description": "Kit of two 16 GB DDR5-5600 modules, CL36, 1.25 V, with heat spreaders. For LGA 1700 and other DDR5 platforms.",
             "image": "images/image_not_found.jpg",
-            "price": "119.00",
+            "price": 119.0,
             "discount": 0,
             "quantity": 16,
             "category": 6
@@ -336,7 +336,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 11,
+        "pk": 125,
         "fields": {
             "product_ptr": 125,
             "capacity": "32GB",
@@ -358,9 +358,9 @@
             "name": "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz CL30 DIMM RAM",
             "slug": "operativna-pamjat-gskill-trident-z5-rgb-32gb-ddr5-6000mhz-cl30-dimm",
             "manufacturer": "G.Skill",
-            "description": "The G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz CL30 kit offers high speed and low latency with customizable RGB lighting.",
+            "description": "Kit of two 16 GB DDR5-6000 modules, CL30, 1.35 V, with RGB lighting and heat spreaders. Fast memory for an enthusiast PC.",
             "image": "images/image_not_found.jpg",
-            "price": "159.00",
+            "price": 159.0,
             "discount": 5,
             "quantity": 10,
             "category": 6
@@ -368,7 +368,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 12,
+        "pk": 126,
         "fields": {
             "product_ptr": 126,
             "capacity": "32GB",
@@ -390,9 +390,9 @@
             "name": "Kingston Fury Beast 16GB (2x8GB) DDR5 5200MHz CL40 DIMM RAM",
             "slug": "operativna-pamjat-kingston-fury-beast-16gb-ddr5-5200mhz-cl40-dimm",
             "manufacturer": "Kingston",
-            "description": "The Kingston Fury Beast 16GB (2x8GB) DDR5 5200MHz CL40 kit is an affordable way to move to DDR5 memory.",
+            "description": "Kit of two 8 GB DDR5-5200 modules, CL40, 1.25 V, with a low-profile heat spreader. An affordable DDR5 kit.",
             "image": "images/image_not_found.jpg",
-            "price": "79.00",
+            "price": 79.0,
             "discount": 0,
             "quantity": 22,
             "category": 6
@@ -400,7 +400,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 13,
+        "pk": 127,
         "fields": {
             "product_ptr": 127,
             "capacity": "16GB",
@@ -422,9 +422,9 @@
             "name": "Crucial 32GB (2x16GB) DDR5 4800MHz CL40 DIMM RAM",
             "slug": "operativna-pamjat-crucial-32gb-ddr5-4800mhz-cl40-dimm",
             "manufacturer": "Crucial",
-            "description": "The Crucial 32GB (2x16GB) DDR5 4800MHz CL40 kit is a reliable memory kit for everyday work and gaming.",
+            "description": "Kit of two 16 GB DDR5-4800 modules, CL40, 1.1 V, without a heat spreader. Standard-speed DDR5 for office and everyday PCs.",
             "image": "images/image_not_found.jpg",
-            "price": "109.00",
+            "price": 109.0,
             "discount": 0,
             "quantity": 18,
             "category": 6
@@ -432,7 +432,7 @@
     },
     {
         "model": "goods.ram",
-        "pk": 14,
+        "pk": 128,
         "fields": {
             "product_ptr": 128,
             "capacity": "32GB",

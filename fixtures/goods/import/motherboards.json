@@ -6,9 +6,9 @@
             "name": "ASUS ROG Strix Z690-A Gaming WiFi",
             "slug": "asus-rog-strix-z690-a-gaming-wifi",
             "manufacturer": "ASUS",
-            "description": "An ATX motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, a PCIe 5.0 x16 slot, Wi-Fi 6E, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700. Four DDR5 slots, PCIe 5.0 x16, several M.2 slots, 2.5 Gb Ethernet and Wi-Fi 6E. For overclockable 12th gen Core processors.",
             "image": "categories/motherboards/asus-rog-strix-z690-a-gaming-wifi.jpg",
-            "price": 289.00,
+            "price": 289.0,
             "discount": 0,
             "quantity": 10,
             "category": 4
@@ -16,7 +16,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 1,
+        "pk": 31,
         "fields": {
             "product_ptr": 31,
             "socket": "LGA 1700",
@@ -26,7 +26,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe x4, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet, Wi-Fi 6E"
         }
@@ -38,9 +38,9 @@
             "name": "Gigabyte B660M AORUS PRO DDR4",
             "slug": "gigabyte-b660m-aorus-pro-ddr4",
             "manufacturer": "Gigabyte",
-            "description": "A Micro-ATX motherboard featuring the Intel B660 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR4 memory, a PCIe 4.0 x16 slot, and 2.5 Gb Ethernet.",
+            "description": "Micro ATX board with the Intel B660 chipset for LGA 1700. Four DDR4 slots, PCIe 4.0 x16, M.2 NVMe slots and 2.5 Gb Ethernet. A good base for a compact gaming PC.",
             "image": "categories/motherboards/gigabyte-b660m-aorus-pro-ddr4.jpg",
-            "price": 178.00,
+            "price": 178.0,
             "discount": 0,
             "quantity": 15,
             "category": 4
@@ -48,7 +48,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 2,
+        "pk": 32,
         "fields": {
             "product_ptr": 32,
             "socket": "LGA 1700",
@@ -58,7 +58,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe x4, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet"
         }
@@ -70,9 +70,9 @@
             "name": "MSI MEG Z690 UNIFY-X",
             "slug": "msi-meg-z690-unify-x",
             "manufacturer": "MSI",
-            "description": "An ATX motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, PCIe 5.0 graphics support, Wi-Fi 6E, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700, built for overclocking. Two DDR5 slots, PCIe 5.0 x16, M.2 NVMe slots, 2.5 Gb Ethernet and Wi-Fi 6E.",
             "image": "categories/motherboards/msi-meg-z690-unify-x.jpg",
-            "price": 356.00,
+            "price": 356.0,
             "discount": 0,
             "quantity": 8,
             "category": 4
@@ -80,17 +80,17 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 3,
+        "pk": 33,
         "fields": {
             "product_ptr": 33,
             "socket": "LGA 1700",
             "chipset": "Intel Z690",
             "form_factor": "ATX",
             "memory_slots": 2,
-            "max_memory": "128 GB",
+            "max_memory": "64 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, USB-C, 2.5 Gb Ethernet, Wi-Fi 6E"
         }
@@ -102,9 +102,9 @@
             "name": "ASRock Z690 Steel Legend WiFi 6E",
             "slug": "asrock-z690-steel-legend-wifi",
             "manufacturer": "ASRock",
-            "description": "An ATX motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, a PCIe 5.0 x16 slot, Wi-Fi 6E, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700. Four DDR5 slots, PCIe 5.0 x16, M.2 NVMe slots, 2.5 Gb Ethernet and Wi-Fi 6E. Good value for a Z690 build.",
             "image": "categories/motherboards/asrock-z690-steel-legend-wifi.jpg",
-            "price": 301.00,
+            "price": 301.0,
             "discount": 10,
             "quantity": 12,
             "category": 4
@@ -112,7 +112,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 4,
+        "pk": 34,
         "fields": {
             "product_ptr": 34,
             "socket": "LGA 1700",
@@ -122,7 +122,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet, Wi-Fi 6E"
         }
@@ -134,9 +134,9 @@
             "name": "NZXT N7 Z690",
             "slug": "nzxt-n7-z690",
             "manufacturer": "NZXT",
-            "description": "An ATX motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, PCIe 5.0 graphics support, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700. Four DDR5 slots, PCIe 5.0 x16, M.2 NVMe slots and 2.5 Gb Ethernet. Has a metal cover over the rear connectors.",
             "image": "categories/motherboards/nzxt-n7-z690.jpg",
-            "price": 267.00,
+            "price": 267.0,
             "discount": 0,
             "quantity": 15,
             "category": 4
@@ -144,7 +144,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 5,
+        "pk": 35,
         "fields": {
             "product_ptr": 35,
             "socket": "LGA 1700",
@@ -154,7 +154,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, USB-C, 2.5 Gb Ethernet"
         }
@@ -166,9 +166,9 @@
             "name": "Biostar Z690 Valkyrie",
             "slug": "biostar-z690-valkyrie",
             "manufacturer": "Biostar",
-            "description": "An ATX motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, PCIe 5.0 graphics support, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700. Four DDR5 slots, PCIe 5.0 x16, M.2 NVMe slots and 2.5 Gb Ethernet. An affordable way into the DDR5 platform.",
             "image": "categories/motherboards/biostar-z690-valkyrie.jpg",
-            "price": 212.00,
+            "price": 212.0,
             "discount": 5,
             "quantity": 20,
             "category": 4
@@ -176,7 +176,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 6,
+        "pk": 36,
         "fields": {
             "product_ptr": 36,
             "socket": "LGA 1700",
@@ -186,7 +186,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, USB-C, 2.5 Gb Ethernet"
         }
@@ -198,9 +198,9 @@
             "name": "ASUS ProArt Z690-Creator WiFi",
             "slug": "asus-proart-z690-creator-wifi",
             "manufacturer": "ASUS",
-            "description": "An ATX creator-focused motherboard featuring the Intel Z690 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, PCIe 5.0 graphics support, Wi-Fi 6E, and high-speed networking.",
+            "description": "ATX board with the Intel Z690 chipset for LGA 1700, made for creators. Four DDR5 slots, PCIe 5.0 x16, M.2 NVMe slots, 10 Gb and 2.5 Gb Ethernet and Wi-Fi 6E.",
             "image": "categories/motherboards/asus-proart-z690-creator-wifi.jpg",
-            "price": 423.00,
+            "price": 423.0,
             "discount": 0,
             "quantity": 10,
             "category": 4
@@ -208,7 +208,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 7,
+        "pk": 37,
         "fields": {
             "product_ptr": 37,
             "socket": "LGA 1700",
@@ -218,7 +218,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, USB-C, HDMI, DisplayPort, Ethernet, Wi-Fi 6E"
         }
@@ -230,9 +230,9 @@
             "name": "Gigabyte B660M Gaming DDR4",
             "slug": "gigabyte-b660m-gaming-ddr4",
             "manufacturer": "Gigabyte",
-            "description": "A Micro-ATX motherboard featuring the Intel B660 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR4 memory, PCIe expansion, and wired Ethernet connectivity.",
+            "description": "Micro ATX board with the Intel B660 chipset for LGA 1700. Four DDR4 slots, PCIe 4.0 x16, M.2 NVMe slots and Gigabit or 2.5 Gb Ethernet. A budget base for a gaming PC.",
             "image": "categories/motherboards/gigabyte-b660m-gaming-ddr4.jpg",
-            "price": 189.00,
+            "price": 189.0,
             "discount": 0,
             "quantity": 15,
             "category": 4
@@ -240,7 +240,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 8,
+        "pk": 38,
         "fields": {
             "product_ptr": 38,
             "socket": "LGA 1700",
@@ -250,7 +250,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2, HDMI, DisplayPort, Ethernet"
         }
@@ -262,9 +262,9 @@
             "name": "ASUS ROG Strix Z790-E Gaming WiFi",
             "slug": "asus-rog-strix-z790-e-gaming-wifi",
             "manufacturer": "ASUS",
-            "description": "An ATX motherboard featuring the Intel Z790 chipset, LGA 1700 socket, support for 13th-generation Intel processors, DDR5 memory, PCIe 5.0 graphics support, Wi-Fi 6E, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the Intel Z790 chipset for LGA 1700. Four DDR5 slots, PCIe 5.0 x16, several M.2 slots, 2.5 Gb Ethernet and Wi-Fi 6E. For high-end 12th and 13th gen Core CPUs.",
             "image": "categories/motherboards/asus-rog-strix-z790-e-gaming-wifi.jpg",
-            "price": 468.00,
+            "price": 468.0,
             "discount": 0,
             "quantity": 8,
             "category": 4
@@ -272,7 +272,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 9,
+        "pk": 39,
         "fields": {
             "product_ptr": 39,
             "socket": "LGA 1700",
@@ -282,7 +282,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR5",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet, Wi-Fi 6E"
         }
@@ -291,12 +291,12 @@
         "model": "goods.product",
         "pk": 40,
         "fields": {
-            "name": "Gigabyte B760M AORUS PRO DDR4",
-            "slug": "gigabyte-b760m-aorus-pro-ddr4",
+            "name": "Gigabyte B760M GAMING X DDR4",
+            "slug": "gigabyte-b760m-gaming-x-ddr4",
             "manufacturer": "Gigabyte",
-            "description": "A Micro-ATX motherboard featuring the Intel B760 chipset, LGA 1700 socket, support for 13th-generation Intel processors, DDR4 memory, PCIe expansion, and 2.5 Gb Ethernet.",
+            "description": "Micro ATX board with the Intel B760 chipset for LGA 1700. Four DDR4 slots, PCIe 4.0 x16, M.2 NVMe slots and 2.5 Gb Ethernet. Supports 12th, 13th and 14th gen Core CPUs.",
             "image": "categories/motherboards/gigabyte-b760m-aorus-pro-ddr4.jpg",
-            "price": 223.00,
+            "price": 223.0,
             "discount": 0,
             "quantity": 12,
             "category": 4
@@ -304,7 +304,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 10,
+        "pk": 40,
         "fields": {
             "product_ptr": 40,
             "socket": "LGA 1700",
@@ -314,7 +314,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2, HDMI, DisplayPort, 2.5 Gb Ethernet"
         }
@@ -326,7 +326,7 @@
             "name": "ASUS ROG Strix B550-F Gaming",
             "slug": "asus-rog-strix-b550-f-gaming",
             "manufacturer": "ASUS",
-            "description": "An ATX motherboard featuring the AMD B550 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, a PCIe 4.0 x16 slot, and 2.5 Gb Ethernet.",
+            "description": "ATX board with the AMD B550 chipset for the AM4 socket. Four DDR4 slots, PCIe 4.0 x16, two M.2 NVMe slots and 2.5 Gb Ethernet. Works with Ryzen 3000 and 5000 processors.",
             "image": "images/image_not_found.jpg",
             "price": 189.0,
             "discount": 0,
@@ -336,7 +336,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 20,
+        "pk": 121,
         "fields": {
             "product_ptr": 121,
             "socket": "AM4",
@@ -346,7 +346,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, 2.5 Gb Ethernet"
         }
@@ -358,7 +358,7 @@
             "name": "MSI MAG B550M Mortar",
             "slug": "msi-mag-b550m-mortar",
             "manufacturer": "MSI",
-            "description": "A Micro-ATX motherboard featuring the AMD B550 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, a PCIe 4.0 x16 slot, and 2.5 Gb Ethernet.",
+            "description": "Micro ATX board with the AMD B550 chipset for the AM4 socket. Four DDR4 slots, PCIe 4.0 x16, two M.2 NVMe slots and 2.5 Gb Ethernet. Works with Ryzen 3000 and 5000 processors.",
             "image": "images/image_not_found.jpg",
             "price": 129.0,
             "discount": 0,
@@ -368,7 +368,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 21,
+        "pk": 122,
         "fields": {
             "product_ptr": 122,
             "socket": "AM4",
@@ -378,7 +378,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 3,
-            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, 2.5 Gb Ethernet"
         }
@@ -390,7 +390,7 @@
             "name": "Gigabyte X570 AORUS Elite",
             "slug": "gigabyte-x570-aorus-elite",
             "manufacturer": "Gigabyte",
-            "description": "An ATX motherboard featuring the AMD X570 chipset, AM4 socket, support for Ryzen 3000 and 5000 series processors, DDR4 memory, PCIe 4.0 slots, and Gigabit Ethernet.",
+            "description": "ATX board with the AMD X570 chipset for the AM4 socket. Four DDR4 slots, PCIe 4.0 x16, two M.2 NVMe slots and Gigabit Ethernet. Works with Ryzen 3000 and 5000 processors.",
             "image": "images/image_not_found.jpg",
             "price": 199.0,
             "discount": 0,
@@ -400,7 +400,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 22,
+        "pk": 123,
         "fields": {
             "product_ptr": 123,
             "socket": "AM4",
@@ -410,7 +410,7 @@
             "max_memory": "128 GB",
             "memory_type": "DDR4",
             "expansion_slots": 4,
-            "storage_interfaces": "M.2 NVMe x2, PCIe 4.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2, HDMI, DisplayPort, Gigabit Ethernet"
         }
@@ -422,7 +422,7 @@
             "name": "ASUS ROG Strix B660-I Gaming WiFi",
             "slug": "asus-rog-strix-b660-i-gaming-wifi",
             "manufacturer": "ASUS",
-            "description": "A Mini-ITX motherboard featuring the Intel B660 chipset, LGA 1700 socket, support for 12th-generation Intel processors, DDR5 memory, a PCIe 5.0 x16 slot, Wi-Fi 6, and 2.5 Gb Ethernet.",
+            "description": "Mini-ITX board with the Intel B660 chipset for LGA 1700. Two DDR5 slots, PCIe 5.0 x16, two M.2 slots, 2.5 Gb Ethernet and Wi-Fi 6. For a small gaming PC.",
             "image": "images/image_not_found.jpg",
             "price": 219.0,
             "discount": 0,
@@ -432,7 +432,7 @@
     },
     {
         "model": "goods.motherboard",
-        "pk": 23,
+        "pk": 124,
         "fields": {
             "product_ptr": 124,
             "socket": "LGA 1700",
@@ -442,7 +442,7 @@
             "max_memory": "64 GB",
             "memory_type": "DDR5",
             "expansion_slots": 1,
-            "storage_interfaces": "M.2 NVMe x2, PCIe 5.0 x16, SATA 6Gb/s",
+            "storage_interfaces": "M.2 NVMe, SATA 6 Gb/s",
             "onboard_graphics": false,
             "rear_panel_ports": "USB 3.2 Gen 2x2, HDMI, DisplayPort, 2.5 Gb Ethernet, Wi-Fi 6"
         }

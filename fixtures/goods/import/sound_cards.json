@@ -6,9 +6,9 @@
             "name": "Creative Sound Blaster Z",
             "slug": "creative-sound-blaster-z",
             "manufacturer": "Creative",
-            "description": "An ideal sound card for gamers and audiophiles, delivering high-quality audio.",
+            "description": "Internal PCIe sound card with 5.1 channel output, 24-bit/192 kHz audio and a 116 dB signal-to-noise ratio. Features: SBX Pro Studio, CrystalVoice.",
             "image": "categories/sound-cards/creative_sound_blaster_z.jpg",
-            "price": "67.00",
+            "price": 67.0,
             "discount": 10,
             "quantity": 50,
             "category": 7
@@ -16,7 +16,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 1,
+        "pk": 61,
         "fields": {
             "product_ptr": 61,
             "interface": "PCIe",
@@ -38,9 +38,9 @@
             "name": "ASUS Xonar AE",
             "slug": "asus-xonar-ae",
             "manufacturer": "ASUS",
-            "description": "A sound card with 7.1-channel audio support for demanding users.",
+            "description": "Internal PCIe sound card with 7.1 channel output, 24-bit/192 kHz audio and a 110 dB signal-to-noise ratio. Features: Hyper Grounding, 192kHz/24-bit.",
             "image": "categories/sound-cards/asus_xonar_ae.jpg",
-            "price": "45.00",
+            "price": 45.0,
             "discount": 5,
             "quantity": 30,
             "category": 7
@@ -48,7 +48,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 2,
+        "pk": 62,
         "fields": {
             "product_ptr": 62,
             "interface": "PCIe",
@@ -60,7 +60,7 @@
             "inputs": "Mic In, Line In",
             "outputs": "Line Out, Optical Out, Headphone Jack",
             "dimensions": "190 x 22 x 125 mm",
-            "weight": 0.30
+            "weight": 0.3
         }
     },
     {
@@ -70,9 +70,9 @@
             "name": "Creative Sound Blaster Audigy FX",
             "slug": "creative-sound-blaster-audigy-fx",
             "manufacturer": "Creative",
-            "description": "An affordable sound card delivering high-quality audio for everyday use.",
+            "description": "Internal PCIe sound card with 5.1 channel output, 24-bit/96 kHz audio and a 106 dB signal-to-noise ratio. Features: SBX Pro Studio, CrystalVoice.",
             "image": "categories/sound-cards/creative_sound_blaster_audigy_fx.jpg",
-            "price": "22.00",
+            "price": 22.0,
             "discount": 0,
             "quantity": 75,
             "category": 7
@@ -80,7 +80,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 3,
+        "pk": 63,
         "fields": {
             "product_ptr": 63,
             "interface": "PCIe",
@@ -102,9 +102,9 @@
             "name": "ASUS Strix Soar",
             "slug": "asus-strix-soar",
             "manufacturer": "ASUS",
-            "description": "A high-quality gaming sound card with 7.1-channel audio support.",
+            "description": "Internal PCIe sound card with 7.1 channel output, 24-bit/192 kHz audio and a 116 dB signal-to-noise ratio. Features: Sonic Studio, Perfect Voice.",
             "image": "categories/sound-cards/asus_strix_soar.jpg",
-            "price": "56.00",
+            "price": 56.0,
             "discount": 5,
             "quantity": 40,
             "category": 7
@@ -112,7 +112,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 4,
+        "pk": 64,
         "fields": {
             "product_ptr": 64,
             "interface": "PCIe",
@@ -134,9 +134,9 @@
             "name": "Creative Sound BlasterX AE-5",
             "slug": "creative-sound-blasterx-ae-5",
             "manufacturer": "Creative",
-            "description": "A powerful sound card with RGB lighting designed for gamers.",
+            "description": "Internal PCIe sound card with 5.1 channel output, 32-bit/384 kHz audio and a 122 dB signal-to-noise ratio. Features: RGB Aurora, Scout Mode.",
             "image": "categories/sound-cards/creative_sound_blasterx_ae_5.jpg",
-            "price": "78.00",
+            "price": 78.0,
             "discount": 15,
             "quantity": 25,
             "category": 7
@@ -144,7 +144,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 5,
+        "pk": 65,
         "fields": {
             "product_ptr": 65,
             "interface": "PCIe",
@@ -156,7 +156,7 @@
             "inputs": "Mic In, Line In",
             "outputs": "Line Out, Optical Out",
             "dimensions": "145 x 20 x 130 mm",
-            "weight": 0.40
+            "weight": 0.4
         }
     },
     {
@@ -166,9 +166,9 @@
             "name": "ASUS Xonar U7 MKII",
             "slug": "asus-xonar-u7-mkii",
             "manufacturer": "ASUS",
-            "description": "A compact USB sound card that delivers high-quality audio.",
+            "description": "External USB sound card with 7.1 channel output, 24-bit/192 kHz audio and a 114 dB signal-to-noise ratio. Features: Hyper Grounding, Sonic Studio.",
             "image": "categories/sound-cards/asus_xonar_u7_mkii.jpg",
-            "price": "49.00",
+            "price": 49.0,
             "discount": 10,
             "quantity": 60,
             "category": 7
@@ -176,7 +176,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 6,
+        "pk": 66,
         "fields": {
             "product_ptr": 66,
             "interface": "USB",
@@ -198,9 +198,9 @@
             "name": "Creative Sound BlasterX G6",
             "slug": "creative-sound-blasterx-g6",
             "manufacturer": "Creative",
-            "description": "A portable sound card with a headphone amplifier, Dolby Digital support, and 7.1-channel audio.",
+            "description": "External USB sound card with 7.1 channel output, 32-bit/384 kHz audio and a 130 dB signal-to-noise ratio. Features: Scout Mode, SB-Axx1.",
             "image": "categories/sound-cards/creative_sound_blasterx_g6.jpg",
-            "price": "89.00",
+            "price": 89.0,
             "discount": 20,
             "quantity": 20,
             "category": 7
@@ -208,7 +208,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 7,
+        "pk": 67,
         "fields": {
             "product_ptr": 67,
             "interface": "USB",
@@ -220,7 +220,7 @@
             "inputs": "Mic In, Line In",
             "outputs": "Line Out, Optical Out, Headphone Jack",
             "dimensions": "111 x 24 x 70 mm",
-            "weight": 0.144
+            "weight": 0.14
         }
     },
     {
@@ -230,9 +230,9 @@
             "name": "ASUS Essence STX II",
             "slug": "asus-essence-stx-ii",
             "manufacturer": "ASUS",
-            "description": "A professional sound card designed for high-quality audio and 7.1-channel sound.",
+            "description": "Internal PCIe sound card with 7.1 channel output, 24-bit/192 kHz audio and a 124 dB signal-to-noise ratio. Features: Hyper Grounding, MUSES Op-Amps.",
             "image": "categories/sound-cards/asus_essence_stx_ii.jpg",
-            "price": "111.00",
+            "price": 111.0,
             "discount": 10,
             "quantity": 15,
             "category": 7
@@ -240,7 +240,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 8,
+        "pk": 68,
         "fields": {
             "product_ptr": 68,
             "interface": "PCIe",
@@ -262,9 +262,9 @@
             "name": "Creative Sound Blaster Omni Surround 5.1",
             "slug": "creative-sound-blaster-omni-surround-5-1",
             "manufacturer": "Creative",
-            "description": "A USB sound card with 5.1-channel audio support and a built-in microphone.",
+            "description": "External USB sound card with 5.1 channel output, 24-bit/96 kHz audio and a 100 dB signal-to-noise ratio. Features: CrystalVoice, Scout Mode.",
             "image": "categories/sound-cards/creative_sound_blaster_omni_surround_5_1.jpg",
-            "price": "33.00",
+            "price": 33.0,
             "discount": 5,
             "quantity": 35,
             "category": 7
@@ -272,7 +272,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 9,
+        "pk": 69,
         "fields": {
             "product_ptr": 69,
             "interface": "USB",
@@ -294,9 +294,9 @@
             "name": "ASUS Xonar DGX",
             "slug": "asus-xonar-dgx",
             "manufacturer": "ASUS",
-            "description": "An affordable PCIe sound card with 5.1-channel audio support for gamers.",
+            "description": "Internal PCIe sound card with 5.1 channel output, 24-bit/96 kHz audio and a 105 dB signal-to-noise ratio. Features: GX 2.5, Smart Volume Normalizer.",
             "image": "categories/sound-cards/asus_xonar_dgx.jpg",
-            "price": "18.00",
+            "price": 18.0,
             "discount": 0,
             "quantity": 50,
             "category": 7
@@ -304,7 +304,7 @@
     },
     {
         "model": "goods.soundcard",
-        "pk": 10,
+        "pk": 70,
         "fields": {
             "product_ptr": 70,
             "interface": "PCIe",
@@ -316,7 +316,7 @@
             "inputs": "Mic In, Line In",
             "outputs": "Line Out, Optical Out, Headphone Jack",
             "dimensions": "145 x 20 x 125 mm",
-            "weight": 0.20
+            "weight": 0.2
         }
     }
 ]
