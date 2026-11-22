@@ -7,7 +7,7 @@ import { useCart, useCreateOrder, useMe } from '../queries'
 
 export default function CheckoutPage() {
   const { data: user, isPending: userPending } = useMe()
-  const { data: cart, isPending: cartPending } = useCart()
+  const { data: cart, error: cartError, isPending: cartPending } = useCart()
   const createOrder = useCreateOrder()
   const navigate = useNavigate()
   const [delivery, setDelivery] = useState(false)
@@ -24,6 +24,9 @@ export default function CheckoutPage() {
       </div>
     )
   }
+
+  // TypeScript also needs this: without data the query has failed
+  if (!cart) return <p className="error">Could not load the cart: {cartError?.message}</p>
 
   if (cart.items.length === 0) {
     return (

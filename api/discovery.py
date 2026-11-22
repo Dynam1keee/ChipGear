@@ -12,7 +12,6 @@ the ones of a guest in the session.
 """
 from django.db.models import Case, Count, IntegerField, Sum, When
 from django.shortcuts import get_object_or_404
-from django.utils import timezone
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -88,11 +87,10 @@ class ViewProductView(APIView):
     def post(self, request, slug):
         product = get_object_or_404(Product, slug=slug)
         if request.user.is_authenticated:
-            # viewed_at has auto_now_add, so the time of an old record is set by hand
-            record, created = RecentlyViewed.objects.get_or_create(user=request.user, product=product)
-            if not created:
-                record.viewed_at = timezone.now()
-                record.save(update_fields=['viewed_at'])
+            # The old record is replaced by a new one: its id is the biggest, so the order is right
+            # even when two views get the same time (the clock of some systems is not precise)
+            RecentlyViewed.objects.filter(user=request.user, product=product).delete()
+            RecentlyViewed.objects.create(user=request.user, product=product)
             old = RecentlyViewed.objects.filter(user=request.user).order_by('-viewed_at', '-id')[HISTORY_KEEP:]
             RecentlyViewed.objects.filter(pk__in=[row.pk for row in old]).delete()
         else:
