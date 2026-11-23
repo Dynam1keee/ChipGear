@@ -1,12 +1,12 @@
 # ChipGear
 
-![CI](https://github.com/Dynam1keee/ChipGear/actions/workflows/ci.yml/badge.svg?branch=react-migration)
+![CI](https://github.com/Dynam1keee/ChipGear/actions/workflows/ci.yml/badge.svg?branch=main)
 
 ChipGear is an online store for computer hardware. The backend is a Django REST API. The frontend is a single-page app built with React 19 and TypeScript.
 
 **Live Demo:** [Visit ChipGear](http://92.5.126.107/)
 
-**Note:** The live demo is still the first (server-rendered) version of the site. It is accessible via HTTP only. Use `http://` instead of `https://`. The React version lives in the `react-migration` branch.
+**Note:** The live demo is still the first (server-rendered) version of the site. It is accessible via HTTP only. Use `http://` instead of `https://`. The React version is in the `main` branch after the migration; the first version is kept in the branch `legacy-django`.
 
 ## Features
 
@@ -210,7 +210,7 @@ Set the same environment variables as for the development server (at least `DJAN
 python manage.py test
 ```
 
-The same tests and the frontend build run in GitHub Actions on every push.
+The same tests and the frontend build run in GitHub Actions on every push. A push to `main` also deploys the site; see [deploy/README.md](deploy/README.md).
 
 ## Administration
 

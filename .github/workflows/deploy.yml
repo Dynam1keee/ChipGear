@@ -1,0 +1,100 @@
+name: Deploy
+
+# Runs after every push to main (only if the CI checks pass) and by hand
+# (Actions -> Deploy -> Run workflow). Setup steps: deploy/README.md.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      replace_database:
+        description: Replace the database on the server with db.sqlite3 from the repository (a backup is made first)
+        type: boolean
+        default: false
+
+# Two deploys at the same time would fight over the same files.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  test:
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: /home/ubuntu/apps/ChipGear   # Django code, .env, db.sqlite3, virtual environment
+      WEB_DIR: /var/www/chipgear            # built frontend, static and media files (served by Nginx)
+      PYTHON: /home/ubuntu/apps/ChipGear/.venv/bin/python
+      SERVICE: chipgear                     # systemd service of Gunicorn
+      SSH_TARGET: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
+      REPLACE_DB: ${{ inputs.replace_database == true }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build the frontend
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Set up SSH
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Upload the Django code
+        # No --delete: the server keeps its own .env, virtual environment and database.
+        run: |
+          rsync -az \
+            --exclude '.git' --exclude '.github' --exclude '.env' --exclude '.venv' --exclude 'venv' \
+            --exclude 'db.sqlite3' --exclude 'media' --exclude 'staticfiles' --exclude 'frontend' \
+            --exclude 'docs' --exclude 'screenshots' --exclude '__pycache__' \
+            ./ "$SSH_TARGET:$APP_DIR/"
+
+      - name: Upload the frontend and the product photos
+        run: |
+          rsync -az --delete frontend/dist/ "$SSH_TARGET:$WEB_DIR/frontend/"
+          rsync -az media/ "$SSH_TARGET:$WEB_DIR/media/"
+
+      - name: Upload the database
+        if: ${{ env.REPLACE_DB == 'true' }}
+        run: rsync -az db.sqlite3 "$SSH_TARGET:$APP_DIR/db.sqlite3.incoming"
+
+      - name: Update the server
+        run: |
+          ssh "$SSH_TARGET" bash -s <<EOF
+          set -euo pipefail
+          cd "$APP_DIR"
+          if [ "$REPLACE_DB" = "true" ]; then
+            sudo systemctl stop "$SERVICE"
+            if [ -f db.sqlite3 ]; then cp -a db.sqlite3 "db.backup-\$(date +%Y%m%d-%H%M%S).sqlite3"; fi
+            mv db.sqlite3.incoming db.sqlite3
+          fi
+          "$PYTHON" -m pip install -q -r requirements.txt
+          "$PYTHON" manage.py migrate --noinput
+          "$PYTHON" manage.py collectstatic --noinput
+          sudo systemctl restart "$SERVICE"
+          sleep 2
+          sudo systemctl is-active "$SERVICE"
+          EOF
+
+      - name: Check the site
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          curl -fsS --retry 5 --retry-delay 3 "http://$HOST/api/categories/" > /dev/null
+          curl -fsS "http://$HOST/" | grep -q '<div id="root">'
