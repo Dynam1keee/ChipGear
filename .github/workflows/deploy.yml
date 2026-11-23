@@ -52,9 +52,12 @@ jobs:
           KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
         run: |
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          # Secrets pasted from Windows have \r\n line endings, which OpenSSH cannot read
+          printf '%s\n' "$SSH_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          printf '%s\n' "$KNOWN_HOSTS" | tr -d '\r' > ~/.ssh/known_hosts
+          # Fails here with a clear message if the key is still broken (cut off, extra spaces)
+          ssh-keygen -y -f ~/.ssh/id_ed25519 > /dev/null
 
       - name: Upload the Django code
         # No --delete: the server keeps its own .env, virtual environment and database.
