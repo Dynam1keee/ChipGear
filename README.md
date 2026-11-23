@@ -6,7 +6,9 @@ ChipGear is an online store for computer hardware. The backend is a Django REST 
 
 **Live Demo:** [Visit ChipGear](http://92.5.126.107/)
 
-**Note:** The live demo is still the first (server-rendered) version of the site. It is accessible via HTTP only. Use `http://` instead of `https://`. The React version is in the `main` branch after the migration; the first version is kept in the branch `legacy-django`.
+**Note:** The website is accessible via HTTP only. Use `http://` instead of `https://`.
+
+The first version of the site (server-rendered Django templates) is kept in the branch `legacy-django`.
 
 ## Features
 
